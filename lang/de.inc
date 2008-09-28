@@ -1,6 +1,6 @@
 <?php
 /*
- Cyrocom Wikepage 2006-1 German Language File
+ Cyrocom Wikepage 2006-2 German Language File
  by Daniel Schmidt
 */
 $encoding = "utf-8";
@@ -11,7 +11,7 @@ $lang['searchpage'] = "Suchseite";
 $lang['orsearchcontent'] = "oder Suchtext";
 $lang['search'] = "Suchen";
 $lang['searchingpage'] = "durchsuche Seite ";
-$lang['searchingcontent'] = "durchsuche Content ";
+$lang['searchingcontent'] = "durchsuche Inhalt ";
 $lang['oldadminpass'] ="Bitte Passwort eingeben ";
 $lang['adminpass'] = "neues Passwort";
 $lang['password'] = "Passwort";
@@ -62,6 +62,10 @@ $lang['pass'] = "Passwort eingeben: ";
 $lang['mainmenu'] = "Hauptmenü ";
 $lang['pagecontents'] = "Seiteninhalte ";
 $lang['navi'] = "Navigation";
+$lang['blogsubject']="Überschrift";
+$lang['blogpage']="Inhalt";
+$lang['blog_out']="blog_ansicht";
+$lang['blog_input_page']="Blog_Eintrag";
 $lang['copyleft'] = "<p>Dieses Dokument steht unter der GNU Free Documentation License, Version 1.1 oder einer späteren Version, welche von der <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a> veröffentlicht wurde. Das Kopieren, Veröffentlichen oder Ändern ist unter Beachtung dieser Bedingungen erlaubt. </p>
  <small>Powered by <a href=\"http://www.cyrocom.com/\">Wikepage</a>, einer php-basierten, ohne MySQL laufenden Homepage-Software.</small><br/><p></p>";

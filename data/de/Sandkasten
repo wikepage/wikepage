@@ -6,7 +6,6 @@ Soundtest
  eins
  zwei
  phhh
- phhh
 
 __unterstrichen__ **fett** \'\'kursiv\'\' oder ::in einer Box::
 
@@ -28,6 +27,10 @@ http://www.cyrocom.com
 
 **Verlinktes Bild:**
 [http://www.cyrocom.com/|wike.gif]
+
+**Table**
+||||Zelle 11||Zelle 12||||
+||||Zelle 21||Zelle 22||||
 
 
 ##red##Diese Farbe ist wirklich schön^^.##

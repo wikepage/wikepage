@@ -1,12 +1,11 @@
-Cyrocom Wikisite/Homepage-Software
-WIKEPAGE Version 2006.1b Opus 8 (Code: Fermi-Dirac)
+Cyrocom Wikisite/Blog/Homepage-Software
+WIKEPAGE Version 2006.2 Opus 9 (Code: Maxwell-Boltzmann)
 -----------------------------------------------------------------------------------------
-Ein Wiki ist eine Software, um Wissen mit anderen zu teilen. Wikepage ist eine standartisierte,
-leichte, kleine, mehrsprachige und vielseitige Wiki-Software. Es ist ein Derivat des Tipiwiki2
-(http://tipiwiki.sourceforge.net/). Wikepage hat einige Eigenschaften die Tipiwiki nicht hat,
-wie eine passwortgeschützte Struktur und 4 beseitigte Sicherheitslöcher, Tabellen-Unterstützung,
-die Fähigkeit Daten hochzuladen, Mehrsprachigkeit, die Möglichkeit der Erstellung multipler
-Seiten... und und und...
+Wikepage ist eine standartisierte, leichte, kleine, mehrsprachige und vielseitige Wiki-Software. 
+Es ist ein Derivat des Tipiwiki2 (http://tipiwiki.sourceforge.net/). Wikepage hat einige 
+Eigenschaften die Tipiwiki nicht hat, wie eine passwortgeschützte Struktur und 4 beseitigte 
+Sicherheitslöcher, Tabellen-Unterstützung, die Fähigkeit Daten hochzuladen, Mehrsprachigkeit, 
+die Möglichkeit der Erstellung multipler Seiten... und und und...
 
 Wikepage hat zwei Modi:
 - Wikimodus: Seiten können ohne Passworteingabe geändert werden.
