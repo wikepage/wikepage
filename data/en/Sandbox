@@ -18,15 +18,16 @@ __underlined__ **bold** \'\'italic\'\' or ::in box::
 *list don\'t work if used like this.
 * must be like this
 
-[http://lisesivdin.freefronthost.com/|Lisesivdin homepage] is Wikepage\'d!
-
-[http://www.cyrocom.com]
-
 **Picture:**
 [wike.gif]
 
-**Linked Picture:**
-[http://www.cyrocom.com/|wike.gif]
+**Links**
+* Static page link: [Index]
+* Static page link with explanation: [Index|Index page of this site]
+* URL link with an explanation: [http://www.wikepage.org/|Wikepage homesite]
+* Simple URL: [http://www.cyrocom.com]
+* Linked picture: [http://www.cyrocom.com/|wike.gif]
+
 
 **Table**
 ||||Cell 11||Cell 12||||

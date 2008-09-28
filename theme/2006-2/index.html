@@ -13,16 +13,11 @@
         <meta name="keywords" content="<!--wikiname-->" />
         <link rel="stylesheet" type="text/css" href="theme/<!--theme-->/style.css" />
         </head>
-        <body> 
-
-
-
-  <body>
-
+        <body>
     <div id="top">
     <table width="620" border="0" cellspacing="0" cellpadding="0" align="center"><tr>
     <td align="left">
-    <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
+    <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&amp;edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
               <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_recent-->"><!--lang_recent--> 
               </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_advsearch-->"><!--lang_advsearch--></a> 
               <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_all-->"><!--lang_all--> 
@@ -33,7 +28,7 @@
             
       <div id="header">
         <h1 class="banner"><!--sitename--></h1>
-        <font color="white"><small><!--siteheader--></small></font>
+        <small><font color="white"><!--siteheader--></font></small>
       </div>
     </div>
 
@@ -41,27 +36,27 @@
             
       <div id="sidebar">
 		<div id="menu">
-        <!--menucontent--><br>
+        <!--menucontent--><br />
         <form method="get" action="index.php">
               <b><!--lang_advsearch--></b>
-              <input type="hidden" name="wiki" value="<!--lang_page_advsearch-->">
-              <input type="hidden" name="PageName" value="">
-              <input type="text" name="PageContent" size="18">
+              <input type="hidden" name="wiki" value="<!--lang_page_advsearch-->" />
+              <input type="hidden" name="PageName" value="" />
+              <input type="text" name="PageContent" size="18" />
             </form>
         </div>
       </div>
 
       <div id="main">
-      <h2 id="title"><b>[ <a href="index.php?wiki=<!--lang_page_advsearch-->&PageContent=<!--wikiname-->">
+      <h2 id="title"><b>[ <a href="index.php?wiki=<!--lang_page_advsearch-->&amp;PageContent=<!--wikiname-->">
                     <!--wikiname--></a> ]</b></h2>
-      <center><small><font color="Silver"><!--bannerwriting--></font><br><a href="index.php?banner=Yes"><img border="0" src="<!--bannerimage-->"></a></small> </center>
-      <br><!--wikicontent-->
+      <center><small><font color="Silver"><!--bannerwriting--></font><br /><a href="index.php?banner=Yes"><img border="0" alt"banner" src="<!--bannerimage-->"></a></small> </center>
+      <br /><!--wikicontent-->
       </div>
 
       <div id="footer">
         <!--lang_lastupdate--><!--lastupdate-->
-        <p>
-<div align="center"><font color="Silver"> <!--copyleft--> </p></div>
+        
+<div align="center"><p><font color="Silver"> <!--copyleft--> </font></p></div>
       </div>
 
     </div>
