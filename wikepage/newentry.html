@@ -13,30 +13,33 @@
         <meta name="keywords" content="<!--wikiname-->" />
         </head>
         <body>
-                <div id="wikepage"><a href="index.php"><!--sitename--></a></div>
+                <div id="wikepage"><a href="http://www.binarymethod.com/wikepage/index.php"><!--sitename--></a></div>
                 <div id="title"><!--wikiname--> <!--lang_editing-->... </div>
-                <hr />
+                <hr>
                 <form method="post" enctype="multipart/form-data" action="index.php?wiki=<!--wikiname-->">
-                <input type="hidden" name="blogedit" value="yes">
+                <input name="blogedit" value="yes" type="hidden">
   <p> <!--lang_pass--><!--uploadsystem-->
-    <input type="submit" value="<!--submit-->" name="submit" />
+    <input value="<!--submit-->" name="submit" type="submit">
     
   </p>
-  <table width="776" border="0" cellspacing="0" cellpadding="0">
-    <tr> <td>
-      <b><!--lang_newentrysubject--></b><br />
+  <table border="0" cellpadding="0" cellspacing="0" width="776">
+    <tbody><tr> <td>
+    	<b><!--lang_blog_image--></b><br>
+			<select size="1" name="blogimage">
+    	<!--blog_imagelist-->
+			</select><br>
+      <b><!--lang_blog_subject--></b><br>
         <input type="text" name="subject" size="80" value="<!--subject-->" />
-      <br /><b><!--lang_newentrypage--></b><br />
-        <textarea name="content" cols="80" rows="20" wrap="soft"><!--already--></textarea>
+      <br><b><!--lang_blog_page--></b><br>
+       <textarea name="content" cols="80" rows="20" wrap="soft"><!--already--></textarea>
       </td>
     </tr>
-  </table>
-  <p><br />
+  </tbody></table>
+  <p><br>
   </p>
   <p>&nbsp;</p>
                 </form>
                 <!--copyleft-->
-                <hr />
+                <hr>
                 <!--writingrules-->
-        </body>
-</html>
+        </body></html>

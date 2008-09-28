@@ -1,6 +1,6 @@
 <?php
 /*
- Wikepage 2007-1 English Language File
+ Wikepage 2007-2 English Language File
  by Sefer Bora LISESIVDIN
 */
 $encoding = "utf-8";
@@ -64,20 +64,26 @@ $lang['submit'] = "Submit";
 $lang['mainmenu'] = "Main Menu ";
 $lang['pagecontents'] = "Page Contents ";
 $lang['navi'] = "Navigation";
-$lang['blogsubject']="Subject";
-$lang['blogpage']="Body";
 $lang['blog_out']="blog_view";
+$lang['blog_archive']="blog_archive";
+$lang['blog_subject']="Subject:";
+$lang['blog_page']="Body:";
 $lang['blog_input_page']="Blog_Entry";
 $lang['activate_TOC']="Activate Table of Contents";
-$lang['TOC']="<input type =\"button\" value =\"Table of Contents\" onclick =\"toggleTOC()\"><div id=TOC></div>";
+$lang['TOC']="<div id=\"TOC\"><input type =\"button\" value =\"Table of Contents\" onclick =\"toggleTOC()\"></div>";
 $lang['nonews']="No News Found";
 $lang['xmlerror']="XML error";
 $lang['atline']="at line";
 $lang['couldnotxml']="could not open XML input";
+$lang['couldnotversioninfo']="System can not connect to internet. You can not import RSS and can not control version info.";
+$lang['newversion']="There is a new version of Wikepage. Please upgrade.";
+$lang['next']="Next";
+$lang['prev']="Previous";
+$lang['noimage']="No Image...";
 $lang['copyleft'] = "<p>Permission is granted to copy, distribute and/or modify this document under the terms of the
  GNU Free Documentation License, Version 1.1 or any later version published by the <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a>. If you don't agree please don't add content. <br />
- <small>Powered by databaseless php wiki-blog-rss reader hybrid engine: <a href=\"http://www.wikepage.org/\">Wikepage</a></small><br />";
+ <small>Powered by databaseless php wiki-blog-rss reader hybrid engine: <a href=\"http://www.wikepage.org/\">Wikepage</a></small></p>";
 $lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<li>One * before a line puts bullets in front of it </li>
 						<li>Links: [Link_type], [http://externallink.com|click] or [http://externallink.com|image.gif] or type URL. For more read Sandbox</li>

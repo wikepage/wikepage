@@ -1,10 +1,10 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: Tahoma, Arial, Verdana;
+  font-family: Tahoma, Helvetica, Arial, Verdana;
   color:#555555;
   background: #fff url(bk.png) repeat-x;
-  font-size: 87.5%;
+  font-size: 10pt;
   line-height: 135%;
 }
 
@@ -16,7 +16,7 @@ border-left-width: 1px;
 border-right-width: 1px;
 border-top-width: 1px;
 color: #000000;
-font-family: Arial, Helvetica, Tahoma, Verdana;
+font-family: Tahoma, Helvetica, Arial, Verdana;
 font-size: 10px;
 font-weight: normal;
 text-indent: 2px;
@@ -27,27 +27,27 @@ text-indent: 2px;
 #header {
   margin: 0em auto;
   padding: 1em 0em 1.1em 0em;
-  width: 46em;
+  width: 800px;
   text-align: left;
   color: #004A84;
 }
 
 #container {
   margin: 0em auto 1em auto;
-  width: 700px;
+  width: 800px;
   text-align: justify;
 }
 
 #main {
   padding: .5em 1em 1em 1em;
-  width: 35em; /* Value for IE. */
+  width: 650px; /* Value for IE. */
 }
 html>body #main {
-  width: 35em; /* Value for functioning browsers. */
+  width: 650px /* Value for functioning browsers. */
 }
 
 #sidebar {
-  width: 9em;
+  width: 120px;
   float: right;
   padding: 0em;
   margin: 0em;
@@ -65,8 +65,9 @@ html>body #main {
 /* Classes */
 
 #banner {
-  width: 35em;
-  color: #c60000;
+  width: 800px;
+  font-family: Century Gothic, georgia, helvetica, times, sans-serif;
+  color: #123456;
   font-size: 300%;
   padding: 30px;
   margin: 0px;
@@ -74,7 +75,7 @@ html>body #main {
 
 h1 {
   font-family:Century Gothic, georgia, helvetica, times, sans-serif;
-  color: #CC7E02;
+  color: #29638C;
   font-size: x-large;
   font-weight: normal;
   margin: .8em 0em .4em 0em;
@@ -84,7 +85,7 @@ h1 {
 
 h2 {
   font-family:Century Gothic, georgia, helvetica, times, sans-serif;
-  color: #CC7E02;
+  color: #29638C;
   font-size: large;
   font-weight: normal;
   margin: .8em 0em .4em 0em;
@@ -94,7 +95,7 @@ h2 {
 
 h3 {
   font-family:Century Gothic, georgia, helvetica, times, sans-serif;
-  color: #CC7E02;
+  color: #29638C;
   font-size: medium;
   font-weight: normal;
   margin: .8em 0em .4em 0em;
@@ -198,9 +199,13 @@ dl {
 }
 
 #TOC {
-  margin: 0px;
-  display: inline;
-  border-style: none;
+  float: right;
+  background-color: #f5f5f5;
+  border:1px solid #ccc;
+  font-size: 70%;
+  padding: 0.3em;
+  margin-left: 1em;
+  width: 200px;
 }
 
 #TOC a.:link {

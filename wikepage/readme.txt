@@ -1,11 +1,11 @@
-Wikisite/Personal/Blog Site Builder
-WIKEPAGE Version 2007.1 Opus 12 (Code: Aharanov - Bohm)
------------------------------------------------------------------------------------------
+Wikepage 2007.2 Opus 13 "Landauer-Büttiker" Wiki/Blog Hybrid Engine
+---
+
 Wikepage is a wiki-standart, easy to use and small wiki/blog hybrid software derived from
 Tipiwiki2 (http://tipiwiki.sourceforge.net/). Wikepage has some security features that
-Tipiwiki does not have, like password protected structure, and 4 patched important security
-flaw, RSS feed import and export support, table support, upload support, multilanguage and
-multisite support...etc...
+Tipiwiki does not have, like password protected structure, and patched a number of important
+security flaws, RSS feed import and export support, table support, upload support,
+multilanguage and multisite support...etc...
 
 Wikepage has two modes:
 
