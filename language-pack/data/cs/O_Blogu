@@ -1,0 +1,8 @@
+! EXPERIMENT: BLOG
+Od vydání Opus 9 má wikepage novou vlastnost: Blog. Blogování je snadné. Máte k dispozici speciální wiki stránku, nazvanou: **Záznam_blogu**. Pokud odká¾ete na tuto stránku a na odkaz kliknete, budete pøesmìrování na stránku pro vlo¾ení záznamu blogu. Mù¾ete editovat název a text s pou¾itím klasických pøíkazù wiki.
+
+Pokud chcete zobrazit záznamy blogu, vlo¾te **< blog_view >** (bez mezer) do kterékoliv va¹í stránky.
+
+Blog ve wikepage obsahuje také jednoduchý RSS výstupní kanál (RSS 0.91). RSS výstup mù¾e být získáván z adresy **index.php?rss=blog** .
+
+Výrazy Záznam_blogu, < blog_view > mohou být zmìnìny v jazykovém souboru **data/xx/xx.inc**. Mù¾ete napøíklad zmìnit Blog na Novinky nebo nìco podobnì zajímavého.

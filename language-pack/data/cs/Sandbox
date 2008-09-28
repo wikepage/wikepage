@@ -1,0 +1,39 @@
+!Haló pøíteli...
+!!Men¹í nadpis...
+!!! Nejmen¹í nadpis
+
+Pøedformátovaný blok
+ jedna 
+ dvì
+ a jedna jsou tøi
+
+__podtr¾ené__ **tuèné** \'\'¹ikmé\'\' nebo ::v boxu::
+
+* seznam
+* dal¹í­
+* a dal¹í­
+
+---
+
+*seznam nefunguje, pokud je napsán takto.
+* musí být pou¾ita mezera
+
+**Obrázek:**
+[wike.gif]
+
+**Odkazy**
+* Odkaz na stránku: [Index]
+* Odkaz na stránku s názvem: [Index|Hlavní stránka webu]
+* Externí­ odkaz s názvem: [http://www.wikepage.org/|Wikepage homesite]
+* Externí­ odkaz: [http://www.cyrocom.com]
+* Odkaz na externí­ obrázek: [http://www.cyrocom.com/|wike.gif]
+
+
+**Tabulka**
+||||Buòka 11||Buòka 12||||
+||||Buòka 21||Buòka 22||||
+
+
+##red##Tato barva je skuteènì sexy.##
+
+---blub
