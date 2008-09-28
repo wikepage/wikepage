@@ -1,16 +1,15 @@
-Cyrocom Wikisite/Personal site Builder
-WIKEPAGE Version 2006.1 Opus 6 (Code: Fermi-Dirac)
+Wikisite/Personal/Blog Site Builder
+WIKEPAGE Version 2006.2a Opus 10 (Code: Maxwell-Boltzmann)
 -----------------------------------------------------------------------------------------
-Wiki is a kind of knowledge sharing formation. Wikepage is a wiki-standart, easy
-to use and small wiki software derived from Tipiwiki2 (http://tipiwiki.sourceforge.net/).
-Wikepage has some security features that Tipiwiki does not have, like password protected
-structure, and 4 patched important security flaw, table support, upload support, multilanguage
-and multisite support...etc...
+Wikepage is a wiki-standart, easy to use and small wiki software derived from Tipiwiki2
+(http://tipiwiki.sourceforge.net/). Wikepage has some security features that Tipiwiki does
+not have, like password protected structure, and 4 patched important security flaw, table
+support, upload support, multilanguage and multisite support...etc...
 
 Wikepage has two modes:
 
--Wiki Mode: Pages can change without entering password.
--Personal Mode: Pages can change only with entering password. 
+-Wiki Mode: Pages and Blog entries can change without entering password.
+-Personal Mode: Pages and Blog entries can change only with entering password.
 
 *INSTALL:
 -Open index.php file with notepad-like pogram and change the site information, language
@@ -20,14 +19,17 @@ Wikepage has two modes:
  the files in the subfolders of data folder.
 -Be sure that your PHP don't work in safe_mode. In safe_mode wikepage can't make pages.
 -If you want to add new language to your site, download from http://www.wikepage.org/
- and then extract it to base folder of wikepage. Then you can change default language variable
- in index.php's source code. And if you want to make a multilanguage site you can easily change
- language in your site by [index.php?lng=en|English] [index.php?lng=tr|Turkce] type links.
--Visit your site. Go to "Administration area" with using "Admin" link and change your
- password.
+ and then extract it to base folder of wikepage. Then you can change default language
+ variable in index.php's source code. And if you want to make a multilanguage site you
+ can easily change language in your site by [index.php?lng=en|English]
+ [index.php?lng=tr|Turkce] type links.
+-Visit your site. You will automaticly redirected to Admin page. You MUST set a password.
 -Your site is working now in Wiki mode!
 -You can change mode in Administration area with entering your password.
--In wiki mode you must enter password "everytime" to change a page. 
+-In wiki mode you must enter password "everytime" to change a page.
+-If you want to use Blog, you can submit new entries from Administration page or
+ [index.php?Blog_Entry|Submit new link] type link.
+- You can view your blog with entering "<blog_view>" into any of your page.
 
 You can found more documentation in your installed site.
 
