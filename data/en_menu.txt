@@ -1,4 +1,3 @@
- 
 * [Index]
 * [Recent_changes]
 * [Search]
@@ -9,13 +8,13 @@
 * [About_Blog]
 
 **Languages**
-[en.gif] [index.php?lng=en|English]
 
+[lng=en|en.gif] [lng=en|English]
 
 [http://www.cyrocom.com/|wike.gif]
 
 [nofollow.gif]
 
-[index.php?rss=yes|rss_wiki.gif]
+[rss=yes|rss_wiki.gif]
 
-[index.php?rss=blog|rss_blog.gif]
+[rss=blog|rss_blog.gif]
