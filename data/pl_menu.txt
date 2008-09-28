@@ -1,0 +1,21 @@
+* [Indeks]
+* [Ostatnie_zmiany]
+* [Wyszukiwanie]
+* [Wszystkie_strony]
+* [Administracja]
+* [Piaskownica]
+* [Styl_Wiki]
+* [O_Blogu]
+
+
+**Jêzyki**
+[lng=en|en.gif] [lng=en|Index]
+[lng=pl|pl.gif] [lng=pl|Indeks]
+
+[http://www.cyrocom.com/|wike.gif]
+
+[nofollow.gif]
+
+[rss=yes|rss_wiki.gif]
+
+[rss=blog|rss_blog.gif]

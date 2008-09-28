@@ -1,0 +1,11 @@
+! Eksperyment - blog
+Pocz±wszy od wersji Opus 9 (2006.2) Wikepage ma now± funkcjê: blog. Obs³uguje siê go równie prosto jak zwyk³e wiki. Mamy do dyspozycji specjaln± stronê o nazwie **Pisz_Blog**. Wchodz±c na ni± trafimy do edytora nowego wpisu. Zwyczajnie wpisujemy temat i tre¶æ z u¿yciem komend znanych z wiki.
+
+Chc±c czytaæ swój blog umieszczamy po prostu s³owo kluczowe **< zobacz_blog >** (bez tych spacji) na stronie.
+
+Blog oparty na Wikepage udostêpnia nag³ówki wpisów w formacie RSS (RSS 0.91)! Znajdziemy je pod adresem **index.php?rss=blog**.
+
+S³owa kluczowe Pisz_Blog i < zobacz_blog > da siê zmieniæ w pliku z ustawieniami jêzykowymi - **data/pl/pl.inc**. Zamiast "bloga" ustawiæ mo¿na "nowo¶ci" albo co¶ bardziej interesuj±cego.
+
+! BLOG
+<zobacz_blog>

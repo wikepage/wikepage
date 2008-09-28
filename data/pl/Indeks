@@ -1,0 +1,86 @@
+! Witamy w [Wikepage].
+
+Przedstawiamy wydanie Opus 10, 2006.2a (nazwa kodowa: Maxwell-Boltzmann) i dziêkujemy za wybór Wikepage. Jest to niedu¿y (nie wykorzystuje bazy MySQL), ³atwy w u¿yciu i zgodny ze standardem wiki program.
+
+Wikepage to ma³e wiki, prosimy wiêc nie szukaæ w nim funkcji obecnych w du¿ych systemach tego rodzaju.
+ ##red##**WA¯NE:** Przed tworzeniem opartej na Wikepage witryny 
+ nale¿y przeczytaæ dokumentacjê!##
+
+!! Nowo¶ci
+Przyda siê pomoc w t³umaczeniu Wikepage na inne jêzyki. Prze³umaczony na Wasz jêzyk plik z folderu lang/en mo¿ecie przes³aæ pod adres: ''sblisesivdin-MA£PKA-gmail.com''.
+!! Indeks
+* [Co_to_wiki] - niektóre informacje na temat systemów wiki i ich historii
+* [Styl_Wiki] - dokumentacja
+* [Piaskownica] - miejsce do testów
+* [O_Blogu] - funkcja bloga w Wikepage
+
+!! **2006.2a** : Zmiany wzglêdem wersji 2006.2
+Jak ju¿ by³o zapowiadane, wydanie Opus 10 to przede wszystkim poprawki. Dziêki panu Tomaszowi Milewskiemu i panu Timowi Davisowi mo¿liwe by³o usuniêcie wielu b³êdów i wprowadzenie usprawnieñ. Szczegó³y poni¿ej:
+* Naprawiono braki w t³umaczeniach i zmiennych - podziêkowania otrzymuje **pan Tomasz Milewski**,
+* Poprawiono stronê do pisania na blogu,
+* Wprowadzono oko³o 30 poprawek w pliku index.html i w funkcji filtruj±cej, by poprawiæ jako¶æ generowanego kodu XHTML - podziêkowania otrzymuje **pan Tomasz Milewski**,
+* Udostêpniono nowy system zmiennych,
+* Wprowadzono nowy system szablonów stron - podziêkowania otrzymuje **pan Tim Davis**,
+* Rozszerzono zakres funkcji odno¶ników - odno¶nik do strony Wiki mo¿e teraz mieæ opis,
+* Dodano wiêcej szczegó³ów na stronie Styl_Wiki - m.in. na temat odno¶ników i powy¿szych nowych systemów,
+* Rozwi±zano problem z dat± na blogu.
+
+!! **2006.2** : Zmiany wzglêdem wersji 2006.1b
+* Poprawiono b³êdy zwi±zane z ustawieniami jêzykowymi i dodano nowe zmienne - podziêkowania otrzymuje **pan Daniel Schmidt**,
+* Naprawiono problem z wysy³aniem plików - podziêkowania otrzymuje **pan Martin Mazur**,
+* Ostatnie zmiany udostêpniono w formacie RSS,
+* Poprawiono literówki w blogu z wiki,
+* Nag³ówki wpisów na blogu dostêpne s± w formacie RSS,
+* Naprawiono problemy z filtrami - podziêkowania otrzymuje **pan Daniel Schmidt**,
+* Ulepszono wystrój z wersji 2006.1
+* Naprawiono problem z tworzeniem pliku INC.
+
+!! **2006.1b** : Zmiany wzglêdem wersji 2006.1a
+* No dobrze, to potwierdzanie edycji to by³ z³y pomys³ :) - bezpieczniej jest bez niego,
+* Rozwi±zano problem z odno¶nikami zewnêtrznymi,
+* Zwiêkszono domy¶lny limit wielko¶ci wysy³anego pliku do 1MB (czyli 8,5Mbita - mo¿na ustawiæ inny w pliku index.php). Poprzednio by³o to tylko 122KB (1Mbit). ''Sorry''. 
+
+!! **2006.1a** : Zmiany wzglêdem wersji 2006.1
+* Rozwi±zano problem z b³êdem zwi±zanym z PHP5.
+
+!! **2006.1** : Zmiany wzglêdem wersji 2005.4
+* System wysy³ania plików,
+* Obs³uga kasowania plików i stron,
+* Potwierdzanie edycji,
+* Poprawiono b³±d nara¿aj±cy na atak D.o.S., zwi±zany z tworzeniem strony,
+* Drobne poprawki w kodzie i uk³adzie plików.
+
+!! **2005.4** : Zmiany wzglêdem wersji 2005.3
+* Co¶ przeciw spamerom: odno¶niki zewnêtrzne z atrybutem ''nofollow'',
+* Nowy wystrój,
+* Zoptymalizowany kod,
+* Komentarze w kodzie s± teraz po angielsku,
+* Przeprojektowano strukturê folderów,
+* Obs³uga internacjonalizacji oparta na pojedynczym pliku,
+* Obs³uga alternatywnych wystrojów,
+* Od tej wersji odno¶niki zewnêtrzne oznaczone s± obrazkiem [ext.gif].
+
+!! **2005.3a** : Zmiany wzglêdem wersji 2005.2
+* Usuniêto wa¿ny b³±d stanowi±cy zagro¿enie bezpieczeñstwa,
+* Arkusz stylów poprawiony pod k±tem Firefoxa i Opery,
+* Krótszy kod, mniejszy plik ZIP, wiele nowych funkcji,
+* Prosty system bannerów,
+* Obs³uga obrazków z odno¶nikami.
+
+!! **2005.2** : Zmiany wzglêdem wersji 2005.1
+* Poprawiony arkusz stylów,
+* Menu mo¿na redagowaæ jak stronê wiki,
+* Obs³uga witryn wielojêzycznych,
+* Przycisk "Wikepage" do umieszczenia na stronie: [wike.gif]
+
+!! **2005.1** : Zmiany wzglêdem Tipiwiki2
+* Nowy arkusz stylów,
+* Obs³uga tabel,
+* Obs³uga s³ów kluczowych Wiki zawieraj±cych podkre¶lenie ('_'),
+* Usuniêto dwa wa¿ne b³êdy stanowi±ce zagro¿enie bezpieczeñstwa,
+* Obs³uga internacjonalizacji,
+* Strona administracyjna,
+* Strony chronione has³em,
+* Umo¿liwiono ##blue##kolorowanie##. 
+
+Wikepage to darmowy program oferowany przez Cyrocom na licencji GPL.

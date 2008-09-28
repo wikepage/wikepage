@@ -1,0 +1,44 @@
+[Wikepage] to zgodny ze standardem wiki program oparty na samym PHP (bez MySQL).
+
+!! Jêzyk znaczników
+* Jedn± gwiazdk± * na pocz±tku linii tworzymy pozycjê listy.
+* Jednym wykrzyknikiem ! na pocz±tku wstawiamy <h1> - du¿y nag³ówek.
+* Dwoma !! wstawiamy znacznik <h2> - ¶redni nag³ówek.
+* Trzema !!! wstawiamy <h3> - ma³y nag³ówek.
+* Dwie gwiazdki * przed i po s³owie lub zdaniu daj± **pogrubienie**.
+* Dwa podkre¶lenia _ daj±  __tekst podkre¶lony__.
+* Dwa apostrofy ' przed i po s³owie lub zdaniu daj± ''kursywê''.
+* Dwa dwukropki : daj± ::tekst w ramce::.
+
+##red##¬ród³a tej strony zobaczymy po wybraniu odno¶nika **Edycja** powy¿ej.##
+
+!! Odno¶niki
+* Wikepage obs³uguje odno¶niki [Takiego_typu] (s³owa kluczowe Wiki), w których spacjê zastêpuje znak podkre¶lenia ('_'). Nowe strony wiki tworzymy po prostu umieszczaj±c w tre¶ci strony istniej±cej odno¶nik do [Strony], któr± chcemy utworzyæ, i nagrywaj±c zmiany. Gdy potem skorzystamy z tego odno¶nika, nowa strona zostanie utworzona.
+* Chc±c podaæ odno¶nik do zewnêtrznego obiektu, nale¿y po prostu wpisaæ w nawiasach kwadratowych jego adres URL - np. tak: [http://www.google.pl]. Je¶li taki adres zostanie uznany za poprawny, bêdzie mo¿na go klikaæ.
+* Odno¶niki zewnêtrzne ³adniej wygl±daj±, je¶li zapisze siê je [http://www.cyrocom.com|w ten sposób]. [Indeks|To samo] dotyczy odno¶ników do stron Wiki.
+* Je¶li w tre¶ci strony adres obrazka na Wiki (nazwê pliku obrazka w folderze data/files) umie¶cimy w [ kwadratowych nawiasach ], obrazek ten zostanie wy¶wietlony na stronie. Przyk³adowo: [wike.gif]. Je¶li chcemy, ¿eby taki obrazek by³ odno¶nikiem, robimy tak: [http://www.cyrocom.com/|wike.gif]. 
+PS. Mo¿emy korzystaæ tylko z lokalnych obrazków, nie mo¿na wpisywaæ pe³nego URL, ¿eby u¿ywaæ na stronie obrazków z zewn±trz .
+
+!! Strony specjalne
+* Informacje ze strony [Ostatnie_zmiany] otrzymamy umieszczaj±c ''< ostatniezmiany >'' (pisane bez spacji) w tre¶ci strony. 
+* Zawarto¶æ strony [Wyszukiwanie] dostaniemy wpisuj±c ''< szukajstron >'' - bez spacji, jak wy¿ej.
+* Podobnie jest z zawarto¶ci± [Wszystkie_strony] - piszemy ''< wszystkiestrony >''.
+* ¯eby w³±czyæ panel administracyjny w swoj± stronê, napiszemy w tre¶ci ''< admin >'' - analogicznie.
+
+!! System zmiennych
+W Wikepage dostêpne s± zmienne, za po¶rednictwem których mo¿emy korzystaæ z ró¿nych mo¿liwo¶ci programu. Obecnie s± trzy takie zmienne:
+* lng - ustawia siê j± na dwuliterowy skrót nazwy jêzyka, np. angielski to "en", polski to "pl". Przyk³ad u¿ycia (w tre¶ci strony): [lng=en|English], [lng=en|en.gif].
+* rss - udostêpnia w formacie RSS ostatnie zmiany, gdy ma warto¶æ "yes", za¶ wpisy na blogu, gdy ustawimy j± na "blog". Przyk³ady: [rss=blog|Nag³ówki RSS z bloga], [rss=yes|rss_wiki.gif].
+* file - u¿ywa siê jej do tworzenia odno¶ników do plików w katalogu data/files - na przyk³ad tak: [pl.gif|Obrazek polskiej flagi].
+
+!! System szablonów
+Chc±c u¿yæ innego stylu na której¶ ze swoich stron, mo¿emy obecnie skorzystaæ z nowego systemu szablonów. Przyk³ad: u¿ywaj±c Wikepage 2006.2a z wystrojem "2006.2", posiadamy plik index.html, który jest podstawowym szablonem wykorzystywanym przez wszystkie strony Wiki. Mo¿emy utworzyæ dodatkowy plik zawieraj±cy nowy szablon, nazwaæ go np. "index2.html" i wgraæ do katalogu z wystrojem 2006.2. Nastêpnie by skorzystaæ ze strony [Wyszukiwanie] i zmienionego szablonu, u¿yjemy odno¶nika postaci: [Wyszukiwanie|index2.html].
+
+!! Tabelki
+Wikepage obs³uguje tabelki. Wiersz tabeli rozpoczynamy czterema znakami pionowej kreski (|), ka¿d± kolumnê oddzielamy dwoma kreskami (|), a na koñcu linii wstawiamy znowu cztery kreski (|). I tyle! Budowê poni¿szej tabelki ujrzymy po przej¶ciu do edycji strony.
+||||**Strona**||**Adres**||||
+||||Cyrocom - strona domowa||http://www.cyrocom.com/||||
+||||S.B.Lisesivdin - strona domowa||http://www.cyrocom.com/sblisesivdin||||
+!! Kolory
+Kolorowanie tekstu jest proste: rozpoczynamy liniê par± krzy¿yków (#), potem wpisujemy nazwê koloru i kolejne dwa krzy¿yki, dalej tekst do pokolorowania i na koñcu jeszcze dwa krzy¿yki. Wprowadzone kolory u¿ywane s± w znaczniku 'font'. Dostêpne s± kolory: Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua, no i White, rzecz jasna. Mo¿na korzystaæ z kodów RGB, jak np. #FF9900.
+##blue##Ta linia jest napisana kolorem niebieskim. Jak to zosta³o zrobione - zobaczymy po przej¶ciu do edycji strony.##
