@@ -1,0 +1,230 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "Bitstream Vera Sans", Arial, Helvetica, sans-serif;
+  font-size: 87.5%;
+  line-height: 135%;
+  text-align: center;
+  background-color: #eeeeee;
+  background-image: url(besa.png);
+  background-attachment: scroll;
+  background-position: 0px 139px;
+  background-repeat: no-repeat;
+}
+
+INPUT {
+background-color: transparent;
+border-bottom-width: 1px;
+border-color: #316B94;
+border-left-width: 1px;
+border-right-width: 1px;
+border-top-width: 1px;
+color: #000000;
+font-family: Arial, Helvetica, Tahoma, Verdana;
+font-size: 10px;
+font-weight: normal;
+text-indent: 2px;
+}
+
+#top {
+  background-color: #556680;
+}
+
+#header {
+  margin: 0em auto;
+  padding: 4em 0em 1.1em 0em;
+  width: 44em;
+  text-align: left;
+  color: #8596b0;
+}
+
+#container {
+  margin: 0em auto 1em auto;
+  width: 46em;
+  text-align: left;
+}
+
+#main {
+  padding: .5em 1em 1em 1em;
+  width: 36.5em; /* Value for IE. */
+}
+html>body #main {
+  width: 35em; /* Value for functioning browsers. */
+}
+
+#sidebar {
+  width: 9em;
+  float: right;
+  padding: 0em;
+  margin: 0em;
+}
+
+#footer {
+  margin: 0em;
+  padding-top: 1em;
+  clear: both;
+  font-size: 80%;
+  color: #aaa;
+  text-align: center;
+}
+
+
+/* Menu */
+
+#menu {
+  margin: 2em 0em 0em 0em;
+  padding: 0em;
+  font-size: 86%;
+}
+
+#menu a {
+        color: #123456;
+        text-decoration: none;
+}
+
+#menu a:hover {
+        color: #1F5B93;
+        background-color: #d1d6e0;
+}
+
+#menu span.box {
+        border: 1px solid #ddd;
+        padding: 1px 2px;
+        margin: 1px;
+}
+
+#menu pre {
+        border: 1px solid #eee;
+        background-color: #f5f5f5;
+        padding: 2px 5px;
+        font-family: monospace;
+}
+
+
+#menu table {
+  background-color: #eee;
+}
+#menu td {
+  background-color: white;
+}
+
+
+/* Classes */
+
+h1.banner {
+  color: #FFFFFF;
+  font-size: 160%;
+  font-weight: normal;
+  margin: 0em;
+}
+h1 {
+  color: #8596b0;
+  font-size: 130%;
+  font-weight: normal;
+  margin: .8em 0em .4em 0em;
+  border-bottom: 1px dotted #8596b0;
+  padding-bottom: .25em;
+}
+
+h2 {
+  color: #8596b0;
+  font-size: 100%;
+  font-weight: normal;
+  margin: .8em 0em .4em 0em;
+  border-bottom: 1px dotted #8596b0;
+  padding-bottom: .25em;
+}
+
+h3 {
+  font-size: 100%;
+  font-weight: normal;
+  font-style: italic;
+  margin: .8em 0em .4em 0em;
+}
+
+p {
+  margin: 0em;
+  padding: 0em 0em .5em 0em;
+}
+
+p.address {
+  font-style: italic;
+}
+
+img {
+  border: none;
+}
+
+a {
+  color: #447;
+}
+
+a:visited {
+  color: #447;
+}
+
+ul {
+  padding: 0em 0em 0em .9em;
+  margin: 0em;
+  list-style-type: square;
+}
+
+ul ul {
+  list-style-type: circle;
+}
+
+dl {
+  padding: 0em;
+  margin: 0em 0em .5em 0em;
+}
+
+
+#main span.box {
+        border: 1px solid #ddd;
+        padding: 1px 2px;
+        margin: 1px;
+}
+
+#main pre {
+        border: 1px solid #eee;
+        background-color: #f5f5f5;
+        padding: 2px 5px;
+        font-family: monospace;
+}
+
+
+#main table {
+  background-color: #eee;
+}
+#main td {
+  background-color: white;
+}
+
+
+#sidebar table {
+  background-color: #eee;
+}
+#sidebar td {
+  background-color: white;
+}
+
+#wikicontrols {
+        margin: 2px 0%;
+}
+
+#wikicontrols a {
+        color: #ddd;
+        background-color: #556680;
+        text-decoration: none;
+        border: 0px;
+        padding: 1px 3px;
+        font-size: 8pt;
+}
+
+#wikicontrols a:hover {
+        color: #123456;
+        border-color: #eee;
+        background-color: #F2F5FC;
+}
+
+.dillo { display: none; }

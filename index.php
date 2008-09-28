@@ -1,6 +1,6 @@
 <?php
-/*		Cyrocom-WIKEPAGE 2005.4 Opus 5 "Bose-Einstein" Wiki/Personal Site Engine
-		Copyleft (C) 2005, 2004. Ankara, Turkey.
+/*		Cyrocom-WIKEPAGE 2006.1 Opus 6 "Fermi-Dirac" Wiki/Personal Site Engine
+		Copyleft (C) 2006, 2005, 2004. Ankara, Turkey.
         http://www.wikepage.org/
 		For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
 
@@ -11,9 +11,9 @@
 // ----------------
 // Put // for deactivate logo and remove // infront of $sitename 
 // and $siteheader for activate sitename on page.
-$logo="logo.gif";
-//$sitename="My Site";
-//$siteheader="Your site's slogan here.";
+//$logo="logo.gif";
+$sitename="My Site";
+$siteheader="Your site's slogan here.";
 
 // Site Owner
 // ----------
@@ -28,24 +28,30 @@ $bannerlink="http://www.wikepage.org/";
 $bannerimage="wikebanner.gif";
 
 // Theme
-// ------------------
-$theme="2005-4";
+$theme="2006-1";
 
+// Upload config
+// ------------------
+// Set maximum file limit (in bits)
+$maxlimit = 1000000; 
+// Set allowed extensions (split using comma)
+$allowed_ext = "jpg,gif,png,jpeg,pdf,doc,xls,ppt,odb,odm,odt,ods,odp";
+// Allow file overwrite? yes/no 
+$overwrite = "no"; 
+
+// Debug mode --> 0
 error_reporting(1);
-session_start();
 
 // Default Language
-// ----------------
 $lang_def="en";
 
-// Options
-// ----------------
 // Timezone according to Greenwich
 $timezone = -6;
 
 /*
  ++++++++ DON'T MAKE CHANGES BELOW HERE ! (unless you're a developer) ++++++++ 
 */
+session_start();
 
 $wiki_get = "wiki";
 $bannerimage = "data/files/".$bannerimage;
@@ -71,7 +77,11 @@ session_register("lang");
 	}
 
 if(!session_is_registered("lang")){
-$langu=$lang_def;
+if($lang){
+	$langu=$lang;
+}else{
+	$langu=$lang_def;
+}
 session_register("lang");
 }
 
@@ -84,29 +94,49 @@ if (!$fp){
 }
 fclose($fp);
                
-include('passwd.php');
+include('data/passwd.php');
 include('lang/'.$langu.'.inc');
 $version_info = explode('.', phpversion());
 
 
 // some special chars
 function htmlchars ($string) {
-
 $string= str_replace("&", "&amp;", $string);
 $string= str_replace("\"", "&quot;", $string);
 $string= str_replace("<", "&lt;", $string);
 $string= str_replace(">", "&gt;", $string);
-
 return $string;
 }
 
-function findpage() {
-        global $wiki_get;
-        global $name;
-        global $data_dir;
-        global $langu;
-        require ('lang/'.$langu.'.inc');
+// little security enchancement
+function secure ($string){
+$string = str_replace("..","",$string);
+$string = str_replace("%2E%2E","",$string);
+$string = str_replace(".%2E","",$string);
+$string = str_replace("%2E.","",$string);
+$string = str_replace(".php","_php",$string);
+$string = str_replace(".phtml","_phtml",$string);
+$string = str_replace(".php3","_php3",$string);
+return $string;
+}
 
+function delpagefile($depa,$defi){
+	global $data_dir,$lang;
+	if($depa != ""){
+		$willdelete="$data_dir/".$depa;
+		@unlink(secure($willdelete));
+	}
+		
+	if($defi != ""){
+		$willdelete="data/files/".$defi;
+		@unlink(secure($willdelete));
+	}
+	die($lang['processesok']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
+}
+
+function findpage() {
+        global $wiki_get, $name, $data_dir, $langu;
+        require ('lang/'.$langu.'.inc');
         $name = basename($name);
         $content = "";
         $formular = "<form method=\"get\" action=\"index.php\">\n<input type=\"hidden\" name=\"$wiki_get\" value=\"$name\" /><table id=\"find\">\n<tr>\n<td>".$lang['searchpage']."</td>\n<td><input type=\"text\" name=\"PageName\" /></td>\n</tr><tr>\n<td>".$lang['orsearchcontent']."</td>\n<td><input type=\"text\" name=\"PageContent\" /></td>\n</tr><tr>\n<td colspan=\"2\"><input type=\"submit\" value=\"".$lang['search']."\" /></td>\n</tr>\n</table>\n</form>\n";
@@ -141,9 +171,7 @@ function findpage() {
 }
 
 function recentchanges() {
-        global $data_dir;
-        global $timezone;
-        global $wiki_get;
+        global $data_dir, $timezone, $wiki_get;
         $content = "";
         $handle = opendir($data_dir);
         $allpages = array();
@@ -178,8 +206,7 @@ function recentchanges() {
 }
 
 function allpages() {
-        global $data_dir;
-        global $wiki_get;
+        global $data_dir, $wiki_get;
         // list all pages
         $content = "<ul>\n";
         $handle = opendir($data_dir);
@@ -194,26 +221,20 @@ function allpages() {
 }
 
 function yonetim() {
-        global $data_dir;
-        global $wiki_get;
-        global $adminpassword;
-        global $passworks;
-        global $langu;
-		global $page_admin;
+        global $data_dir, $wiki_get, $adminpassword, $passworks, $langu, $page_admin;
 		require ('lang/'.$langu.'.inc');
-        // admin part
-        $content = $lang['nottochangepass']."<br>";       
+        // admin part     
 	    if($adminpassword){
-			$content .= "<form method=\"post\" action=\"index.php\">\n<input type=\"hidden\" name=\"wiki\" value=\"".$page_admin."\" /><table id=\"find\">\n<tr>\n<td>".$lang['oldadminpass']."</td>\n<td><input type=\"password\" name=\"password0\" /></td>\n</tr><tr>\n<td>".$lang['adminpass']."</td>\n<td><input type=\"password\" name=\"password1\" /></td>\n</tr><tr>\n<td>".$lang['againadminpass']."</td>\n<td><input type=\"password\" name=\"password2\" /></td>\n</tr><tr>\n<td>".$lang['passless']."</td>\n<td><input type=\"checkbox\" name=\"passwrks\" value=\"checkbox\" ";
+			$content .= "<form method=\"post\" action=\"index.php\">\n<input type=\"hidden\" name=\"wiki\" value=\"".$page_admin."\" /><table id=\"find\">\n<tr><td colspan=\"2\"><b>".$lang['password']."</b></td></tr><tr>\n<td>".$lang['oldadminpass']."</td>\n<td><input type=\"password\" name=\"password0\" /></td>\n</tr><tr><td colspan=\"2\"><b>".$lang['changepass']."</b></td></tr><tr>\n<td>".$lang['adminpass']."</td>\n<td><input type=\"password\" name=\"password1\" /></td>\n</tr><tr>\n<td>".$lang['againadminpass']."</td>\n<td><input type=\"password\" name=\"password2\" /></td>\n</tr><tr><td colspan=\"2\"><b>".$lang['othersett']."</b></td></tr><tr>\n<td>".$lang['passless']."</td>\n<td><input type=\"checkbox\" name=\"passwrks\" value=\"checkbox\" ";
 			if ($passworks == "1"){
 			$content .= "checked></td>\n</tr>";
 			}else{
 			$content .= "></td>\n</tr>";
 			}
 		
-			$content .= "<tr>\n<td colspan=\"2\"><input type=\"submit\" value=\"".$lang['change']."\" /></td>\n</tr>\n</table>\n</form>\n";
+			$content .= "<tr>\n<td>".$lang['delpage']."</td>\n<td><input type=\"text\" name=\"delpage\" /></td>\n</tr><tr>\n<td>".$lang['delfile']."</td>\n<td><input type=\"text\" name=\"delfile\" /></td>\n</tr><tr>\n<td colspan=\"2\"><input type=\"submit\" value=\"".$lang['change']."\" /></td>\n</tr>\n</table>\n</form>\n";
 		}else{
-			$content .= "<form method=\"post\" action=\"index.php\">\n<input type=\"hidden\" name=\"wiki\" value=\"".$page_admin."\" /><table id=\"find\">\n<tr>\n<td>".$lang['adminpass']."</td>\n<td><input type=\"password\" name=\"password1\" /></td>\n</tr><tr>\n<td>".$lang['againadminpass']."</td>\n<td><input type=\"password\" name=\"password2\" /></td>\n</tr><tr>\n<td colspan=\"2\"><input type=\"submit\" value=\"".$lang['change']."\" /></td>\n</tr>\n</table>\n</form>\n";
+			$content .= "<form method=\"post\" action=\"index.php\">\n<input type=\"hidden\" name=\"wiki\" value=\"".$page_admin."\" /><table id=\"find\">\n<tr>\n<tr><td colspan=\"2\"><b>".$lang['setpass']."</b></td></tr><td>".$lang['adminpass']."</td>\n<td><input type=\"password\" name=\"password1\" /></td>\n</tr><tr>\n<td>".$lang['againadminpass']."</td>\n<td><input type=\"password\" name=\"password2\" /></td>\n</tr><tr>\n<td colspan=\"2\"><input type=\"submit\" value=\"".$lang['change']."\" /></td>\n</tr>\n</table>\n</form>\n";
 		}
 		
         
@@ -222,8 +243,7 @@ return $content;
 
 // Wiki Style to HTML
 function filter($raw) {
-        global $wiki_get;
-        global $langu;
+        global $wiki_get, $langu;
         require ('lang/'.$langu.'.inc');
         $filtered = stripslashes(htmlchars("\n\n".$raw));
         // php-special
@@ -284,20 +304,14 @@ function filter($raw) {
        	$filtered = str_replace("<br />\n<h","\n<h", $filtered);
        	$filtered = preg_replace("/(<\/h[1-3]>)<br \/>\n/","\\1\n", $filtered);
        	$filtered = str_replace("<p></p>","",$filtered);
+
+
        	return $filtered;
 }
 
 // output of program
 function output($data, $file) {
-	global $sitename;
-	global $siteheader;
-	global $bannerwriting;
-	global $bannerimage;
-	global $langu;
-	global $encoding;
-	global $author;
-	global $logo;
-	global $theme;
+	global $sitename, $siteheader, $bannerwriting, $bannerimage, $lang, $langu, $encoding, $author, $logo, $theme, $passworks;	
 	require ('lang/'.$langu.'.inc');
         $pagename = basename($file);
         $modified = "";
@@ -313,7 +327,12 @@ function output($data, $file) {
         $data = str_replace("<!--lang_index-->",$lang['index'],$data);
         $data = str_replace("<!--lang_lastupdate-->",$lang['lastupdate'],$data);
         $data = str_replace("<!--lang_editing-->",$lang['editing'],$data);
-        $data = str_replace("<!--lang_ifuveapass-->",$lang['ifuveapass'],$data);
+        if($passworks == "0"){
+	        $buf=$lang['pass']."<input type=\"password\" name=\"mypassword\">";
+        }else{
+	        $buf="";
+        }
+        $data = str_replace("<!--lang_pass-->",$buf,$data);
         $data = str_replace("<!--lang_mainmenu-->",$lang['mainmenu'],$data);
         $data = str_replace("<!--lang_pagecontents-->",$lang['pagecontents'],$data);
         $data = str_replace("<!--lang_search-->",$lang['search'],$data);
@@ -333,9 +352,7 @@ function output($data, $file) {
 }
 // load page content
 function showpage($file) {
-        global $theme;
-		global $wiki_get;
-		global $langu;
+        global $theme, $wiki_get, $langu;
         $content = "";
         $menucontent ="";
         // load file
@@ -353,15 +370,21 @@ function showpage($file) {
 }
 // if edit clicked..
 function editpage($file) {
-        global $path;
-        global $page_admin;
-        global $langu;
+        global $path, $page_admin, $langu, $lang, $encoding, $wiki_get;
+		$pagename = basename($file);
+        $template = "<html><head><title>Edit ".$pagename."?</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=".$encoding."\"></head><body><p>".$lang['clickoktoedit']." \"".$pagename."\"</p><form name=\"form1\" method=\"post\" action=\"\"><input type=\"submit\" name=\"Edit2\" value=\"OK\">  <input type=\"button\" value=\"".$lang['backtopage']."\" onClick=\"javascript: history.go(-1)\"><input type=\"hidden\" name=\"editpagename\" value=\"".$pagename."\"></form></body></html>";
+        output($template, $file );
+}
+
+function editpage2($file) {
+        global $path, $page_admin, $langu, $lang;
         $already = "";
         $mainmenu = "";
         if( file_exists( $file ) )
             $already = implode( "", file( "$file" ) );
         if( !file_exists( $file ) ){
-            $namePath = "$path/$file";
+	        //thanks to M.T.Sandikkaya for path correction
+            $namePath = ".$path/$file";
             @touch($namePath);
             chmod($file, 0666);
             $already = implode( "", file( "$file" ) );
@@ -373,7 +396,9 @@ function editpage($file) {
         else
                 echo " (Edit) ".$lang['filenotfound']."<br />\n";
         $template = implode( "", $template );
-        $whole =str_replace("<!--already-->",stripslashes($already),$template);
+        $uploadcode = "Select file for upload:<input type=\"file\" name=\"userfile\"><input type=\"hidden\" name=\"wiki\" value=\"".$pagename."\">";
+        $whole =str_replace("<!--uploadsystem-->",stripslashes($uploadcode),$template);
+        $whole =str_replace("<!--already-->",stripslashes($already),$whole);
         $whole =str_replace("<!--mainmenu-->",stripslashes($mainmenu),$whole);
         // locking file
         if( !is_writeable($file) )
@@ -384,11 +409,11 @@ function editpage($file) {
 
 function banner() {
 		global $bannerlink;
-		$fp = fopen("bannercount.txt","r+");
-		$count = fread($fp, filesize("bannercount.txt"));
+		$fp = fopen("data/bannercount.txt","r+");
+		$count = fread($fp, filesize("data/bannercount.txt"));
 		$count++;
         fclose($fp);
-        $fp = fopen("bannercount.txt", "w+");
+        $fp = fopen("data/bannercount.txt", "w+");
         fputs($fp, $count);
         fclose($fp);
         echo "<html><head><meta http-equiv=\"refresh\" content=\"0;URL=".$bannerlink.">";
@@ -438,6 +463,45 @@ if( isset($_POST["content"]) ) {
                 die($lang['cantwriteinpage']);
         }
         fclose($handle);
+        
+        //if upload something, then do!
+		$pagename = basename($name);
+        $filesize = $_FILES['userfile']['size']; // Get file size (in bits)
+		$filename = strtolower($_FILES['userfile']['name']); // Get file name; make it all lowercase
+		if($filename || !$filename==""){ // File not selected
+		
+		if(file_exists("data/files/".$filename) && $overwrite=="no"){ // Check if file exists
+			$error .=$lang['uploadexists'];
+		}
+
+		// Check if file size
+		if($filesize < 1){ // File is empty
+   			$error .= $lang['uploadempty'];
+		}elseif($filesize > $maxlimit){ // File is more than maximum
+   			$error .= $lang['uploadbig'];
+		}
+
+		$file_ext = preg_split("/./",$filename); // Split filename at period (name.ext)
+		$allowed_ext = preg_split("/,/",$allowed_ext); // Create array of extensions
+		foreach($allowed_ext as $ext){
+   		if($ext==$file_ext[1]) $match = "1"; // File is allowed
+		}
+
+		// File extension not allowed
+		if(!$match){
+   		$error .= $lang['uploadnotallowed'];
+		}
+
+		if($error){
+	    	die ($lang['uploaderror']."<br>".$error."<a href=\"index.php?".$wiki_get."=".$pagename."\">".$lang['backtopage']." ".$pagename."</a>"); // Display error messages
+		}else{
+   		if(move_uploaded_file($_FILES['userfile']['tmp_name'], $folder.$filename)){ // Upload file
+      		die ($lang['uploadsuccess']."<a href=\"index.php?".$wiki_get."=".$pagename."\">".$lang['backtopage']." ".$pagename."</a>");
+   		}else{
+      		print ($lang['uploadlimit']."<a href=\"index.php?".$wiki_get."=".$pagename."\">".$lang['backtopage']." ".$pagename."</a>"); // Display error
+		}
+		}
+    }
     }else{
 	 die($lang['passmodeerror']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
     }   
@@ -455,7 +519,7 @@ if( $_GET["banner"] == "Yes" ) banner();
 		if($HTTP_POST_VARS['password1'] != "" && $HTTP_POST_VARS['password2'] != "" ){
 		if($HTTP_POST_VARS['password1'] == $HTTP_POST_VARS['password2']){
 		$passworks="1";
-		$fp = fopen("passwd.php","w+");
+		$fp = fopen("data/passwd.php","w+");
            	fwrite ($fp, '<? $adminpassword = "'.crypt($HTTP_POST_VARS['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
            	die($lang['passsuccess']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 		}
@@ -477,18 +541,19 @@ if( $_GET["banner"] == "Yes" ) banner();
 		
 	if($HTTP_POST_VARS['password1'] != "" && $HTTP_POST_VARS['password2'] != ""){
 		if($HTTP_POST_VARS['password1'] == $HTTP_POST_VARS['password2']){
-           	$fp = fopen("passwd.php","w+");
+           	$fp = fopen("data/passwd.php","w+");
            	fwrite ($fp, '<? $adminpassword = "'.crypt($HTTP_POST_VARS['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
-           	die($lang['processesok']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
+           	delpagefile($HTTP_POST_VARS['delpage'],$HTTP_POST_VARS['delfile']);
         }else{
            die(" <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 		}
 		
 		}else{
-			$fp = fopen("passwd.php","w+");
+			$fp = fopen("data/passwd.php","w+");
            	fwrite ($fp, '<? $adminpassword = "'.$adminpassword.'"; $passworks="'.$passworks.'";?>');           	
-			die($lang['processesok']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
-		}	
+			delpagefile($HTTP_POST_VARS['delpage'],$HTTP_POST_VARS['delfile']);
+		}
+			
 		exit;
 }
 }
@@ -500,8 +565,16 @@ header ("Pragma: no-cache");
 header ("Content-Type: text/html; charset=".$encoding);
 
 // edit or show page?
-if( $edit )
-        editpage( $name );
-else
-        showpage( $name );
+if( $edit ){
+	if($HTTP_POST_VARS['Edit2']== "OK"){
+		$name=$HTTP_POST_VARS['editpagename'];
+		$name = "$data_dir/".$_GET[$wiki_get];
+		secure($name);
+		editpage2( $name );
+	}else{
+	editpage( $name );
+	}
+}else{
+    showpage( $name );
+}
 ?>
