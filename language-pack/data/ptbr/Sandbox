@@ -1,0 +1,39 @@
+!Ola pessoal..
+!! um pequeno título...
+!!! pequeno título
+
+teste de som
+ aspas começam com um simples espaço
+
+__underlined__ **bold** \'\'italic\'\' or ::in box::
+
+* listas
+* de novo
+* e de novo
+
+---
+
+*listas não funcionam se utilizada assim.
+* deve ser assim
+
+**Picture:**
+[wike.gif]
+
+**Links**
+* Link estático: [Index]
+* Link estático com explicação: [Index|Índice deste site]
+* URL com explicação: [http://www.wikepage.org/|Wikepage site]
+* Simples URL: [http://www.cyrocom.com]
+* Imagem: [http://www.cyrocom.com/|wike.gif]
+* Email: [sblisesivdin@gmail.com]
+* Imagen na caixa: A primeira é uma miniatura a segunda é a original {wike.gif|wikepage|wike.gif}
+
+
+**Table**
+||||Cell 11||Cell 12||||
+||||Cell 21||Cell 22||||
+
+
+##red##Esta cor é realmente sexy.##
+
+---blub

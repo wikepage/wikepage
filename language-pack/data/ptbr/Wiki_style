@@ -1,0 +1,52 @@
+!! Markup Language
+* One * before line, make list.
+* One ! before line make <h1> - big title
+* Two !! before line make <h2> - middle title
+* Three !!! before line make <h3> - small title
+* Two * before and after words or sentences will make them **bold**
+* Two _ before and after words or sentences will make them __underlined__
+* Two \' before and after words or sentences will make them \'\'italic\'\'
+* Two : before and after words or sentences will make them ::boxed::
+
+##red##You can click **Edit** link above this page to view this page\'s source.##
+
+!! Links
+* Wikepage used [Wiki_word] type links whish used \'_\' as whitespace. For make a new page just make a link in a page like [Word] and then save and use the link. When you use link, page\'ll created.
+* If you want to link to something external, you could just type the url like [http://www.wikepage.org/] and if it is valid, it will be clickable
+* To make external links more beautiful, there is another version link can be used to create something [http://www.cyrocom.com|like this], or to a static page [Index|like this]
+* If you write a email address (without mailto:) between [ ], email address will be displayed like [sblisesivdin@gmail.com].
+* If you put the url of a picture between such [ ] brackets, the image will be displayed.
+* Boxed image, using:{a|b|c} (a)thumbnail image, (b)caption (c)original image. Original image will be resized to width of 468 pixels, if bigger than that. If you click, you can view original image. Example: {wike.gif|Caption of image|wike.gif}
+* You can use static picture\'s names which can be found in data/files folder.
+For example :[wike.gif], But if you want to use linked image then: [http://www.cyrocom.com/|wike.gif]
+ PS: You can\'t link URL pictures.
+ Only local pictures can be linked.
+
+!! Special Pages
+* Information in [Last_changes] page is created with writing \'\'< lastchanges >\'\' (without whitespaces) in source of page. 
+* Information in [Search] page is created with \'\'< search >\'\' like above.
+* And information in [All_pages].. just write \'\'< allpages >\'\'.
+* If you want to include administration area in one of your other pages, just write \'\'< admin >\'\' like above.
+
+!! Variable System
+Wikepage system has commands set. There are three of them recently:
+* lng variable: must be set to two letter language\'s abbreviation, like \"en\" for English, \"tr\" for Turkish. Usage (in any pages): [lng=en|English], [lng=en|en.gif]
+* rss variable: \"yes\" for recently changes rss output and \"blog\" for blog\'s rss output. Usage: [rss=blog|Blog RSS Output], [rss=yes|rss_wiki.gif]
+* file variable: Used for file links into data/files folder. Usage [file=filename.pdf|Information about file]
+
+!! Template System
+If you want to use another page style for any of your pages, now you can use new template system. For example you use 2006.2a with a theme called \"2006.2\", there must be a \"index.html\" which is the general template page for all pages. Then make a new template page called \"index2.html\", put it into 2006.2\'s theme folder. If you want to view \"Search\" page with new template, use this type of link: [Search|index2.html]
+
+!! Tables
+Wikepage has table support.Just begin the line with 4 pipes (|), for each column put  2 pipes (|), and for ending line put another 4 pipes (|). That\'s all! You can view this page\'s source to view table below this paragraph.
+||||**Website**||**Link**||||
+||||Cyrocom Homepage||[http://www.cyrocom.com/]||||
+||||SBLisesivdin Homepage||[http://www.cyrocom.com/sblisesivdin]||||
+
+!! RSS Feeds
+Wikepage has a maximum of one RSS feed support per page. To include a RSS feed into any page just begin with 2 special parenthesis ({), then write URL of feed , then  put a pipe (|) and then write how many feed that you want to show in your page, and close with 2 special parenthesis (}).
+{{http://www.wikepage.org/index.php?rss=blog|1}}  
+
+!! Coloring
+For coloring: Just begin with 2 sharps (#) then input color name and 2 sharps more.. then write the writings that will be colored, then 2 sharps to close. Entered colors used in font tag. Colors are Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua and White of course. Or use RGB codes like #FF9900.
+##blue##For example blue writing. Click edit of this page to view.##
