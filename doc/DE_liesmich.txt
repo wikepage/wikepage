@@ -1,0 +1,43 @@
+Cyrocom Wikisite/Homepage-Software
+WIKEPAGE Version 2006.1b Opus 8 (Code: Fermi-Dirac)
+-----------------------------------------------------------------------------------------
+Ein Wiki ist eine Software, um Wissen mit anderen zu teilen. Wikepage ist eine standartisierte,
+leichte, kleine, mehrsprachige und vielseitige Wiki-Software. Es ist ein Derivat des Tipiwiki2
+(http://tipiwiki.sourceforge.net/). Wikepage hat einige Eigenschaften die Tipiwiki nicht hat,
+wie eine passwortgeschützte Struktur und 4 beseitigte Sicherheitslöcher, Tabellen-Unterstützung,
+die Fähigkeit Daten hochzuladen, Mehrsprachigkeit, die Möglichkeit der Erstellung multipler
+Seiten... und und und...
+
+Wikepage hat zwei Modi:
+- Wikimodus: Seiten können ohne Passworteingabe geändert werden.
+- Privatmodus: Seiten können nur durch Passworteingabe geändert werden.
+
+* Installation:
+- Öffne die index.php mit einem Texteditor und ändere die Site-Information, die Sprache und andere
+  Optionen der Seite.
+- Lade alle Dateien auf deinen Webspace mit Hilfe eines FTP-Programmes hoch.
+- Ändere die Zugriffsberechtigungen des data-Ordners und dessen Unterordner in chmod 777
+  (755 funktioniert manchmal nicht).
+- PHP darf nicht im safe_mode laufen, Wikepage kann dann keine Seiten erstellen.
+- Wenn eine neue Sprache zur Webseite hinzugefügt werden soll, kann diese von
+  http://www.wikepage.org/ heruntergeladen werden. Danach diese in den Basisordner von Wikepage
+  entpacken. Nun die Sprachenvariable (language) in der index.php ändern. Soll die Seite
+  Mehrsprachigkeit unterstützen, kann die Sprache einfach durch Links des Typs
+  [index.php?lng=en|English] [index.php?lng=tr|Turkce] geändert werden.
+- Besuche nun deine Seite. Gehe in den Administrationsbereich durch Anklicken des "Admin"-Links
+  und ändere das Passwort.
+- Die Webseite befindet sich nun im Wikimodus! Dieser kann im Administrationsbereich
+  durch Eingabe des Passworts und Entfernen des Häkchens bei "Seiten ohne Passwort bearbeiten"
+  geändert werden.
+- Im Wikimodus muss kein Passwort zur Änderung einer Seite angegeben werden.
+
+Mehr Informationen sind auf der installierten Webseite zu finden.
+
+*Lizenz
+Wikepage ist eine quelloffene Software (OpenSource), lizensiert unter der GNU/GPL. Mehr
+Informationen sind hier zu finden
+[ www.gnu.org/copyleft/gpl.html ]
+
+*Sonstiges
+- Wenn die Ordnerberechtigungen geändert werden, läuft Wikepage zu 90%.
+- Dateierstellung, Hochladen und Löschen läuft unter Umständen nicht, wenn safe_mode=on ist.

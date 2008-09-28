@@ -1,0 +1,55 @@
+! Willkommen bei [Wikepage].
+Dies ist Version 2006.1b (Fermi-Dirac), danke für die Entscheidung für Wikepage. Wikepage baut auf Wiki-Standards auf, ist leicht zu bedienen, läuft ohne MySQL und ist eine sehr kleine Wiki-Software.
+
+Wikepage ist ein kleines Wiki. Bitte erwartet keine mächtigen Wiki-Eigenschaften von Wikepage.
+ ##red##**WICHTIG:** Bitte zuerst die Dokumention lesen,
+ bevor eine Seite erstellt wird! (findet sich im doc-Ordner)##
+
+!! Neuigkeiten
+Bitte helft die Internationalisierung von Wikepage voranzutreiben. Dazu die Dateien in lang/en in der entsprechenden Sprache übersetzen und mailen. (\'\'sblisesivdin-AT-gmail.com\'\')
+!! Index
+* [Was_ist_ein_Wiki] - Informationen zu Wikis und ihrer Geschichte
+* [Wiki_Stil] - Verwendung und Dokumentation
+* [Sandkasten] - zum Austoben und Testen...
+
+!! **2006.1** : Änderungen gegenüber 2005.4
+* Upload-System,
+* Unterstützung für Löschen von Dateien/Seiten,
+* "Bearbeitung bestätigen"-Seite,
+* Bug/D.O.S.-Schwachstelle bei der Seitenerstellung beseitigt,
+* kleinere Korrekturen im Quelltext und Dateisystem.
+
+!! **2005.4** : Änderungen gegenüber 2005.3
+* Spamschutz verbessert (nofollow),
+* neues Thema,
+* verbesserter Quelltext,
+* Quelltext-Anmerkungen nun in Englisch,
+* überarbeitete Ordnerstruktur,
+* Internationalisierung (i18n), Übersetzung in einer Datei möglich,
+* Unterstützung von Themen,
+* externe Links werden mit [ext.gif] gekennzeichnet,
+
+!! **2005.3a** : Änderungen gegenüber 2005.2
+* wichtige Sicherheitslücke geschlossen,
+* CSS für Firefox und Opera korrigiert,
+* schlankerer Quelltext und kleinere ZIP-Datei mit neuen Eigenschaften,
+* einfache Banner-Unterstützung,
+* Unterstützung verlinkter Bilder,
+
+!! **2005.2** : Änderungen gegenüber 2005.1
+* verbesserter CSS-Stil,
+* bearbeitbares Seitenmenü,
+* Unterstützung verschiedener Sprachen,
+* Wikepage-Banner: [wike.gif]
+
+!! **2005.1** : Änderungen gegenüber Tipiwiki2
+* neuer CSS-Stil,
+* Tabellen-Unterstützung,
+* Unterstützung von Wikiwörtern des Typs \'_\',
+* 2 wichtige Sicherheitslücken geschlossen,
+* i18n-Unterstützung
+* Administrations-Bereich,
+* Passwort geschützte Seiten,
+* ##blue##Texteinfärbung## möglich. 
+
+Wikepage ist geschrieben von Cyrocom unter einer freien Lizenz ([http://www.fsf.org/licensing/licenses/gpl.html|GPL] - GNU General Public Licence).
