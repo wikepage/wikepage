@@ -1,0 +1,26 @@
+[Index]
+ 
+[Recent_changes]
+ 
+[Search]
+ 
+[All_pages]
+ 
+[Admin]
+ 
+[Sandbox]
+ 
+[Wiki_style]
+ 
+
+ **Info**
+ You can easily
+ change your
+ menu content
+ by clicking \'\'Edit\'\'
+
+**Languages**
+[en.gif] [index.php?lng=en|English]
+
+
+[http://www.cyrocom.com/|wike.gif]
