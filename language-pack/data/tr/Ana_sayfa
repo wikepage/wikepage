@@ -1,22 +1,31 @@
-! [Wikepage] 2005.3\'e hoþgeldiniz.
+! [Wikepage] 2005.4\'e (Kod ismi: Bose-Einstein) hoþgeldiniz.
 Bu wiki yazýlýmýný denemeyi seçtiniz.. Tebrikler! çünkü wikepage __ilk ve tek türkçe wiki yazýlýmýdýr__.
-Wiksis\'i biliyorsanýz þunu söyleyebiliriz ki Wikepage 2005.3, wiksis\'in yeni ve geliþtirilmiþ sürümüdür. Wikepage 2005.3 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
+Wikepage 2005.3 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
 
  ##red##**DÝKKAT:** Sitenizi oluþturmaya baþlamadan önce dökümantasyonu okuyun!(doc dizininde)##
 
-!! **2005.3** : 2005.2\'ye eklenen özellikler:
+!! **2005.4
+* Spammer düþmaný Nofollow dýþ linkler,
+* Yeni tema,
+* Optimize edilmiþ kod,
+* Kod içi notlar artýk ingilizce,
+* Yeni dizin yapýsý,
+* Tek dosya i18n desteði,
+* Tema desteði,
+* Artýk dýþ linkler [ext.gif] ile gösterilecek,
+
+!! **2005.3a** : 2005.2\'ye eklenen özellikler:
+* Önemli bir güvenlik açýðý kapatýldý,
 * Firefox ve Opera için düzeltilmiþ css stili,
 * Yeni özelliklere raðmen daha küçük kod ve daha küçük zip boyutu,
 * Basit reklam desteði,
 * Linkli resim desteði,
 
-!! **2005.2** : 2005.1\'e eklenen özellikler:
+!! **2005.2**
 * Geliþtirilmiþ css stili,
 * Wiki-düzenlenebilir sol menü,
 * Çokludilli site desteði,
 * Siteniz için wikepage ikonlarý: [cyrocomwike.gif], [ilove.gif], [wike.gif]
-
-!! **2005.1** : Özellikleri
 * Çoklu dil desteði,
 * Wiki ve Kiþisel site modu,
 * Geliþmiþ [Wiki_stil] desteði,
@@ -27,11 +36,9 @@ Wiksis\'i biliyorsanýz þunu söyleyebiliriz ki Wikepage 2005.3, wiksis\'in yeni v
 * Ve birçok özellik,
 
 !! Haberler
-Wikepage\'in yerelleþtirme çalýþmalarýna yardýmcý olmak istemez misiniz? Cyrocom\'da [http://www.cyrocom.com/index.php?wiki=Development|ilgili sayfaya] giderek gerekli dosyayý indirin. Çevirin ve (\'\'master-AT-cyrocom.com\'\') adresine gönderin. Toplam süre yaklaþýk 30 dakikadýr.
+Wikepage\'in yerelleþtirme çalýþmalarýna yardýmcý olmak istemez misiniz? Wikepage sitesinde\'de [http://www.wikepage.org/index.php?wiki=Development|ilgili sayfaya] giderek gerekli dosyayý indirin. Ýngilizce ve Türkçe dýþýndaki diðer dillere çevirin ve (\'\'sblisesivdin-AT-yahoo.com\'\') adresine gönderin. Çeviri için harcayacaðýnýz toplam süre yaklaþýk 30 dakikadýr.
 
 !! Ýçindekiler
 * [Wiki_nedir] - açýklama ve wiki tarihi
 * [Wiki_stil] - kullaným ve dokümantasyon
 * [Kumluk] - denemelerinizi yapmanýz için açýk alan
-
-Programýn sahibi [Cyrocom], size ücretsiz ve GPL lisanslý sunuyor.
