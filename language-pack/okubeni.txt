@@ -1,13 +1,13 @@
 Cyrocom Wiki sitesi/Kiþisel site Yazýlýmý
-WIKEPAGE Sürüm 2006.1 (Kod ismi: Fermi-Dirac)
+WIKEPAGE Opus 10 Sürüm 2006.2a (Kod ismi: Maxwell-Boltzmann)
 -----------------------------------------------------------------------------------------
 Wikepage yazýlýmý, paylaþma amacýyla yapýlmýþ, herkesin sayfa yapabilmesi ve
 paylaþabilmesi amacýyla yapýlmýþtýr.
 
 Wikepage iki moda sahiptir:
 
--Wiki Modu: Sayfalar þifre girmeden deðiþtirilebilir.
--Kiþisel Modu: Sayfalar ancak þifre ile deðiþtirilebilir. 
+-Wiki Modu: Sayfalar ve blog þifre girmeden deðiþtirilebilir.
+-Kiþisel Modu: Sayfalar ve blog ancak þifre ile deðiþtirilebilir. 
 
 
 *KURULUM:
@@ -23,10 +23,14 @@ Wikepage iki moda sahiptir:
  ve sitenizin taban dizinine açýn. index.php dosyasýnda ki tanýmlý dil (default language) ayarýný yapýn
  (normalde ingilizce). Artýk sitenizde [index.php?lng=en|English] [index.php?lng=tr|Turkce] turu
  linklerle diller arasý geçiþ yapabilirsiniz.
--Yönetim linkine girip þifre belirleyin. 
+-Sitenize tarayýcýnýzla bakýn. Þifrenizi belirleyene kadar yönetim sayfasýna yönlendirileceksiniz.
+ Þifre belirleyin.
 -Siteniz Wiki modunda çalýþmaya baþlamýþtýr.
 -Sitenizin içeriðinin bu þifrenizle korunmasý için (Kiþisel moda geçiþ)tekrar yönetime
  gelip þifresiz yazma modunu kapatýn.
+-Blog kullanmak istiyorsanýz Yönetim sayfasýndan yeni girdi yapabilir, yada 
+ [index.php?Blog_Girdi|Yeni blog girdis] türünde bir link kullanabilirsiniz..
+- Blog'unuzu görmek için herhangi bir sayfanýza "<blog_izle>" yazmanýz yeterlidir.
 
 Artýk sayfalarýnýza ulaþabilirsiniz. Hazýr gelen kurulumda size wikiyi ve yazým kurallarýný
 öðreten sayfalar bulunur.

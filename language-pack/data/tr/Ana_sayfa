@@ -1,56 +1,19 @@
 ! Hoþgeldiniz
-[Wikepage] 2006.1\'e (Kod ismi: Fermi-Dirac).
-Bu wiki yazýlýmýný seçtiðiniz için teþekkürler! Wikepage 2006.1 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
+[Wikepage] Opus 10 2006.2a\'a (Kod ismi: Maxwell-Boltzmann).
+Bu wiki yazýlýmýný seçtiðiniz için teþekkürler! Wikepage 2006.2a basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
 
- ##red##**DÝKKAT:** Sitenizi oluþturmaya baþlamadan önce dökümantasyonu okuyun!(doc dizininde)##
+ ##red##**DÝKKAT:** Sitenizi oluþturmaya baþlamadan önce dökümantasyonu okuyun!##
 
 ! Haberler
-Wikepage\'in yerelleþtirme çalýþmalarýna yardýmcý olmak istemez misiniz? Wikepage sitesinde\'de [http://www.wikepage.org/index.php?wiki=Development|ilgili sayfaya] giderek gerekli dosyayý indirin. Ýngilizce ve Türkçe dýþýndaki diðer dillere çevirin ve (\'\'sblisesivdin-AT-yahoo.com\'\') adresine gönderin. Çeviri için harcayacaðýnýz toplam süre yaklaþýk 30 dakikadýr.
+Wikepage\'in yerelleþtirme çalýþmalarýna yardýmcý olmak istemez misiniz? Wikepage sitesinde\'de [http://www.wikepage.org/index.php?wiki=Development|ilgili sayfaya] giderek gerekli dosyayý indirin. Almanca, Ýngilizce ve Türkçe dýþýndaki diðer dillere çevirin ve (\'\'sblisesivdin-AT-gmail.com\'\') adresine gönderin. Çeviri için harcayacaðýnýz toplam süre yaklaþýk 30 dakikadýr.
 
 ! Ýçindekiler
 * [Wiki_nedir] - açýklama ve wiki tarihi
 * [Wiki_stil] - kullaným ve dokümantasyon
 * [Kumluk] - denemelerinizi yapmanýz için açýk alan
+* [Blog_hakkinda] - Bir deney: wikepage\'in blog özelliði? 
 
-!! **2006.1**
-* Dosya yükleme,
-* Dosya ve sayfa silme,
-* Deðiþtirme onay sayfasý,
-* D.O.S. saldýrýyla sayfa oluþturma ile ilgili bir açýk kapatýldý,
-* Kodda ve dosya sisteminde ufak deðiþiklikler
+! BLOG
+<blog_izle>
 
-!! **2005.4**
-* Spammer düþmaný Nofollow dýþ linkler,
-* Yeni tema,
-* Optimize edilmiþ kod,
-* Kod içi notlar artýk ingilizce,
-* Yeni dizin yapýsý,
-* Tek dosya i18n desteði,
-* Tema desteði,
-* Artýk dýþ linkler [ext.gif] ile gösterilecek,
-
-!! **2005.3a** 
-* Önemli bir güvenlik açýðý kapatýldý,
-* Firefox ve Opera için düzeltilmiþ css stili,
-* Yeni özelliklere raðmen daha küçük kod ve daha küçük zip boyutu,
-* Basit reklam desteði,
-* Linkli resim desteði,
-
-!! **2005.2**
-* Geliþtirilmiþ css stili,
-* Wiki-düzenlenebilir sol menü,
-* Çoklu site desteði,
-* Siteniz için wikepage ikonlarý,
-
-* Wiki ve Kiþisel site modu,
-* Geliþmiþ [Wiki_stil] desteði,
-
-!! **2005.1** :Tipiwiki2'ye eklenen ozellikler
-* Yeni css stili,
-* Tablo desteði,
-* '_' türü wiki kelimesi desteði,
-* 2 önemli güvenlik açýðý kapatýldý,
-* Çoklu dil desteði,
-* Yönetim alaný,
-* Þifre korumalý sayfalar,
-* ##blue##Renkli## yazý desteði. 
+Wikepage Cyrocom tarafýndan GPL lisansý ile daðýtýlmaktadýr.
