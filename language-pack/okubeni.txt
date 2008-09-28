@@ -1,5 +1,5 @@
 Cyrocom Wiki sitesi/Kiþisel site Yazýlýmý
-WIKEPAGE Opus 11 Sürüm 2006.3 (Kod ismi: Shubnikov - de Hass)
+WIKEPAGE Opus 11 Sürüm 2007.1 (Kod ismi: Aharanov - Bohm)
 -----------------------------------------------------------------------------------------
 Wikepage yazýlýmý, paylaþma amacýyla yapýlmýþ, herkesin sayfa yapabilmesi ve
 paylaþabilmesi amacýyla yapýlmýþtýr.

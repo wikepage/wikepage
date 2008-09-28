@@ -1,9 +1,9 @@
 <?php
 /*
- Cyrocom Wikepage 20062 Turkish Language File
+ Cyrocom Wikepage 2007.1 Turkish Language File
  by Sefer Bora LISESIVDIN
 */
-$encoding = "windows-1254";
+$encoding = "utf-8";
 $data_dir = "data/tr";
 $page_default = "Ana_sayfa";
 $page_admin = "Yönetim";
@@ -70,6 +70,10 @@ $lang['blog_out']="blog_izle";
 $lang['blog_input_page']="Blog_Girdi";
 $lang['activate_TOC']="Ýçindekileri Aktifleþtir";
 $lang['TOC']="<input type =\"button\" value =\"Ýçindekiler\" onclick =\"toggleTOC()\"><div id=TOC></div>";
+$lang['nonews']="Haber Bulunamadý";
+$lang['xmlerror']="XML hatasý";
+$lang['atline']="satýrýnda";
+$lang['couldnotxml']="XML girdisini açamadý";
 $lang['copyleft'] = "<p>Bu wiki sitesinde yayýnlanan tüm içeriðin kopyalanmasý, daðýtýlmasý veya deðiþtirilmesi 
 üzerinde GNU-FDL Sürüm 1.1 yada <a href=\"http://www.fsf.org/\">FSF</a> tarafýndan çýkarýlan daha sonraki lisans 
 haklarý geçerlidir. Kabul etmiyorsanýz lütfen içerik eklemeyiniz.
