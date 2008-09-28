@@ -1,9 +1,23 @@
 ! Welcome to [Wikepage].
-This is the 2005.4 (Bose-Einstein), Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software derived from Tipiwiki2.
+This is the 2006.1b (Fermi-Dirac), Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software.
 
 Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wikepage.
  ##red##**IMPORTANT:** Please read documentation first,
  before building your site! (in doc folder)##
+
+!! News
+Please help the internationalization works of Wikepage. Just translate file in lang/en to your language and mail it! (\'\'sblisesivdin-AT-gmail.com\'\').
+!! Index
+* [What_is_wiki] - information and history about wiki
+* [Wiki_style] - usage and documentation
+* [Sandbox] - test area...
+
+!! **2006.1** : Features added to 2005.4
+* Upload system,
+* Delete file/page and support,
+* Edit confirmation page,
+* Page creation D.O.S. bug closed,
+* Small corrections in code and file system.
 
 !! **2005.4** : Features added to 2005.3
 * Spammer enemy: Nofollow outlinks,
@@ -14,7 +28,6 @@ Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from W
 * Single file i18n support,
 * Theme support,
 * From now on, outlinks are signed with [ext.gif],
-
 
 !! **2005.3a** : Features added to 2005.2
 * An important security flaw closed,
@@ -29,7 +42,6 @@ Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from W
 * Multilanguage site support,
 * wikepage visuals for your site: [wike.gif]
 
-
 !! **2005.1** : Features added to Tipiwiki2
 * New css style,
 * Table support,
@@ -40,11 +52,4 @@ Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from W
 * Password protected pages,
 * ##blue##Coloring## feature. 
 
-!! News
-Please help the internationalization works of Wikepage. Just translate file in lang/en to your language and mail it! (\'\'master-AT-cyrocom.com\'\').
-!! Index
-* [What_is_wiki] - information and history about wiki
-* [Wiki_style] - usage and documentation
-* [Sandbox] - test area...
-
-[Cyrocom], is glad to serve this GPL software to you. Good bye!
+Wikepage is served by Cyrocom with a free licence (GPL).

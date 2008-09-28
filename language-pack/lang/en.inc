@@ -1,8 +1,6 @@
 <?php
 /*
- Cyrocom Wikepage Language Files
-
- English Language File
+ Cyrocom Wikepage 2006-1 English Language File
  by Sefer Bora LISESIVDIN
 */
 $encoding = "iso-8859-1";
@@ -14,11 +12,12 @@ $lang['orsearchcontent'] = "or search content";
 $lang['search'] = "Search";
 $lang['searchingpage'] = "Searching page ";
 $lang['searchingcontent'] = "Searching content ";
-$lang['nottochangepass'] = "If you don't want to change your password, ENTER YOUR PASSWORD IN FIRST FIELD!";
-$lang['oldadminpass'] ="Administration Password";
-$lang['adminpass'] = "New Administration Password";
-$lang['againadminpass'] = "Again New Administration Password (for control)";
+$lang['oldadminpass'] ="You must enter your old password ";
+$lang['adminpass'] = "New Password";
+$lang['againadminpass'] = "Again New Password (for control) ";
 $lang['passless'] = "Page editing without password";
+$lang['delfile'] = "Delete file (without ask and return!)";
+$lang['delpage'] = "Delete page (without ask and return!)";
 $lang['change'] = "Change";
 $lang['abbrev_findpage'] = "findpage";
 $lang['abbrev_admin'] = "admin";
@@ -35,6 +34,13 @@ $lang['oldpasswrong'] = "You entered your old password wrong.";
 $lang['processesok'] = "Processes ok.";
 $lang['filloldpass'] = "Please enter old password!";
 $lang['twopassmustequal'] = "Two password fields must be same.";
+$lang['uploadexists'] = "- File already exists";
+$lang['uploadempty'] = "- File size is empty.<br>";
+$lang['uploadbig'] = "- File size is too big.<br>";
+$lang['uploadnotallowed'] = "- File type isn't allowed.<br>";
+$lang['uploaderror'] = "Error trying to upload file:<br>";
+$lang['uploadsuccess'] = "Success! The file has been uploaded.";
+$lang['uploadlimit'] = "Error! File size might exceed upload limit of server. Try again.";
 $lang['edit'] = "Edit ";
 $lang['recent'] = "Recent Changes";
 $lang['advsearch'] = "Advanced Search ";
@@ -43,10 +49,13 @@ $lang['admin'] = "Administration ";
 $lang['index'] = "Index ";
 $lang['lastupdate'] = "Last Update: ";
 $lang['editing'] = "editing ";
-$lang['ifuveapass'] = "If you have a password: ";
+$lang['pass'] = "Enter password: ";
 $lang['mainmenu'] = "Main Menu ";
 $lang['pagecontents'] = "Page Contents ";
 $lang['navi'] = "Navigation";
+$lang['ok'] = "OK";
+$lang['clickoktoedit'] = "Click Ok to edit page";
+$lang['backtopage'] = "Back to previous page";
 $lang['copyleft'] = "<p>Permission is granted to copy, distribute and/or modify this document under the terms of the
  GNU Free Documentation License, Version 1.1 or any later version published by the <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a>. If you don't agree please don't add content. </p>
