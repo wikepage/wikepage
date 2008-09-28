@@ -438,6 +438,7 @@ if( $_GET["edit"] == "Yes" )
 if( $_GET["banner"] == "Yes" ) banner();
     if( $HTTP_POST_VARS['wiki'] == $page_admin ){
 	if($HTTP_POST_VARS['password0'] == "" ){
+	if( isset($adminpassword) ) die("$lang_filloldpass <p> <a href=\"index.php\">$lang_returnhomepage</a>");
 	//Ýlk defa þifre deðiþtirme modu.
 		if($HTTP_POST_VARS['password1'] != "" && $HTTP_POST_VARS['password2'] != "" ){
 		if($HTTP_POST_VARS['password1'] == $HTTP_POST_VARS['password2']){
