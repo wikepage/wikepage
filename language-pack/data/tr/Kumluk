@@ -8,7 +8,7 @@ ses
  bir
  ki
 
-__altýçizgi__ **koyu** \'\'italik\'\'
+__altýçizgi__ **koyu** \'\'italik\'\' ve ::kutu::
 
 * listeler
 * uzun
@@ -16,16 +16,14 @@ __altýçizgi__ **koyu** \'\'italik\'\'
 
 ---
 
-*böyle olunca liste patlýyo.
+*böyle olunca liste çalýþmaz
 * böyle olacak
 
-[http://lisesivdin.freefronthost.com/||Liþesivdin] sayfasýnda Wikepage kullanýyor!
+[http://lisesivdin.freefronthost.com/|Liþesivdin] sayfasýnda Wikepage kullanýyor!
 
 http://www.cyrocom.com
 
-[wike.gif]
-
-**REsim:**
+**Resim:**
 [wike.gif]
 **Linkli resim:**
 [http://www.cyrocom.com/|wike.gif]

@@ -6,17 +6,10 @@
 * [Kumluk]
 * [Wiki_stil]
 
- **Bilgi**
- Bu menü içeriðini
- sayfanýn üstünde
- bulunan \'\'Düzenle\'\'
- ye týklayarak
- kolayca
- deðiþtirebilirsiniz.
-
 [tr.gif] [index.php?lng=tr|Turkce]
 [en.gif] [index.php?lng=en|English]
 
 
 [http://www.cyrocom.com/|wike.gif]
 
+[nofollow.gif]

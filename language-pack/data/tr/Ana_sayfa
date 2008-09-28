@@ -1,10 +1,25 @@
-! [Wikepage] 2005.4\'e (Kod ismi: Bose-Einstein) hoþgeldiniz.
-Bu wiki yazýlýmýný denemeyi seçtiniz.. Tebrikler! çünkü wikepage __ilk ve tek türkçe wiki yazýlýmýdýr__.
-Wikepage 2005.3 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
+! Hoþgeldiniz
+[Wikepage] 2006.1\'e (Kod ismi: Fermi-Dirac).
+Bu wiki yazýlýmýný seçtiðiniz için teþekkürler! Wikepage 2006.1 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
 
  ##red##**DÝKKAT:** Sitenizi oluþturmaya baþlamadan önce dökümantasyonu okuyun!(doc dizininde)##
 
-!! **2005.4
+! Haberler
+Wikepage\'in yerelleþtirme çalýþmalarýna yardýmcý olmak istemez misiniz? Wikepage sitesinde\'de [http://www.wikepage.org/index.php?wiki=Development|ilgili sayfaya] giderek gerekli dosyayý indirin. Ýngilizce ve Türkçe dýþýndaki diðer dillere çevirin ve (\'\'sblisesivdin-AT-yahoo.com\'\') adresine gönderin. Çeviri için harcayacaðýnýz toplam süre yaklaþýk 30 dakikadýr.
+
+! Ýçindekiler
+* [Wiki_nedir] - açýklama ve wiki tarihi
+* [Wiki_stil] - kullaným ve dokümantasyon
+* [Kumluk] - denemelerinizi yapmanýz için açýk alan
+
+!! **2006.1**
+* Dosya yükleme,
+* Dosya ve sayfa silme,
+* Deðiþtirme onay sayfasý,
+* D.O.S. saldýrýyla sayfa oluþturma ile ilgili bir açýk kapatýldý,
+* Kodda ve dosya sisteminde ufak deðiþiklikler
+
+!! **2005.4**
 * Spammer düþmaný Nofollow dýþ linkler,
 * Yeni tema,
 * Optimize edilmiþ kod,
@@ -14,7 +29,7 @@ Wikepage 2005.3 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmý
 * Tema desteði,
 * Artýk dýþ linkler [ext.gif] ile gösterilecek,
 
-!! **2005.3a** : 2005.2\'ye eklenen özellikler:
+!! **2005.3a** 
 * Önemli bir güvenlik açýðý kapatýldý,
 * Firefox ve Opera için düzeltilmiþ css stili,
 * Yeni özelliklere raðmen daha küçük kod ve daha küçük zip boyutu,
@@ -24,21 +39,18 @@ Wikepage 2005.3 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmý
 !! **2005.2**
 * Geliþtirilmiþ css stili,
 * Wiki-düzenlenebilir sol menü,
-* Çokludilli site desteði,
-* Siteniz için wikepage ikonlarý: [cyrocomwike.gif], [ilove.gif], [wike.gif]
-* Çoklu dil desteði,
+* Çoklu site desteði,
+* Siteniz için wikepage ikonlarý,
+
 * Wiki ve Kiþisel site modu,
 * Geliþmiþ [Wiki_stil] desteði,
-* Toplamý 60K\'dan küçük (iki dil dosyalarýyla beraber),
-* Veritabaný gerektirmez,
-* Arama desteði,
-* URL resim desteði,
-* Ve birçok özellik,
 
-!! Haberler
-Wikepage\'in yerelleþtirme çalýþmalarýna yardýmcý olmak istemez misiniz? Wikepage sitesinde\'de [http://www.wikepage.org/index.php?wiki=Development|ilgili sayfaya] giderek gerekli dosyayý indirin. Ýngilizce ve Türkçe dýþýndaki diðer dillere çevirin ve (\'\'sblisesivdin-AT-yahoo.com\'\') adresine gönderin. Çeviri için harcayacaðýnýz toplam süre yaklaþýk 30 dakikadýr.
-
-!! Ýçindekiler
-* [Wiki_nedir] - açýklama ve wiki tarihi
-* [Wiki_stil] - kullaným ve dokümantasyon
-* [Kumluk] - denemelerinizi yapmanýz için açýk alan
+!! **2005.1** :Tipiwiki2'ye eklenen ozellikler
+* Yeni css stili,
+* Tablo desteði,
+* '_' türü wiki kelimesi desteði,
+* 2 önemli güvenlik açýðý kapatýldý,
+* Çoklu dil desteði,
+* Yönetim alaný,
+* Þifre korumalý sayfalar,
+* ##blue##Renkli## yazý desteði. 

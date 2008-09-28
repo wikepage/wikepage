@@ -1,24 +1,27 @@
 <?php
 /*
- Cyrocom Wikepage 2005.4 Language Files
- Turkish Language File
+ Cyrocom Wikepage 2005.4 Turkish Language File
  by Sefer Bora LISESIVDIN
 */
 $encoding = "windows-1254";
 $data_dir = "data/tr";
 $page_default = "Ana_sayfa";
 $page_admin = "Yönetim";
-
 $lang['searchpage'] = "Sayfa ismi ile arama";
 $lang['orsearchcontent'] = "yada içerikte arama yap";
 $lang['search'] = "Ara";
 $lang['searchingpage'] = "Aranan sayfa:";
 $lang['searchingcontent'] = "Sayfalarda aranan terim:";
-$lang['nottochangepass'] = "Eðer yönetim þifrenizi deðiþtirmek istemiyorsanýz, SADECE ÝLK ALANA ÞÝFRENÝZÝ GÝRÝNÝZ!";
-$lang['oldadminpass'] ="Yönetim Sistemi Þifresi";
-$lang['adminpass'] = "Yeni Yönetim Sistemi Þifresi";
-$lang['againadminpass'] = "Bir daha Yeni Yönetim Sistemi Þifresi (kontrol amaçlý)";
+$lang['oldadminpass'] ="Þifrenizi giriniz";
+$lang['adminpass'] = "Yeni þifre";
+$lang['password'] = "Þifre";
+$lang['changepass'] = "Þifre deðiþtir";
+$lang['othersett'] = "Diðer ayarlar";
+$lang['setpass'] = "Þifre oluþtur";
+$lang['againadminpass'] = "Bir daha yeni þifre (kontrol amaçlý)";
 $lang['passless'] = "Þifresiz sayfa düzenleme";
+$lang['delfile'] = "Sayfa sil (sormadan ve geridönüþümsüz!)";
+$lang['delpage'] = "Dosya sil (sormadan ve geridönüþümsüz!)";
 $lang['change'] = "Deðiþtir";
 $lang['abbrev_findpage'] = "sayfabul";
 $lang['abbrev_admin'] = "yönetim";
@@ -35,6 +38,13 @@ $lang['oldpasswrong'] = "Eski Þifrenizi yanlýþ girdiniz.";
 $lang['processesok'] = "Ýþlemleriniz yapýldý";
 $lang['filloldpass'] = "Eski þifre bolumunu doldurunuz!";
 $lang['twopassmustequal'] = "Her iki þifre alanýda ayný olmak zorundadýr.";
+$lang['uploadexists'] = "- Dosya zaten var";
+$lang['uploadempty'] = "- Dosya boyutu sýfýr.<br>";
+$lang['uploadbig'] = "- Dosya boyutu çok büyük.<br>";
+$lang['uploadnotallowed'] = "- Dosya türü kabul edilmiyor.<br>";
+$lang['uploaderror'] = "Dosya yüklenirken hata oluþtu:<br>";
+$lang['uploadsuccess'] = "Baþarýlý! Dosya yüklendi.";
+$lang['uploadlimit'] = "Hata! Dosya boyutu sunucu tarafýndan verilen izini geçiyor. Bir daha deneyin.";
 $lang['edit'] = "Düzenle ";
 $lang['recent'] = "Deðiþiklikler";
 $lang['advsearch'] = "Geliþmiþ Arama ";
@@ -43,7 +53,7 @@ $lang['admin'] = "Yönetim ";
 $lang['index'] = "Ýndeks ";
 $lang['lastupdate'] = "Son güncelleme: ";
 $lang['editing'] = "düzenleniyor ";
-$lang['ifuveapass'] = "Eðer þifreniz varsa: ";
+$lang['pass'] = "Þifrenizi giriniz: ";
 $lang['mainmenu'] = "Ana Menü ";
 $lang['pagecontents'] = "Sayfa Ýçeriði ";
 $lang['navi'] = "Navigasyon";

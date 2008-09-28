@@ -1,5 +1,5 @@
 Cyrocom Wiki sitesi/Kiþisel site Yazýlýmý
-WIKEPAGE Sürüm 2005.4 (Kod ismi: Bose-Einstein)
+WIKEPAGE Sürüm 2006.1b (Kod ismi: Fermi-Dirac)
 -----------------------------------------------------------------------------------------
 Wikepage yazýlýmý, paylaþma amacýyla yapýlmýþ, herkesin sayfa yapabilmesi ve
 paylaþabilmesi amacýyla yapýlmýþtýr.
@@ -42,6 +42,3 @@ Program GNU/GPL lisanslýdýr. Lisans koþullarý için:
 
 -Ayrýca safe_mode'u bazý hosting firmalarý kullanabiliyor. O zaman tabiiki dosya
  oluþturulamamadan doðan bir sorun doðar.
- 
--Yönetimde 3 adet þifre alaný görünmektedir. Son ikisi sadece þifrenizi deðiþtirmek
-istiyorsanýz kullanmak içindir.
