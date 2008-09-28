@@ -1,14 +1,14 @@
 <?php
-/*	Wikepage 2006.3 Opus 11 "Shubnikov - de Hass" Wiki/Blog Hybrid Engine
-	Copyleft (C) 2006, 2005, 2004. Ankara, Turkiye.
+/*	Wikepage 2007.1 Opus 12 "Aharonov-Bohm" Wiki/Blog Hybrid Engine
+	Copyleft (C) 2007 - 2004. Ankara, Turkiye.
 	http://www.wikepage.org/
 	For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
 	Tipiwiki2 : Copyleft (C) 2003, Andreas Zwinkau, andi@buxach.de, GPL
 */
 // Sitename?
 // ----------------
-$sitename="My Site";
-$siteheader="Your site's slogan here.";
+$sitename="Sitename";
+$siteheader="Slogan here (change these from <b>index.php</b>)";
 $url="http://www.domain.com/index.php";
 // Site Owner
 // ----------
@@ -21,7 +21,7 @@ $bannerlink="http://www.wikepage.org/";
 // Remove // before $bannerimage for activate banner.
 $bannerimage="wikebanner.gif";
 // Theme
-$theme="2006-3";
+$theme="2007-1";
 // Upload config
 // ------------------
 // Set maximum file limit (in bits) (~1Mb in default)
@@ -30,7 +30,7 @@ $maxlimit=8500000;
 $allowed_ext="jpg,gif,png,jpeg,pdf,doc,xls,ppt,odb,odm,odt,ods,odp";
 // Allow file overwrite? yes/no 
 $overwrite="yes"; 
-error_reporting(1);
+error_reporting(0);
 // Default Language
 $lang_def="en";
 // Timezone according to Greenwich
@@ -119,6 +119,115 @@ function delpagefile($depa,$defi){
 	}
 	die($lang['processesok']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 }
+
+//----
+//Created by Global Syndication's RSS Parser
+function startElement($parser, $nam, $attrs) {
+   	global $rss_channel, $currently_writing, $main;
+   	switch($nam) {
+   		case "RSS":
+   		case "RDF:RDF":
+   		case "ITEMS":
+   			$currently_writing = "";
+   			break;
+   		case "CHANNEL":
+   			$main = "CHANNEL";
+   			break;
+   		case "IMAGE":
+   			$main = "IMAGE";
+   			$rss_channel["IMAGE"] = array();
+   			break;
+   		case "ITEM":
+   			$main = "ITEMS";
+   			break;
+   		default:
+   			$currently_writing = $nam;
+   			break;
+   	}
+}
+
+function endElement($parser, $nam) {
+   	global $rss_channel, $currently_writing, $item_counter;
+   	$currently_writing = "";
+   	if ($nam == "ITEM") {
+   		$item_counter++;
+   	}
+}
+
+function characterData($parser, $rssdata) {
+	global $rss_channel, $currently_writing, $main, $item_counter;
+	if ($currently_writing != "") {
+		switch($main) {
+			case "CHANNEL":
+				if (isset($rss_channel[$currently_writing])) {
+					$rss_channel[$currently_writing] .= $rssdata;
+				} else {
+					$rss_channel[$currently_writing] = $rssdata;
+				}
+				break;
+			case "IMAGE":
+				if (isset($rss_channel[$main][$currently_writing])) {
+					$rss_channel[$main][$currently_writing] .= $rssdata;
+				} else {
+					$rss_channel[$main][$currently_writing] = $rssdata;
+				}
+				break;
+			case "ITEMS":
+				if (isset($rss_channel[$main][$item_counter][$currently_writing])) {
+					$rss_channel[$main][$item_counter][$currently_writing] .= $rssdata;
+				} else {
+					$rss_channel[$main][$item_counter][$currently_writing] = $rssdata;
+				}
+				break;
+		}
+	}
+}
+function RSSParse($rssfile, $itemcoun) {
+	global $rss_channel, $lang, $currently_writing, $main, $item_counter, $rssdata;
+	set_time_limit(300);
+	if (isset($rss_channel)) unset($rss_channel);
+	$rss_channel = array();
+	$currently_writing = "";
+	$main = "";
+	$rssdata ="";
+	$rssfile=str_replace("&amp;", "&", $rssfile);
+	$xml_parser = xml_parser_create();
+	xml_set_element_handler($xml_parser, "startElement", "endElement");
+	xml_set_character_data_handler($xml_parser, "characterData");
+	if (!($fr[$rssfile] = fopen($rssfile, "r"))) {
+		die($lang['couldnotxml']);
+	}
+	while ($rssdata = fread($fr[$rssfile], 4096)) {			
+		if (!xml_parse($xml_parser, $rssdata, feof($fr[$rssfile]))) {
+			die(sprintf($lang['xmlerror']." %s ".$lang['atline']." %d",xml_error_string(xml_get_error_code($xml_parser)),xml_get_current_line_number($xml_parser)));
+		}
+	}
+	fclose($fr[$rssfile]);
+	xml_parser_free($xml_parser);
+	$news="";
+	$itemcoun++;
+	if ($itemcoun > count($rss_channel["ITEMS"]) || $itemcoun == "1")$itemcoun=count($rss_channel["ITEMS"]);
+	if (isset($rss_channel["ITEMS"])) {
+		if (count($rss_channel["ITEMS"]) > 0) {
+		for($i = 0;$i < $itemcoun;$i++) {
+			if (isset($rss_channel["ITEMS"][$i]["LINK"])) {
+				if( strpos($rssfile, "news.google") == FALSE ){
+					$news .= "\n <a href=\"".$rss_channel["ITEMS"][$i]["LINK"]."\">".$rss_channel["ITEMS"][$i]["TITLE"]."</a><br />";
+				}
+			} else {
+				if( strpos($rssfile, "news.google") == FALSE ){
+					$news .="\n".$rss_channel["ITEMS"][$i]["TITLE"]."<br />";
+				}
+			}
+			$news .=$rss_channel["ITEMS"][$i]["DESCRIPTION"]."\n<p>";
+		}
+	} else {
+		$news .= $lang['nonews'];
+	}
+	}
+	return $news;
+}
+//----
 
 function findpage() {
 	global $wiki_get, $name, $data_dir, $langu;
@@ -309,9 +418,9 @@ function filter($raw, $type) {
 		$filtered=preg_replace("/\n(!!)(.+)\n/","\n</p><strong>\\2</strong>\n<p>",$filtered);
 		$filtered=preg_replace("/\n(!)(.+)\n/","\n</p><strong>\\2</strong>\n<p>",$filtered);
 	}else{
-		$filtered=preg_replace("/\n(!!!)(.+)\n/","</p><h3>\\2</h3><p>",$filtered);
-		$filtered=preg_replace("/\n(!!)(.+)\n/","</p><h2>\\2</h2><p>",$filtered);
-		$filtered=preg_replace("/\n(!)(.+)\n/","</p><h1>\\2</h1><p>",$filtered);
+		$filtered=preg_replace("/\n(!!!)(.+)\n/","\n<h3>\\2</h3>",$filtered);
+		$filtered=preg_replace("/\n(!!)(.+)\n/","\n<h2>\\2</h2>",$filtered);
+		$filtered=preg_replace("/\n(!)(.+)\n/","\n<h1>\\2</h1>",$filtered);
 		// html new lines <br />
 		$filtered = str_replace("\n","<br />\n",$filtered);
 		$filtered=str_replace("\n\n","</p>\n<p>",$filtered);
@@ -335,6 +444,20 @@ function filter($raw, $type) {
 	// <pre> blocks
 	$filtered=preg_replace("/(?<=\n) (.*)(\n)/","</p><pre>\\1</pre><p>", $filtered);
 	$filtered=preg_replace("/<\/pre><p>(\s)*<\/p><pre>/","", $filtered);
+	//RSS parsing
+	if( strpos($filtered, "{{") !== FALSE ){
+		preg_match_all("/\{\{(.+)\|(.+)\}\}/i",$filtered,$a,PREG_PATTERN_ORDER);
+		$d=array();
+		foreach ($a as $b){ 
+			$c = count ($b);
+			$d = array_merge($d, $b);
+		}
+			for ($i=0;$i<$c;$i++){
+				$e=preg_split("/\{\{(.+)\|(.+)\}\}/i",$d[$i],-1,PREG_SPLIT_DELIM_CAPTURE);
+				$filtered=str_replace($d[$i], RSSParse($e[1],$e[2]), $filtered);
+//				$filtered=preg_replace("/\{\{(.+)\|(.+)\}\}/i",RSSParse($e[1],$e[2]), $filtered);
+			}				
+	}
 	// add specials, control first for improper usage
 	if( strpos($filtered, "&lt;".$lang['abbrev_findpage']."&gt;") !== FALSE )
 		$filtered=str_replace("&lt;".$lang['abbrev_findpage']."&gt;", findpage(), $filtered);
