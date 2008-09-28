@@ -1,5 +1,5 @@
 Wikisite/Personal/Blog Site Builder
-WIKEPAGE Version 2006.3 Opus 11 (Code: Shubnikov - de Hass)
+WIKEPAGE Version 2007.1 Opus 12 (Code: Aharanov - Bohm)
 -----------------------------------------------------------------------------------------
 Wikepage is a wiki-standart, easy to use and small wiki software derived from Tipiwiki2
 (http://tipiwiki.sourceforge.net/). Wikepage has some security features that Tipiwiki does
