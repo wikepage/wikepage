@@ -1,6 +1,6 @@
 <?php
 /*
- Cyrocom Wikepage 2006-1 English Language File
+ Cyrocom Wikepage 2006-2 English Language File
  by Sefer Bora LISESIVDIN
 */
 $encoding = "iso-8859-1";
@@ -51,12 +51,21 @@ $lang['advsearch'] = "Advanced Search ";
 $lang['all'] = "All Pages";
 $lang['admin'] = "Administration ";
 $lang['index'] = "Index ";
+$lang['page_recent'] = "Recent_changes";
+$lang['page_advsearch'] = "Search";
+$lang['page_all'] = "All_pages";
+$lang['page_admin'] = "Admin";
+$lang['page_index'] = "Index";
 $lang['lastupdate'] = "Last Update: ";
 $lang['editing'] = "editing ";
 $lang['pass'] = "Enter password: ";
 $lang['mainmenu'] = "Main Menu ";
 $lang['pagecontents'] = "Page Contents ";
 $lang['navi'] = "Navigation";
+$lang['blogsubject']="Subject";
+$lang['blogpage']="Body";
+$lang['blog_out']="blog_view";
+$lang['blog_input_page']="Blog_Entry";
 $lang['copyleft'] = "<p>Permission is granted to copy, distribute and/or modify this document under the terms of the
  GNU Free Documentation License, Version 1.1 or any later version published by the <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a>. If you don't agree please don't add content. </p>

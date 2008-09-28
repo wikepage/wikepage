@@ -1,0 +1,8 @@
+! AN EXPERIMENT: BLOG
+From Opus 9, wikepage has got a new feature: Blog. Wikepage\'s blog is as easy as wiki. You have a special wiki page named: **Blog_Entry**. If you link to this page and click it, you will be redirected to blog entry page. You will simply edit your subject and body of your entry, using classical wiki commands.
+
+If you want to view your blog you can simply put **< blog_view >** (without whitespaces) in any of your pages.
+
+Blog part of wikepage has got a simple rss feedout too (RSS 0.91)! The rss output can be catched from **index.php?rss=blog** .
+
+Blog_Entry, < blog_view > words can be changed from the **data/en/en.inc** language file. You can change blog as news or something more interesting.
