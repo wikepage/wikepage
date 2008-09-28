@@ -8,8 +8,10 @@
 * Two * before and after words or sentences will make them **bold**
 * Two _ before and after words or sentences will make them __underlined__
 * Two \' before and after words or sentences will make them \'\'italic\'\'
+* Two : before and after words or sentences will make them ::boxed::
 
 ##red##You can click **Edit** link above this page to view this page\'s source.##
+
 !! Links
 * Wikepage used [Wiki_word] type links whish used \'_\' as whitespace. For make a new page just make a link in a page like [Word] and then save and use the link. When you use link, page\'ll created.
 * If you want to link to something external, you could just type the url and if it is valid, it will be clickable

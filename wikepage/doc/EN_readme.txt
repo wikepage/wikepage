@@ -33,7 +33,7 @@ Wikepage has two modes:
 You can found more documentation in your installed site.
 
 *LICENCE
-Wiksis is a open software licenced with GNU/GPL. For more information:
+Wikepage is a open software licenced with GNU/GPL. For more information:
 [ www.gnu.org/copyleft/gpl.html ]
 
 *IN ADDITION

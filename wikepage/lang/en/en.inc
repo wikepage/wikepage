@@ -36,6 +36,7 @@ $lang_passsuccess = "Your password formed successfuly.";
 $lang_twononemptypassmustequal = "You must enter password at first and two fields must be same.";
 $lang_oldpasswrong = "You entered your old password wrong.";
 $lang_processesok = "Processes ok.";
+$lang_filloldpass = "Please enter old password!";
 $lang_twopassmustequal = "Two password fields must be same.";
 $lang_writingrules = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<li>One * before a line puts bullets in front of it </li>
