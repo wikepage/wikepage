@@ -1,5 +1,5 @@
 Cyrocom Wiki sitesi/Kiþisel site Yazýlýmý
-WIKEPAGE Sürüm 2006.1b (Kod ismi: Fermi-Dirac)
+WIKEPAGE Sürüm 2006.1 (Kod ismi: Fermi-Dirac)
 -----------------------------------------------------------------------------------------
 Wikepage yazýlýmý, paylaþma amacýyla yapýlmýþ, herkesin sayfa yapabilmesi ve
 paylaþabilmesi amacýyla yapýlmýþtýr.

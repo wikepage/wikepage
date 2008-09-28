@@ -57,6 +57,9 @@ $lang['pass'] = "Þifrenizi giriniz: ";
 $lang['mainmenu'] = "Ana Menü ";
 $lang['pagecontents'] = "Sayfa Ýçeriði ";
 $lang['navi'] = "Navigasyon";
+$lang['ok'] = "Tamam";
+$lang['clickoktoedit'] = "Sayfayý düzenlemek için Tamam tuþuna basýnýz";
+$lang['backtopage'] = "Önceki sayfaya dön";
 $lang['copyleft'] = "<p>Bu wiki sitesinde yayýnlanan tüm içeriðin kopyalanmasý, daðýtýlmasý veya deðiþtirilmesi 
 üzerinde GNU-FDL Sürüm 1.1 yada <a href=\"http://www.fsf.org/\">FSF</a> tarafýndan çýkarýlan daha sonraki lisans 
 haklarý geçerlidir. Kabul etmiyorsanýz lütfen içerik eklemeyiniz.
