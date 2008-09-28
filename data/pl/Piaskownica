@@ -20,15 +20,13 @@ Tekst __podkre¶lony__, **pogrubiony**, ''kursyw±'' i ::w ramce::
 *list nie robi siê tak...
 * ... tylko tak
 
+[http://lisesivdin.freefronthost.com/|Strona domowa Lisesivdina] jest oparta na Wikepage!
+
+http://www.cyrocom.com
 **Obrazek:**
 [wike.gif]
-
-**Odno¶niki:**
-* odno¶nik do strony Wiki: [Indeks]
-* odno¶nik do strony Wiki z opisem: [Indeks|Strona g³ówna tej witryny]
-* URL z opisem: [http://www.wikepage.org/|Strona g³ówna Wikepage]
-* Zwyk³y URL: [http://www.cyrocom.com]
-* Obrazek z odno¶nikiem: [http://www.cyrocom.com/|wike.gif]
+**Obrazek z odno¶nikiem:**
+[http://www.cyrocom.com/|wike.gif]
 
 **Tabelka**
 ||||Komórka 11||Komórka 12||||

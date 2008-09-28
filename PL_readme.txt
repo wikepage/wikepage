@@ -1,5 +1,5 @@
 Wikepage - program do tworzenia wiki i stron osobistych opartych na wiki
-Wersja 2006.2a Opus 10 (nazwa kodowa: Maxwell-Boltzmann)
+Wersja 2006.2 Opus 9 (nazwa kodowa: Maxwell-Boltzmann)
 -----------------------------------------------------------------------------------------
 Wikepage to zgodny ze standardem wiki, ³atwy w u¿yciu, niedu¿y program wywodz±cy siê z 
 Tipiwiki2 (http://tipiwiki.sourceforge.net/). Wikepage ma zabezpieczenia, których Tipiwiki

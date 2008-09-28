@@ -38,7 +38,6 @@ $lang['oldpasswrong'] = "Obecne has³o podano b³êdnie.";
 $lang['processesok'] = "Wykonano.";
 $lang['filloldpass'] = "Proszê wprowadziæ obecne has³o!";
 $lang['twopassmustequal'] = "Zawarto¶æ obu pól z has³ami musi byæ identyczna.";
-$lang['uploadnote'] = "Wybierz plik do wys³ania:";
 $lang['uploadexists'] = "- Plik ju¿ istnieje";
 $lang['uploadempty'] = "- Plik jest pusty.<br />";
 $lang['uploadbig'] = "- Zbyt du¿y rozmiar pliku.<br />";
@@ -60,7 +59,6 @@ $lang['page_index'] = "Indeks";
 $lang['lastupdate'] = "Ostatnio zmieniano: ";
 $lang['editing'] = "- redagowanie ";
 $lang['pass'] = "Wpisz has³o: ";
-$lang['submit'] = "Wy¶lij";
 $lang['mainmenu'] = "G³ówne menu ";
 $lang['pagecontents'] = "Tre¶æ strony ";
 $lang['navi'] = "Nawigacja";
@@ -71,7 +69,7 @@ $lang['blog_input_page']="Pisz_Blog";
 $lang['copyleft'] = "Udziela siê zezwolenia na kopiowanie, rozpowszechnianie i/lub modyfikacjê niniejszego dokumentu na zasadach okre¶lonych licencj± GNU Free Documentation License w&nbsp;wersji 1.1 lub pó¼niejszej, opublikowan± przez <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a>. Niespe³niaj±cych jej warunków prosi siê o&nbsp;rezygnacjê z&nbsp;modyfikowania tre¶ci.<br />
  <small>Strona u¿ywa opartego na PHP (bez MySQL) systemu do budowy witryn i Wiki: <a href=\"http://www.cyrocom.com/\">Wikepage</a></small><br />";
-$lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: left; font-size: smaller; \">
+$lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: left; font-size: small; \">
 		<li>Gwiazdk± - * - na pocz±tku linii oznaczamy pozycjê listy</li>
 		<li>Odno¶niki: [W_nawiasach_kwadratowych], [http://zewnetrzny.odnosnik.com|Taki], [http://zewnetrzny.pl|obrazek.gif] albo sam adres URL</li>
 		<li>Jeden lub wiêcej wykrzykników - ! - wykorzystuje siê do pisania nag³ówków </li>
