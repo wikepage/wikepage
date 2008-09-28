@@ -1,5 +1,5 @@
 Cyrocom Wiki sitesi/Kiþisel site Yazýlýmý
-WIKEPAGE Sürüm 2005.3 (Kod ismi: Frank-Van Der Merwe)
+WIKEPAGE Sürüm 2005.4 (Kod ismi: Bose-Einstein)
 -----------------------------------------------------------------------------------------
 Wikepage yazýlýmý, paylaþma amacýyla yapýlmýþ, herkesin sayfa yapabilmesi ve
 paylaþabilmesi amacýyla yapýlmýþtýr.
@@ -15,12 +15,11 @@ Wikepage iki moda sahiptir:
  bilgisi, dil ve ayarlarý kendinize göre yapýn.
 -Kurulum için internet sitenizin kurmak istediðiniz dizinine dosyalarý kopyalayýn.
 -Daha sonra data dizinini ve içindeki dizinleri dosyalarý yazýlabilir hale getirin.
- (FTP yazýlýmýnýzla yapabilirsiniz Chmod 777)
+ (FTP yazýlýmýnýzla yapabilirsiniz Chmod 777, yada en azýndan 755, ama bazý sitelerde
+ sorun çýkabilir.)
 -PHP'nizin safe_mode'da çalýþtýrmayýn. Wiki sayfalarýný oluþturtmaz. safe_mode zorunlu
  ise zaten iþinizi biliyorsunuz demektir. Ayarýný yapýn :)
--Ýstiyorsanýz duzenle.html ve goster.html uzerinde deðiþiklikler yapýp tasarýmý
- deðiþtirebilirsiniz.
--Sitenize yeni dil eklemek istiyorsanýz, http://www.cyrocom.com/download adresinden indirin
+-Sitenize yeni dil eklemek istiyorsanýz, http://www.wikepage.org/ adresinden indirin
  ve sitenizin taban dizinine açýn. index.php dosyasýnda ki tanýmlý dil (default language) ayarýný yapýn
  (normalde ingilizce). Artýk sitenizde [index.php?lng=en|English] [index.php?lng=tr|Turkce] turu
  linklerle diller arasý geçiþ yapabilirsiniz.
