@@ -1,5 +1,5 @@
 Cyrocom Wikisite/Personal site Builder
-WIKEPAGE Version 2006.1b Opus 8 (Code: Fermi-Dirac)
+WIKEPAGE Version 2006.1 Opus 6 (Code: Fermi-Dirac)
 -----------------------------------------------------------------------------------------
 Wiki is a kind of knowledge sharing formation. Wikepage is a wiki-standart, easy
 to use and small wiki software derived from Tipiwiki2 (http://tipiwiki.sourceforge.net/).
