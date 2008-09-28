@@ -1,5 +1,5 @@
 Cyrocom Wiki sitesi/Kiþisel site Yazýlýmý
-WIKEPAGE Sürüm 2006.2 (Kod ismi: Maxwell-Boltzmann)
+WIKEPAGE Opus 11 Sürüm 2006.3 (Kod ismi: Shubnikov - de Hass)
 -----------------------------------------------------------------------------------------
 Wikepage yazýlýmý, paylaþma amacýyla yapýlmýþ, herkesin sayfa yapabilmesi ve
 paylaþabilmesi amacýyla yapýlmýþtýr.
