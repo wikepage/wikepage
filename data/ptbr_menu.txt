@@ -1,0 +1,21 @@
+* [Index]
+* [Recent_changes]
+* [Search]
+* [All_pages]
+* [Admin]
+* [Sandbox]
+* [Wiki_style]
+* [About_Blog]
+
+**Línguas**
+
+[lng=ptbr|ptbr.gif] [lng=ptbr|Portugues BR]
+[lng=en|en.gif] [lng=en|English]
+
+[http://www.wikepage.org/|wike.gif]
+
+[nofollow.gif]
+
+[rss=yes|rss_wiki.gif]
+
+[rss=blog|rss_blog.gif]
