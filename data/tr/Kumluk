@@ -19,15 +19,15 @@ __altýçizgi__ **koyu** \'\'italik\'\' ve ::kutu::
 *böyle olunca liste çalýþmaz
 * böyle olacak
 
-[http://lisesivdin.freefronthost.com/|Liþesivdin] sayfasýnda Wikepage kullanýyor!
-
-http://www.cyrocom.com
-
 **Resim:**
 [wike.gif]
-**Linkli resim:**
-[http://www.cyrocom.com/|wike.gif]
 
+**Linkler**
+* Statik sayfa linki: [Ana_Sayfa]
+* Açýklamalý statik sayfa linki: [Ana_Sayfa|Bu sitenin ana sayfasi]
+* Açýklamalý URL link: [http://www.wikepage.org/|Wikepage sitesi]
+* Basit URL: [http://www.cyrocom.com]
+* Linkli resim: [http://www.cyrocom.com/|wike.gif]
 
 ##red##Bu renk gerçekten seksi.##
 

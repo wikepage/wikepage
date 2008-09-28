@@ -1,0 +1,8 @@
+! BÝR DENEY: BLOG
+Opus 9\'dan itibaren wikepage yeni bir özellik içeriyor: Blog. Wikepage\'in blog özelliðide wiki kadar kolay. **Blog_Girdi** adýnda özel bir sayfa bulunuyor. Eðer bu sayfaya link verir ve giderseniz özel bir Blog girdi sayfasýna ulaþýrsýnýz. Klasik wiki komutlarýyla baþlýðýnýzý ve içeriði oluþturabilirsiniz.
+
+Eðer blog\'u görmek isterseniz herhangi bir sayfanýn içine yazacaðýnýz **< blog_izle >** komutu (boþluklar olmadan) o sayfaya blog\'u yerleþtirecektir.
+
+Wikepage\'in blog özelliði basit bir RSS çýktýya da sahiptir (RSS 0.91)! RSS çýktýya **index.php?rss=blog** adresinden ulaþabilirsiniz.
+
+Blog_Girdi, < blog_izle > kelimeleri **data/tr/tr.inc** dil dosyasýndan deðiþtirilebilir.Bu sayede blog kelimesi yerine haberler gibi daha ilgili bir kelime kullanabilirsiniz.

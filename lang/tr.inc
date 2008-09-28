@@ -1,6 +1,6 @@
 <?php
 /*
- Cyrocom Wikepage 2005.4 Turkish Language File
+ Cyrocom Wikepage 20062 Turkish Language File
  by Sefer Bora LISESIVDIN
 */
 $encoding = "windows-1254";
@@ -38,6 +38,7 @@ $lang['oldpasswrong'] = "Eski Þifrenizi yanlýþ girdiniz.";
 $lang['processesok'] = "Ýþlemleriniz yapýldý";
 $lang['filloldpass'] = "Eski þifre bolumunu doldurunuz!";
 $lang['twopassmustequal'] = "Her iki þifre alanýda ayný olmak zorundadýr.";
+$lang['uploadnote'] = "Yüklenecek dosyayý seçiniz:";
 $lang['uploadexists'] = "- Dosya zaten var";
 $lang['uploadempty'] = "- Dosya boyutu sýfýr.<br>";
 $lang['uploadbig'] = "- Dosya boyutu çok büyük.<br>";
@@ -50,16 +51,23 @@ $lang['recent'] = "Deðiþiklikler";
 $lang['advsearch'] = "Geliþmiþ Arama ";
 $lang['all'] = "Tüm Sayfalar";
 $lang['admin'] = "Yönetim ";
-$lang['index'] = "Ýndeks ";
+$lang['index'] = "Ana Sayfa ";
+$lang['page_recent'] = "Son_degisiklikler";
+$lang['page_advsearch'] = "Sayfa_bul";
+$lang['page_all'] = "Tum_sayfalar";
+$lang['page_admin'] = "Yonetim";
+$lang['page_index'] = "Ana_sayfa";
 $lang['lastupdate'] = "Son güncelleme: ";
 $lang['editing'] = "düzenleniyor ";
 $lang['pass'] = "Þifrenizi giriniz: ";
+$lang['submit'] = "Gönder";
 $lang['mainmenu'] = "Ana Menü ";
 $lang['pagecontents'] = "Sayfa Ýçeriði ";
 $lang['navi'] = "Navigasyon";
-$lang['ok'] = "Tamam";
-$lang['clickoktoedit'] = "Sayfayý düzenlemek için Tamam tuþuna basýnýz";
-$lang['backtopage'] = "Önceki sayfaya dön";
+$lang['blogsubject']="Konu";
+$lang['blogpage']="Ýçerik";
+$lang['blog_out']="blog_izle";
+$lang['blog_input_page']="Blog_Girdi";
 $lang['copyleft'] = "<p>Bu wiki sitesinde yayýnlanan tüm içeriðin kopyalanmasý, daðýtýlmasý veya deðiþtirilmesi 
 üzerinde GNU-FDL Sürüm 1.1 yada <a href=\"http://www.fsf.org/\">FSF</a> tarafýndan çýkarýlan daha sonraki lisans 
 haklarý geçerlidir. Kabul etmiyorsanýz lütfen içerik eklemeyiniz.
