@@ -1,0 +1,34 @@
+Wikisite/Personal/Blog Site Builder
+WIKEPAGE Version 2007.1 Opus 12 (Code: Aharanov - Bohm)
+-----------------------------------------------------------------------------------------
+Wikepage is een gestandardiseerde, eenvoudig te gebruiken wiki-software.
+Het is een afgeleid van Tipiwiki2 (http://tipiwiki.sourceforge.net/).
+Wikepage heeft enkele beveiligingen die Tipiwiki niet heeft, zoals een wachtwoord beveiligde structuur,
+and 4 gepatchte beveilingsgaten, tabellen ondersteuning, upload understeuning, meertaligheid en multisite ondersteuning...etc...
+
+Wikepage heeft twee modes:
+
+-Wiki Mode: Pagina's and Blog's kunnen veranderd worden zonder een wachtwoord.
+-Personal Mode: Pagina's and Blog's kunnen alleen worden aangepast met een wachtwoord.
+
+*INSTALLEREN:
+-Open het index.php bestand met een editor en pas de informatie aan (taal (=vervang 'en' door 'nl'), site en andere opties)
+-Zet alles met FTP op de webserver
+-Zet de rechten van de mappen en bestanden goed met: Chmod 777, (op z'n minst 755 maar soms werkt dat niet).
+-Zorg ervoor dat je PHP niet in safe_mode werkt. In safe_mode kan wikepage geen pagina's maken.
+-Wanneer je een nieuwe taal wil toevoegen, download deze van http://www.wikepage.org/
+ en plaats deze in de map van wikepage. Verander daarna je taal in de broncode van de index.php.
+ Voor meertaligheid, kun je het een en ander met links op je site zoals: 
+ [index.php?lng=en|English] en/of [index.php?lng=nl|Dutch] .
+-Bij het eerste bezoek van de site MOET je een wachtwoord van de Admin invoeren. 
+-En dan werkt ie!
+-Verder kun je via de Administratie pagina het een en ander aanpassen.
+-In de wiki mode moet je bij elke wijziging je wachtwoord intypen (of natuurlijk door je browser laten opslaan)
+
+Meer documentatie vindt je op je site..
+
+*LICENTIE
+Wikepage is open software middels GNU/GPL. Voor meer informatie:
+[ www.gnu.org/copyleft/gpl.html ]
+
+*/ translation by yostea@gmail.com /*

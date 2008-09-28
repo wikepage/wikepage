@@ -1,0 +1,9 @@
+! EEN EXPERIMENT: BLOG
+Vanaf Opus 9, heeft wikepage een nieuwe feature: Blog. Wikepage's blog is zo eenvoudig als wiki zelf. Er is een speciale wiki pagina met de naam: **Blog_Entry**. Als hierop geklikt wordt komt je terrecht op de blog pagina.
+Hier kan vanalles worden ingevuld (uiteraard ook met de wiki commando's).
+
+Om de blog te bekijken (te linken) zet: **< blog_view >** (zonder spaties) op je pagina.
+
+Het Blog deel van de wikepage heeft ook nog een eenvoudige rss feedout too (RSS 0.91)! Deze rss output kan be via **index.php?rss=blog** aangeroepen worden.
+
+Blog_Entry, < blog_view > termen kunnen aangepast worden het **data/en/en.inc** taal bestand (in dit voorbeeld het Engelse bestand).

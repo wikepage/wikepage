@@ -1,0 +1,20 @@
+* [Index]
+* [Recent_aangepast]
+* [Zoek]
+* [Alle_paginas]
+* [Admin]
+* [Sandbox]
+* [Wiki_style]
+* [Over_Blog]
+
+**Talen**
+
+[lng=nl|nl.gif] [lng=nl|Nederlands]
+
+[http://www.wikepage.org/|wike.gif]
+
+[nofollow.gif]
+
+[rss=yes|rss_wiki.gif]
+
+[rss=blog|rss_blog.gif]
