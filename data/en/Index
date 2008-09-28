@@ -1,18 +1,17 @@
-! WELCOME TO [Wikepage].
-
-This is the Opus 10, 2006.2a (Maxwell-Boltzmann), Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, databaseless and small wiki-blog hybrid software. Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wikepage.
+! Welcome to Wikepage!
+This is the Opus 11, 2006.3 (Shubnikov - de Hass), Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, databaseless and small wiki-blog hybrid software. Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wikepage.
  ##red##**IMPORTANT:** Please read documentation first, before building
  your site!##
 
 !! News
-Please help the internationalization works of Wikepage. Just download latest English file from [http://www.wikepage.org] and translate file to your language. You can mail it to (\'\'sblisesivdin-AT-gmail.com\'\').
+Please help the internationalization works of Wikepage. Just download latest English file from [http://www.wikepage.org] and translate file to your language. You can mail it to [sblisesivdin@gmail.com].
 !! Index
 * [What_is_wiki] - information and history about wiki
 * [Wiki_style] - usage and documentation
 * [Sandbox] - test area...
 * [About_Blog] - An experiment: blog feature of wikepage? 
 
-! BLOG
+! Blog
 <blog_view>
 
 Wikepage is served by Cyrocom with a free licence (GPL).

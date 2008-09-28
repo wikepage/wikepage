@@ -1,4 +1,3 @@
- 
 * [Index]
 * [Recent_changes]
 * [Search]
@@ -9,6 +8,7 @@
 * [About_Blog]
 
 **Languages**
+
 [lng=en|en.gif] [lng=en|English]
 
 [http://www.cyrocom.com/|wike.gif]
