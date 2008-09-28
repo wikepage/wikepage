@@ -1,0 +1,23 @@
+! Welcome to [Wikepage].
+Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software derived from Tipiwiki2.
+
+Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wiksis.
+ ##red##**IMPORTANT:** Please read documentation first, before building your site! (in doc folder)##
+!! Features added to Tipiwiki2
+* New css style,
+* Table support,
+* \'_\' type Wiki word support,
+* 2 important security flaw closed,
+* I18n support
+* Administration Area,
+* Password protected pages,
+* ##blue##Coloring## feature. 
+
+!! News
+Please change the files in lang/en for give Wikepage, I18n support in your language! You can email me from \'\'master-AT-cyrocom.com\'\'.
+!! Index
+* [What_is_wiki] - information and history about wiki
+* [Wiki_style] - usage and documentation
+* [Sandbox] - test area...
+
+[Cyrocom], is glad to serve this GPL software to you. Good bye!
