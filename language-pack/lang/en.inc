@@ -1,6 +1,6 @@
 <?php
 /*
- Cyrocom Wikepage 2006-1 English Language File
+ Cyrocom Wikepage 2006-2 English Language File
  by Sefer Bora LISESIVDIN
 */
 $encoding = "iso-8859-1";
@@ -14,6 +14,10 @@ $lang['searchingpage'] = "Searching page ";
 $lang['searchingcontent'] = "Searching content ";
 $lang['oldadminpass'] ="You must enter your old password ";
 $lang['adminpass'] = "New Password";
+$lang['password'] = "Password";
+$lang['changepass'] = "Change Password";
+$lang['othersett'] = "Other Settings";
+$lang['setpass'] = "Set Password";
 $lang['againadminpass'] = "Again New Password (for control) ";
 $lang['passless'] = "Page editing without password";
 $lang['delfile'] = "Delete file (without ask and return!)";
@@ -34,11 +38,12 @@ $lang['oldpasswrong'] = "You entered your old password wrong.";
 $lang['processesok'] = "Processes ok.";
 $lang['filloldpass'] = "Please enter old password!";
 $lang['twopassmustequal'] = "Two password fields must be same.";
+$lang['uploadnote'] = "Select file for upload:";
 $lang['uploadexists'] = "- File already exists";
-$lang['uploadempty'] = "- File size is empty.<br>";
-$lang['uploadbig'] = "- File size is too big.<br>";
-$lang['uploadnotallowed'] = "- File type isn't allowed.<br>";
-$lang['uploaderror'] = "Error trying to upload file:<br>";
+$lang['uploadempty'] = "- File size is empty.<br />";
+$lang['uploadbig'] = "- File size is too big.<br />";
+$lang['uploadnotallowed'] = "- File type isn't allowed.<br />";
+$lang['uploaderror'] = "Error trying to upload file:<br />";
 $lang['uploadsuccess'] = "Success! The file has been uploaded.";
 $lang['uploadlimit'] = "Error! File size might exceed upload limit of server. Try again.";
 $lang['edit'] = "Edit ";
@@ -47,22 +52,29 @@ $lang['advsearch'] = "Advanced Search ";
 $lang['all'] = "All Pages";
 $lang['admin'] = "Administration ";
 $lang['index'] = "Index ";
+$lang['page_recent'] = "Recent_changes";
+$lang['page_advsearch'] = "Search";
+$lang['page_all'] = "All_pages";
+$lang['page_admin'] = "Admin";
+$lang['page_index'] = "Index";
 $lang['lastupdate'] = "Last Update: ";
 $lang['editing'] = "editing ";
 $lang['pass'] = "Enter password: ";
+$lang['submit'] = "Submit";
 $lang['mainmenu'] = "Main Menu ";
 $lang['pagecontents'] = "Page Contents ";
 $lang['navi'] = "Navigation";
-$lang['ok'] = "OK";
-$lang['clickoktoedit'] = "Click Ok to edit page";
-$lang['backtopage'] = "Back to previous page";
+$lang['blogsubject']="Subject";
+$lang['blogpage']="Body";
+$lang['blog_out']="blog_view";
+$lang['blog_input_page']="Blog_Entry";
 $lang['copyleft'] = "<p>Permission is granted to copy, distribute and/or modify this document under the terms of the
  GNU Free Documentation License, Version 1.1 or any later version published by the <a href=\"http://www.fsf.org/\">
- Free Software Foundation</a>. If you don't agree please don't add content. </p>
- <small>Powered by mysqlless php wikisite-homepage engine: <a href=\"http://www.cyrocom.com/\">Wikepage</a></small><br/><p></p>";
+ Free Software Foundation</a>. If you don't agree please don't add content. <br />
+ <small>Powered by databaseless php wikisite-homepage engine: <a href=\"http://www.cyrocom.com/\">Wikepage</a></small><br />";
 $lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<li>One * before a line puts bullets in front of it </li>
-						<li>Links: [Link_type], [http://externallink.com|click] or [http://externallink.com|image.gif] or type URL
+						<li>Links: [Link_type], [http://externallink.com|click] or [http://externallink.com|image.gif] or type URL </li>
 						<li>One or more ! make it a headline </li>
 						<li>** to make something bold </li>
 						<li>__ to underline </li>
@@ -75,7 +87,7 @@ $lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<font color=\"Fuchsia\">Fuchsia</font>, <font color=\"Green\">Green</font>, <font color=\"Lime\">Lime</font>, 
 						<font color=\"Olive\">Olive</font>, <font color=\"Yellow\">Yellow</font>, <font color=\"Navy\">Navy</font>, 
 						<font color=\"Blue\">Blue</font>, <font color=\"Teal\">Teal</font>, <font color=\"Aqua\">Aqua</font> 
-						and <font color=\"White\">White</font> of course. Or use RGB codes like <font color=\"#FF9900\">#FF9900</font> or <a href=\"http://www.yourhtmlsource.com/stylesheets/namedcolours.html\" target=\"_blank\">try more</a></li></small>
+						and <font color=\"Black\">White</font> of course. Or use RGB codes like <font color=\"#FF9900\">#FF9900</font> or <a href=\"http://www.yourhtmlsource.com/stylesheets/namedcolours.html\" target=\"_blank\">try more</a></li></small>
                       </ul>";
 
  ?>
