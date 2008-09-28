@@ -37,8 +37,9 @@ $lang_twononemptypassmustequal = "You must enter password at first and two field
 $lang_oldpasswrong = "You entered your old password wrong.";
 $lang_processesok = "Processes ok.";
 $lang_twopassmustequal = "Two password fields must be same.";
-$lang_writingrules = "<ul id=\"footer\" style=\"text-align: left;\"> <small><small>
+$lang_writingrules = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<li>One * before a line puts bullets in front of it </li>
+						<li>Links: [Link_type], [http://externallink.com|click] or [http://externallink.com|image.gif] or type URL
 						<li>One or more ! make it a headline </li>
 						<li>** to make something bold </li>
 						<li>__ to underline </li>
@@ -51,6 +52,6 @@ $lang_writingrules = "<ul id=\"footer\" style=\"text-align: left;\"> <small><sma
 						<font color=\"Fuchsia\">Fuchsia</font>, <font color=\"Green\">Green</font>, <font color=\"Lime\">Lime</font>, 
 						<font color=\"Olive\">Olive</font>, <font color=\"Yellow\">Yellow</font>, <font color=\"Navy\">Navy</font>, 
 						<font color=\"Blue\">Blue</font>, <font color=\"Teal\">Teal</font>, <font color=\"Aqua\">Aqua</font> 
-						and <font color=\"White\">White</font> of course. Or use RGB codes like <font color=\"#FF9900\">#FF9900</font> or <a href=\"http://www.yourhtmlsource.com/stylesheets/namedcolours.html\" target=\"_blank\">try more</a></li></small></small>
+						and <font color=\"White\">White</font> of course. Or use RGB codes like <font color=\"#FF9900\">#FF9900</font> or <a href=\"http://www.yourhtmlsource.com/stylesheets/namedcolours.html\" target=\"_blank\">try more</a></li></small>
                       </ul>";
 ?>

@@ -1,62 +1,48 @@
 <?php
-
-/*		Cyrocom Wikepage Wiki/Personal Site Engine
-		Copyright (C) 2005 Cyrocom.com, Ankara, Turkey. All rights reserved.(R)
+/*		Cyrocom-WIKEPAGE 2005.3 Wiki/Personal Site Engine
+		Copyleft (C) 2005,2004. Ankara, Turkey.
         http://www.cyrocom.com/
+		For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
 
-        This program is free software; you can redistribute it and/or modify it under the terms of the GNU
-        General Public License as published by the Free Software Foundation; either version 2 of the License,
-        or (at your option) any later version.
-        This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
-        the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
-        License for more details.
-        You should have received a copy of the GNU General Public License along with this library.
-        
-
-/*
-Cyrocom WikSis (Wiki Sistemi)
-Copyright (C) 2004 CyrocomGPL'ed, GPL
+		Tikiwiki2 : Copyleft (C) 2003, Andreas Zwinkau, andi@buxach.de, GPL
 */
 
-/*
-Tikiwiki2 : Copyright (C) 2003
-Andreas Zwinkau, andi@buxach.de, GPL
-*/
-
-// ----------------------------------
 // Site Information
-// ----------------------------------
-// 
-$sitename="Wikepage 2005.2";
+// ----------------
+$sitename="Wikepage 2005.3";
 $siteheader="Your site's slogan here.";
 $author="CyrocomWikepage";
+
+// Activate for a 230x110 logo:
+//$logo="logo.gif";
+
+// Banner Information
+// ------------------
+//$bannerwriting="ADVERTISEMENT";
+//Use http:// for external links.. 
+$bannerlink="index.php";
+$bannerimage="banner.jpg";
 
 error_reporting(1);
 session_start();
 
-
-// ----------------------------------
 // Default Language
-// ----------------------------------
-// en: English, tr: Türkçe
+// ----------------
 $lang_def="en";
 
-
-// ----------------------------------
 // Options
-// ----------------------------------
-
-// Timezone according to Greenwich. For US EST:-6, CST:-7, MST:-8, PST:-9, Alaskan Time:-10, Hawaiian Time:-11
-// Türkiye için 2 olmalý
+// ----------------
+// Timezone according to Greenwich
 $timezone = -6;
 
-// Wiki get, don't change. Change will need changes in lang files
-
+// Wiki get command. Change will need changes in lang files
 $wiki_get = "wiki";
 
-// ++++++++ DON'T MAKE CHANGES BELOW HERE ! (unless you're a developer) ++++++++ 
+/*
+ ++++++++ DON'T MAKE CHANGES BELOW HERE ! (unless you're a developer) ++++++++ 
+*/
 
-// PHP5 ise SCRIPT_FILENAME DEÐÝÞKENÝ kullan
+
 if ($version_info[0] < 5 ) {
 $servpath = $HTTP_SERVER_VARS['PATH_TRANSLATED'];
 
@@ -67,7 +53,6 @@ $servpath = $HTTP_SERVER_VARS['PATH_TRANSLATED'];
 $info = pathinfo( $servpath );
 $path = $info[ 'dirname' ];
 
-// eðer ( PHP sürüm < 4.1 ) $_GET çalýþmaz!
 if ($version_info[0] < 4 || ($version_info[0] > 3 && $version_info[1] < 1)) {
         $_POST = $HTTP_POST_VARS;
         $_GET = $HTTP_GET_VARS;
@@ -98,10 +83,7 @@ $version_info = explode('.', phpversion());
 $template_show_langed='lang/'.$lang.'/'.$template_show;
 $template_edit_langed='lang/'.$lang.'/'.$template_edit;
 
-
-
 // bazý özeller
-
 function htmlchars ($string) {
 
 $string= str_replace("&", "&amp;", $string);
@@ -128,12 +110,9 @@ function findpage() {
         // dizindeki tüm sayfalarý al
         $handle = opendir("$data_dir");
         while( $newdir = readdir($handle) )
-//WikiKelimeli
-//                if(preg_match("/([A-Z][a-z0-9]+){2,}/",$newdir) )
-//[Kelime_grublu]
                 if(preg_match("/([\w]+)/",$newdir) )
                         $allpages[] = $newdir;
-        // uyuþan sayfa isimlerine bak
+        // Uyuþan sayfa isimlerine bak
         if( $_GET["PageName"] != "" ) {
                 $pagename = $_GET["PageName"];
                 $content .= "<h3>".$lang_searchingpage." $pagename </h3>\n<ul>\n";
@@ -166,9 +145,6 @@ function recentchanges() {
         $handle = opendir($data_dir);
         $allpages = array();
         while( $newfile = readdir($handle) )
-//WikiKelimeli
-//                if(preg_match("/([A-Z][a-z0-9]+){2,}/",$newfile) )
-//[Kelime_grublu]
                 if(preg_match("/([\w]+)/",$newfile) )
                         $allpages[] = $newfile;
         $max_pages = sizeof($allpages) / 3;
@@ -205,9 +181,6 @@ function allpages() {
         $content = "<ul>\n";
         $handle = opendir($data_dir);
         while( $newfile = readdir($handle) )
-//WikiKelimeli
-//                if(preg_match("/([A-Z][a-z0-9]+){2,}/",$newfile) )
-//[Kelime_grublu]
                 if(preg_match("/([\w]+)/",$newfile) )
                         $allpages[] = $newfile;
         sort($allpages);
@@ -256,31 +229,24 @@ function filter($raw) {
 		global $lang_abbrev_allpages;
 		global $lang_abbrev_recentchanges;
         $filtered = stripslashes(htmlchars("\n\n".$raw));
-
         // php-özel
-        $filtered = str_replace("\r\n","\n",$filtered);
-
+        $filtered = str_replace("\r\n","\n",$filtered);	
         // [ url | link ] dýþ linkler
         $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\">\\3</a>", $filtered);
         $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\">\\2</a>", $filtered);
-
-        // resimler [ url ]
-        $filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"\\1\" class=\"wikiimage\" />",$filtered);
-
+        // resimli link [ url | [resim] ]  
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\"><img src=\"\\3\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+        $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\"><img src=\"\\2\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+  		// resimler [ url ]
+        $filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
         // sayfa içindeki düz URL'ler
         $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\|([\w\:\#\- ]+)\]/i","<a href=\"\\1\">\\3</a>", $filtered);
-
-        // Wiki kelimeler (Sadece biri seçili olacak þekilde)
-        //(1) BileþikKelime
-        //$filtered = preg_replace("/([A-Z][a-z0-9\;\&]+){2,}/","<a href=\"index.php?$wiki_get=\\0\">\\0</a>", $filtered);
-        //(2) []li kelime (geçerli)
+        // []li kelime
         $filtered = preg_replace("/\[([\w]+)\]/","<a href=\"index.php?$wiki_get=\\1\">\\1</a>", $filtered);
-
         // Baþlýklar <h1><h2><h3>
-        $filtered = preg_replace("/\n(!!!)(.+)\n/","</p>\n<h5>\\2</h5>\n<p>",$filtered);
-        $filtered = preg_replace("/\n(!!)(.+)\n/","</p>\n<h4>\\2</h4>\n<p>",$filtered);
-        $filtered = preg_replace("/\n(!)(.+)\n/","</p>\n<h3>\\2</h3>\n<p>",$filtered);
-
+        $filtered = preg_replace("/\n(!!!)(.+)\n/","</p>\n<h3>\\2</h3>\n<p>",$filtered);
+        $filtered = preg_replace("/\n(!!)(.+)\n/","</p>\n<h2>\\2</h2>\n<p>",$filtered);
+        $filtered = preg_replace("/\n(!)(.+)\n/","</p>\n<h1>\\2</h1>\n<p>",$filtered);
         // yazý dekorasyonlarý(koyu,yatýk,altçizgili,kutulu)
         $filtered = preg_replace("/\*\*(.+)\*\*/U","<strong>\\1</strong>", $filtered);
         $filtered = preg_replace("/__(.+)__/U","<u>\\1</u>", $filtered);
@@ -288,22 +254,17 @@ function filter($raw) {
         $filtered = preg_replace("/\:\:(.+)\:\:/U","<span class=\"box\">\\1</span>", $filtered);
         // yatay çizgiler
         $filtered = preg_replace("/\n---.*\n/","\n<hr class=\"wiki\"/>\n",$filtered);
-
         // listeler <ul>
         $filtered = preg_replace("/(?<=[\n>])\* (.+)\n/","<li>\\1</li>",$filtered);
         $filtered = preg_replace("/<li>(.+)\<\/li>/","</p><ul>\\0</ul><p>",$filtered);
-
         // ön ve son satýr aralarýný çýkar
         $filtered = preg_replace("/^(\n+)/","",$filtered);
         $filtered = preg_replace("/\n{3,}/","\n\n",$filtered);
-
         // <pre> bloklarý
         $filtered = preg_replace("/(?<=\n) (.*)(\n)/","<pre>\\1</pre>", $filtered);
-
         // html satýr aralarý <br />
         $filtered = str_replace("\n","<br />\n",$filtered);
         $filtered = str_replace("</pre><pre>","\n", $filtered);
-
         // özelleri ekle, fonksiyonlarý gereksiz kullanýmýný önlemek için önce kontrol et
         if( strpos($filtered, "&lt;".$lang_abbrev_findpage."&gt;") !== FALSE )
                 $filtered = str_replace("&lt;".$lang_abbrev_findpage."&gt;", findpage(), $filtered);
@@ -313,34 +274,32 @@ function filter($raw) {
                 $filtered = str_replace("&lt;".$lang_abbrev_allpages."&gt;", allpages(), $filtered);
         if( strpos($filtered, "&lt;".$lang_abbrev_recentchanges."&gt;") !== FALSE )
                 $filtered = str_replace("&lt;".$lang_abbrev_recentchanges."&gt;", recentchanges(), $filtered);
-
        //html table
        $filtered = preg_replace("/\|\|\|\|(.+)\|\|\|\|/U","<table><tr><td>\\1</td></tr></table>", $filtered);
        $filtered = preg_replace("/(.+)\|\|/U","\\1</td><td>", $filtered);
        $filtered = preg_replace("/<\/table><br \/>\n<table>/","", $filtered);
-       
        //yazi rengi
        $filtered = preg_replace("/\#\#(.+)\#\#/U","<font color=\\1>", $filtered);
        $filtered = preg_replace("/(.+)\#\#/U","\\1</font>", $filtered);
-
-
-        // html güzelliði
-        $filtered = str_replace("</li>","</li>\n",$filtered);
-        $filtered = str_replace("ul>","ul>\n",$filtered);
-        $filtered = str_replace("<br />\n<h","\n<h", $filtered);
-        $filtered = preg_replace("/(<\/h[1-3]>)<br \/>\n/","\\1\n", $filtered);
-        $filtered = str_replace("<p></p>","",$filtered);
-
-        return $filtered;
+       // html güzelliði
+       $filtered = str_replace("</li>","</li>\n",$filtered);
+       $filtered = str_replace("ul>","ul>\n",$filtered);
+       $filtered = str_replace("<br />\n<h","\n<h", $filtered);
+       $filtered = preg_replace("/(<\/h[1-3]>)<br \/>\n/","\\1\n", $filtered);
+       $filtered = str_replace("<p></p>","",$filtered);
+       return $filtered;
 }
 
 // bu programýn TEK çýktýsý!
 function output($data, $file) {
 	global $sitename;
 	global $siteheader;
+	global $bannerwriting;
+	global $bannerimage;
 	global $lang_writingrules;
 	global $encoding;
 	global $author;
+	global $logo;
         $pagename = basename($file);
         $modified = "";
         if( file_exists($file) ) {
@@ -351,20 +310,20 @@ function output($data, $file) {
         $data = str_replace("<!--wikiname-->",$pagename,$data);
         $data = str_replace("<!--sitename-->",$sitename,$data);
         $data = str_replace("<!--siteheader-->",$siteheader,$data);
+        $data = str_replace("<!--bannerwriting-->",$bannerwriting,$data);
+        $data = str_replace("<!--bannerimage-->",$bannerimage,$data);
         $data = str_replace("<!--lastupdate-->",$modified,$data);
+        $data = str_replace("<!--logo-->",$logo,$data);
         $data = str_replace("<!--writingrules-->",$lang_writingrules,$data);
         echo $data;
 }
-
 // sayfa içeriðini al
 function showpage($file) {
         global $template_show_langed;
         global $wiki_get;
         global $lang;
-        
         $content = "";
         $menucontent ="";
-
         // istenen dosyayý al
         $raw = implode("", file($file) );
         // menu dosyasýný al
@@ -372,14 +331,12 @@ function showpage($file) {
         // filtrele!
         $content = filter( $raw ) . $content;
         $menucontent = filter( $raw2 ) . $menucontent;
-
         // sayfa þablonunu al
         $template = implode( "", file($template_show_langed) );
         $whole = str_replace("<!--wikicontent-->",$content,$template);
         $whole = str_replace("<!--menucontent-->",$menucontent,$whole);
         output( $whole, $file );
 }
-
 // eðer sayfa düzenlemek istemiþsek
 function editpage($file) {
         global $template_edit_langed;
@@ -396,10 +353,8 @@ function editpage($file) {
             chmod($file, 0666);
             $already = implode( "", file( "$file" ) );
         }
-        
         //menu dosyasýný aç
         $mainmenu = implode("", file('data/'.$lang.'_menu.txt') );
-        
         if( file_exists( $template_edit_langed ) )
                 $template = file($template_edit_langed);
         else
@@ -414,13 +369,25 @@ function editpage($file) {
         output($whole, $file );
 }
 
+function banner() {
+		global $bannerlink;
+		$fp = fopen("bannercount.txt","r+");
+		$count = fread($fp, filesize("bannercount.txt"));
+		$count++;
+        fclose($fp);
+        $fp = fopen("bannercount.txt", "w+");
+        fputs($fp, $count);
+        fclose($fp);
+        echo "<html><head><meta http-equiv=\"refresh\" content=\"0;URL=".$bannerlink.">";
+        exit;
+}
+
 $edit = False;
 $name = "$data_dir/$page_default";
 
+
 if( isset( $_GET[$wiki_get] ) )
         $name = "$data_dir/".$_GET[$wiki_get];
-// þimdiki sayfanýn adýný artýk biliyoruz
-
 // ufak bir güvenlik düzeltmesi
         $name = str_replace("..","",$name);
         $name = str_replace("%2E%2E","",$name);
@@ -431,14 +398,12 @@ if( isset( $_GET[$wiki_get] ) )
         $name = str_replace(".php3","_php3",$name);
 // düzenlemeden sonra olasý ývýrzývýrlarý yaz
 if( isset($_POST["content"]) ) {
-
 // þifre korumasý
 	if ($HTTP_POST_VARS['mypassword'] !=""){
 	$testpass= crypt($HTTP_POST_VARS['mypassword'], "CW");
 	}else{
 		$testpass="0";
 	}
-	
 	if($testpass == $adminpassword || $passworks=="1"){
         $data = rtrim($_POST["content"])."\n";
         $data2 = rtrim($_POST["menucontent"])."\n";
@@ -466,14 +431,12 @@ if( isset($_POST["content"]) ) {
     }   
 }
 
-
 if( ! file_exists( "$name" ) )
         $edit = True;
 if( $_GET["edit"] == "Yes" )
         $edit = True;
-
+if( $_GET["banner"] == "Yes" ) banner();
     if( $HTTP_POST_VARS['wiki'] == $page_admin ){
-
 	if($HTTP_POST_VARS['password0'] == "" ){
 	//Ýlk defa þifre deðiþtirme modu.
 		if($HTTP_POST_VARS['password1'] != "" && $HTTP_POST_VARS['password2'] != "" ){
@@ -487,7 +450,6 @@ if( $_GET["edit"] == "Yes" )
 	}else{
 	die("$lang_twononemptypassmustequal <p> <a href=\"index.php\">$lang_returnhomepage</a>");
 	}
-		
 	}else{
 	
 		if($adminpassword)
@@ -513,21 +475,16 @@ if( $_GET["edit"] == "Yes" )
 			$fp = fopen("passwd.php","w+");
            	fwrite ($fp, '<? $adminpassword = "'.$adminpassword.'"; $passworks="'.$passworks.'";?>');           	
 			die("$lang_processesok <p> <a href=\"index.php\">$lang_returnhomepage</a>");
-		}
-			
-		
+		}	
 		exit;
 }
 }
-
 // yeniden yükleyi zorla [ by hybrid-2k (Fabio Pereira) ]
-
 header ("Expires: Mon, 26 Jul 1990 05:00:00 GMT");
 header ("Last-Modified: " . gmdate("D, d M Y H:i:s") . " GMT");
 header ("Cache-Control: no-cache, must-revalidate");
 header ("Pragma: no-cache");
 header ("Content-Type: text/html; charset=".$encoding);
-
 
 // düzenliyor muyuz yoksa gösteriyor muyuz?
 if( $edit )

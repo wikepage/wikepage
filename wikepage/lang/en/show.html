@@ -15,52 +15,87 @@
         </head>
         <body>
         
-        <div id="wikepage"><!--sitename--> </div>
-                <div id="header">
-                <!--siteheader-->
+                
 
-                </div>
-                <h3 id="title">[ <a href="index.php?wiki=Find_page&PageContent=<!--wikiname-->"><!--wikiname--></a> ]</h3>
-				<div id="wikicontrols">
-                        <a href="index.php?wiki=<!--wikiname-->&edit=Yes" style="font-weight: bold;">Edit</a>
-                        <span class="dillo"> | </span>
-                        <a href="index.php?wiki=Recent_changes">Recent changes</a>
-                        <span class="dillo"> | </span>
-                        <a href="index.php?wiki=Search">Search</a>
-                        <span class="dillo"> | </span>
-                        <a href="index.php?wiki=All_pages">All pages</a>
-                        <span class="dillo"> | </span>
-                        <a href="index.php?wiki=Admin">Administration</a>
-                        <span class="dillo"> | </span>
-                        <a href="index.php?wiki=Index">Index</a>
-                        <span class="dillo"> | </span>
-                        </div>
-                <hr />
-<div id="contentarea">                
-<table width="90%" border="0" cellspacing="5" cellpadding="0">
-    <tr>
-      <td valign="top" width="20%">
-      <div id="menucontent">
-      <img src="pix.gif" width="150" height="1"> 
+	
+<table border="0" cellpadding="1" cellspacing="1" bgcolor="#316B94" width="750" align="center">
+    <tr> 
+      
+    <td bgcolor="#FFFFFF" width="750"> 
+      <table border="0" cellpadding="0" cellspacing="0" width="750">
+        <tr height="20">     
+        <td width="600"> 
+            <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&edit=Yes" style="font-weight: bold;">Edit</a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=Recent_changes">Recent 
+              changes</a> <span class="dillo"> | </span> <a href="index.php?wiki=Search">Advanced Search</a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=All_pages">All 
+              pages</a> <span class="dillo"> | </span> <a href="index.php?wiki=Admin">Administration</a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=Index">Index</a> 
+              <span class="dillo"> | </span> </div>
+          </td>
+          <td width="150" valign="middle"><div id="wikicontrols">
+            <form method="get" action="index.php">
+              <b>Search:</b>
+              <input type="hidden" name="wiki" value="Search">
+              <input type="hidden" name="PageName" value="">
+              <input type="text" name="PageContent" size="18">
+            </form></div>
+          </td>
+          </tr>
+        </table>
+        
+      <table border="0" cellpadding="0" cellspacing="0" width="750">
+        <tr height="110"> 
+            
+          <td valign="center" width="230" background="<!--logo-->" align="left" height="110">
+          	<div id="wikepage"><!--sitename--></div>
+            <div id="header"><!--siteheader--></div>
+          </td>
+          <td valign="center" align="center" height="110" width="520">
+          <center><small><font color="Silver"><!--bannerwriting--></font><br><a href="index.php?banner=Yes"><img border="0" src="<!--bannerimage-->"></a></small> </center>
+          </td>
+          </tr>
+          <tr height="20"> 
+            
+          <td align="center" width="230">Last update: 
+            <!--lastupdate-->
+          </td>
+            
+          <td width="520"> 
+            <table border="0" cellpadding="0" cellspacing="0" width="520">
+              <tr height="20"> 
+                  
+                <td width="520">
+                  <h2 id="title"><b>[ <a href="index.php?wiki=Find_page&PageContent=<!--wikiname-->">
+                    <!--wikiname-->
+                    </a> ]</b></h2> 
+                </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+          <tr> 
+            
+          <td width="230" valign="top"> 
+            <div id="menucontent">
         <!--menucontent-->
-        </div>
-      </td>
-      <td width="80%">
-      <div id="wikicontent">
-        <!--wikicontent-->
-        </div>
+        </div><p>
+        </p>    
+        </td>
+            
+          <td width="520" valign="top"> 
+            <div id="wikicontent"> 
+              <!--wikicontent-->
+            </div>
+            </td>
+          </tr>
+        </table>
       </td>
     </tr>
   </table>
-  </div>
-                
-                <hr />
-                <div id="footer">
-                <span style="float: right"><form method="post" action="index.php?wiki=Search"><input type="text" name="PageContent" size="30">&nbsp;<input type="submit" value="Search" /></form></span>
-
-                        <p>Last update: <!--lastupdate--><br />
-                         <small>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.1 or any later version published by the <a href="http://www.fsf.org/">Free Software Foundation</a>.</small><br/>
-						 <small>Powered by mysqlless php wikisite-homepage engine: <a href="http://www.cyrocom.com/">Wikepage</a></small><br/></p>
-                </div>
-        </body>
+<div id="footer"><p>
+<div align="center"><font color="Silver"> Powered by mysqlless php wikisite-homepage engine:<a href="http://www.cyrocom.com/"><b>Wikepage!</b></a> </font></div><br>
+<div align="center"><font color="Silver"> Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License,<br> Version 1.1 or any later version published by the <a href="http://www.fsf.org/">Free Software Foundation</a>.</font></div><br>
+</div>               
+</body>
 </html>
