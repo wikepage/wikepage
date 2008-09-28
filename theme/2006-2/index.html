@@ -12,8 +12,6 @@
         <meta name="author" content="<!--author-->" />
         <meta name="keywords" content="<!--wikiname-->" />
         <link rel="stylesheet" type="text/css" href="theme/<!--theme-->/style.css" />
-        <style type="text/css" media="screen">@import "./screen-adv-browsers.css";</style>
-	    <script type="text/javascript" src="theme/<!--theme-->/script.js"></script></head>
         </head>
         <body> 
 
@@ -23,14 +21,14 @@
 
     <div id="top">
     <table width="620" border="0" cellspacing="0" cellpadding="0" align="center"><tr>
-    <td align="left"><div id="wikicontrols"><a href="index.php?wiki=<!--wikiname-->&edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
-              <span class="dillo"> | </span> <a href="index.php?wiki=Recent_changes"><!--lang_recent--> 
-              </a> <span class="dillo"> | </span> <a href="index.php?wiki=Search"><!--lang_advsearch--></a> 
-              <span class="dillo"> | </span> <a href="index.php?wiki=All_pages"><!--lang_all--> 
-              </a> <span class="dillo"> | </span> <a href="index.php?wiki=Admin"><!--lang_admin--></a> 
-              <span class="dillo"> | </span> <a href="index.php?wiki=Index"><!--lang_index--></a> 
-              <span class="dillo"> | </span>
-            </div></td>
+    <td align="left">
+    <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_recent-->"><!--lang_recent--> 
+              </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_advsearch-->"><!--lang_advsearch--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_all-->"><!--lang_all--> 
+              </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_admin-->"><!--lang_admin--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_index-->"><!--lang_index--></a> 
+              <span class="dillo"> | </span> </div></td>
   </tr></table>
             
       <div id="header">
@@ -45,8 +43,8 @@
 		<div id="menu">
         <!--menucontent--><br>
         <form method="get" action="index.php">
-              <b>Search:</b>
-              <input type="hidden" name="wiki" value="Search">
+              <b><!--lang_advsearch--></b>
+              <input type="hidden" name="wiki" value="<!--lang_page_advsearch-->">
               <input type="hidden" name="PageName" value="">
               <input type="text" name="PageContent" size="18">
             </form>
@@ -54,8 +52,8 @@
       </div>
 
       <div id="main">
-      <h1 id="title"><b>[ <a href="index.php?wiki=Search&PageContent=<!--wikiname-->">
-                    <!--wikiname--> </a> ]</b></h1>
+      <h2 id="title"><b>[ <a href="index.php?wiki=<!--lang_page_advsearch-->&PageContent=<!--wikiname-->">
+                    <!--wikiname--></a> ]</b></h2>
       <center><small><font color="Silver"><!--bannerwriting--></font><br><a href="index.php?banner=Yes"><img border="0" src="<!--bannerimage-->"></a></small> </center>
       <br><!--wikicontent-->
       </div>

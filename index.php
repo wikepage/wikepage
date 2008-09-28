@@ -1,6 +1,6 @@
 <?php
-/*		Cyrocom-WIKEPAGE 2006.1b Opus 8 "Fermi-Dirac" Wiki/Personal Site Engine
-		Copyleft (C) 2006, 2005, 2004. Ankara, Turkey.
+/*		Cyrocom-WIKEPAGE 2006.2 Opus 9 "Maxwell-Boltzmann" Wiki/Personal Site Engine
+		Copyleft (C) 2006, 2005, 2004. Ankara, Turkiye.
         http://www.wikepage.org/
 		For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
 
@@ -14,10 +14,11 @@
 //$logo="logo.gif";
 $sitename="My Site";
 $siteheader="Your site's slogan here.";
+$url = "http://www.domain.com/index.php";
 
 // Site Owner
 // ----------
-$author="CyrocomWikepage";
+$author="Wikepage";
 
 // Banner Information
 // ------------------
@@ -28,7 +29,7 @@ $bannerlink="http://www.wikepage.org/";
 $bannerimage="wikebanner.gif";
 
 // Theme
-$theme="2006-1";
+$theme="2006-2";
 
 // Upload config
 // ------------------
@@ -82,8 +83,7 @@ if(strlen($_SESSION['lang']) < 5 && strlen($_SESSION['lang']) <> 0){
 $langu=$lang_def;
 
 //if lng variable is wrong, take default
-@ $fp = fopen("lang/$lang.inc","a", 1);
-if (!$fp){
+if (!file_exists("lang/$lang.inc")){
 	 $langu=$lang_def;
 }
 fclose($fp);
@@ -99,6 +99,8 @@ $string= str_replace("&", "&amp;", $string);
 $string= str_replace("\"", "&quot;", $string);
 $string= str_replace("<", "&lt;", $string);
 $string= str_replace(">", "&gt;", $string);
+$string= str_replace("&laquo;", "&lt;", $string);
+$string= str_replace("&raquo;", "&gt;", $string);
 return $string;
 }
 
@@ -234,9 +236,46 @@ function yonetim() {
         
 return $content;
 }
+function blogout(){
+global $data_dir,$wiki_get;
+	$content = "";
+    $handle = opendir($data_dir);
+    $allpages = array();
+    while( $newfile = readdir($handle) )
+       if(preg_match("/(Entry-[\w]+)/",$newfile) )
+          $allpages[] = $newfile;
+       $max_pages = sizeof($allpages);
+       if( $max_pages > 20 )
+          $max_pages = 20;
+       $counter = 0;
+//       
+       while( $counter < $max_pages ) {
+          $today = array();
+          foreach( $allpages as $page ) {
+              $filetime = filemtime("$data_dir/$page");
+                 $today[] = $page;
+          }
+          $today=array_reverse($today);
+          if( sizeof($today) > 0 ) {
+	         foreach( $today as $page ){
+		        $filem=file("$data_dir/$page");
+				$content .="\n<p><a href=\"index.php?$wiki_get=$page\"><h2>".ltrim(stripslashes($filem[0]),'!')."</h2></a>\n";
+				unset($filem[0]);
+				$raw = implode("", $filem );
+        	// filter!
+        		$raw = filter( $raw, blog );
+				$content .="<i>".strftime("%a, %d %b %Y ", $filetime).date("G:i:s", filemtime("$data_dir/$page")+(3600*$timezone))."</i><br/>\n";
+				$content .=$raw."</p>\n";
+                }}
+                $counter += sizeof($today);
+                $date -= 86400;
+                $day += 1;
+        }
+        return $content;
+	}
 
 // Wiki Style to HTML
-function filter($raw) {
+function filter($raw, $type) {
         global $wiki_get, $langu;
         require ('lang/'.$langu.'.inc');
         $filtered = stripslashes(htmlchars("\n\n".$raw));
@@ -244,21 +283,29 @@ function filter($raw) {
         $filtered = str_replace("\r\n","\n",$filtered);	
         // [ url | link ] outlinks
         $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
-        $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\">\\2</a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\|([\w\:\#\- ]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+        $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"index.php?$wiki_get=\\1\">\\2</a>", $filtered);
         // linked picture [ url | [picture] ]  
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"\\3\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"data/files/\\3\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
         $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"data/files/\\2\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
   		// pictures [ url ]
         $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+\.(png|gif|jpg))\]/","<img src=\"\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
   		$filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"data/files/\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
         // plain URLs
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\|([\w\:\#\- ]+)\]/i","<a href=\"\\1\">\\3</a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
         // []'ed words
         $filtered = preg_replace("/\[([\w]+)\]/","<a href=\"index.php?$wiki_get=\\1\">\\1</a>", $filtered);
         // Headers <h1><h2><h3>
-        $filtered = preg_replace("/\n(!!!)(.+)\n/","</p>\n<h3>\\2</h3>\n<p>",$filtered);
+        if ($type=="blog"){
+        $filtered = preg_replace("/\n(!!!)(.+)\n/","</p>\n<b>\\2</b>\n<p>",$filtered);
+        $filtered = preg_replace("/\n(!!)(.+)\n/","</p>\n<b>\\2</b>\n<p>",$filtered);
+        $filtered = preg_replace("/\n(!)(.+)\n/","</p>\n<b>\\2</b>\n<p>",$filtered);
+    	}else{
+	    $filtered = preg_replace("/\n(!!!)(.+)\n/","</p>\n<h3>\\2</h3>\n<p>",$filtered);
         $filtered = preg_replace("/\n(!!)(.+)\n/","</p>\n<h2>\\2</h2>\n<p>",$filtered);
         $filtered = preg_replace("/\n(!)(.+)\n/","</p>\n<h1>\\2</h1>\n<p>",$filtered);
+    	}
         // Decorations (bold, italic, underlined, boxed)
         $filtered = preg_replace("/\*\*(.+)\*\*/U","<strong>\\1</strong>", $filtered);
         $filtered = preg_replace("/__(.+)__/U","<u>\\1</u>", $filtered);
@@ -286,6 +333,8 @@ function filter($raw) {
                 $filtered = str_replace("&lt;".$lang['abbrev_allpages']."&gt;", allpages(), $filtered);
         if( strpos($filtered, "&lt;".$lang['abbrev_recentchanges']."&gt;") !== FALSE )
                 $filtered = str_replace("&lt;".$lang['abbrev_recentchanges']."&gt;", recentchanges(), $filtered);
+        if( strpos($filtered, "&lt;".$lang['blog_out']."&gt;") !== FALSE )
+                $filtered = str_replace("&lt;".$lang['blog_out']."&gt;", blogout(), $filtered);
        	//html table
        	$filtered = preg_replace("/\|\|\|\|(.+)\|\|\|\|/U","<table><tr><td>\\1</td></tr></table>", $filtered);
        	$filtered = preg_replace("/(.+)\|\|/U","\\1</td><td>", $filtered);
@@ -322,6 +371,14 @@ function output($data, $file) {
         $data = str_replace("<!--lang_index-->",$lang['index'],$data);
         $data = str_replace("<!--lang_lastupdate-->",$lang['lastupdate'],$data);
         $data = str_replace("<!--lang_editing-->",$lang['editing'],$data);
+        //and pages
+        $data = str_replace("<!--lang_page_recent-->",$lang['page_recent'],$data);
+        $data = str_replace("<!--lang_page_advsearch-->",$lang['page_advsearch'],$data);
+        $data = str_replace("<!--lang_page_all-->",$lang['page_all'],$data);
+        $data = str_replace("<!--lang_page_admin-->",$lang['page_admin'],$data);
+        $data = str_replace("<!--lang_page_index-->",$lang['page_index'],$data);
+        $data = str_replace("<!--lang_lastupdate-->",$lang['lastupdate'],$data);
+        $data = str_replace("<!--lang_editing-->",$lang['editing'],$data);
         if($passworks == "0"){
 	        $buf=$lang['pass']."<input type=\"password\" name=\"mypassword\">";
         }else{
@@ -343,6 +400,11 @@ function output($data, $file) {
         $data = str_replace("<!--lastupdate-->",$modified,$data);
         $data = str_replace("<!--logo-->",$logo,$data);
         $data = str_replace("<!--writingrules-->",$lang['writingrules'],$data);
+        $data = str_replace("<!--lang_newentrysubject-->",$lang['blogsubject'],$data);
+        $data = str_replace("<!--lang_newentrypage-->",$lang['blogpage'],$data);
+        
+
+
         echo $data;
 }
 // load page content
@@ -365,22 +427,35 @@ function showpage($file) {
 }
 
 function editpage($file) {
-        global $path, $page_admin, $langu, $lang;
+        global $path,$data_dir, $page_admin, $langu, $lang;
         $already = "";
         $mainmenu = "";
-        if( file_exists( $file ) )
-            $already = implode( "", file( "$file" ) );
-        //load menu file
-        $mainmenu = implode("", file('data/'.$langu.'_menu.txt') );
-        if( file_exists( "edit.html" ) )
-                $template = file("edit.html");
-        else
-                echo " (Edit) ".$lang['filenotfound']."<br />\n";
-        $template = implode( "", $template );
+        $filer="$data_dir/".$lang['blog_input_page'];
+        if (substr_count($file, "Entry-") != 0 or $file == $filer ){
+	      if($file != $filer){
+		      if( file_exists( $file ) ) $already = file( "$file" );
+	      }
+         if( file_exists( "newentry.html" ) )
+                 $template = file("newentry.html");
+         else
+                 echo " (Newentry) ".$lang['filenotfound']."<br />\n";
+         $template = implode( "", $template );
+         $whole = str_replace("<!--subject-->",ltrim(stripslashes($already[0]),'!'),$template);
+         $whole =str_replace("<!--already-->",stripslashes(implode("",array_slice($already,1))),$whole);
+	    }else{
+		 if( file_exists( $file ) ) $already = implode( "", file( "$file" ) );
+         //load menu file
+         $mainmenu = implode("", file('data/'.$langu.'_menu.txt') );
+         if( file_exists( "edit.html" ) )
+                 $template = file("edit.html");
+         else
+                 echo " (Edit) ".$lang['filenotfound']."<br />\n";
+         $template = implode( "", $template );
+         $whole =str_replace("<!--mainmenu-->",stripslashes($mainmenu),$template);
+         $whole =str_replace("<!--already-->",stripslashes($already),$whole);
+    	}
         $uploadcode = "Select file for upload:<input type=\"file\" name=\"userfile\"><input type=\"hidden\" name=\"wiki\" value=\"".$pagename."\">";
-        $whole =str_replace("<!--uploadsystem-->",stripslashes($uploadcode),$template);
-        $whole =str_replace("<!--already-->",stripslashes($already),$whole);
-        $whole =str_replace("<!--mainmenu-->",stripslashes($mainmenu),$whole);
+        $whole =str_replace("<!--uploadsystem-->",stripslashes($uploadcode),$whole);
         // locking file
         if( file_exists($file) && !is_writeable($file) )
                 //note s modify!
@@ -401,12 +476,120 @@ function banner() {
         exit;
 }
 
+function htmltotxt($string) {
+	$search = array ('@<script[^>]*?>.*?</script>@si', // Strip out javascript
+	'@<[\/\!]*?[^<>]*?>@si',          // Strip out HTML tags
+	'@([\r\n])[\s]+@',                // Strip out white space
+	'@&(quot|#34);@i',                // Replace HTML entities
+	'@&(amp|#38);@i','@&(lt|#60);@i','@&(gt|#62);@i','@&(nbsp|#160);@i','@&(iexcl|#161);@i','@&(cent|#162);@i','@&(pound|#163);@i','@&(copy|#169);@i','@&#(\d+);@e');
+	$replace = array ('','','\1','"','&','<','>',' ',chr(161),chr(162),chr(163),chr(169),'chr(\1)');
+$string = preg_replace($search, $replace, $string);
+return $string;
+}
+
 $edit = False;
 $name = "$data_dir/$page_default";
 
+if (isset($_GET['rss']))
+ {
+  $rssname=$_GET['rss'];
+  header("Content-type: text/xml");
+  echo '<?xml version="1.0" encoding="'.$encoding.'"?>';
+  ?>
+	<rss version="0.91">
+	<channel>
+	<title><?php echo $sitename; ?></title>
+	<link><?php echo $url; ?></link>
+<description><?php echo $siteheader; ?></description>
+<language><?php echo $langu; ?></language>
+<?php
+  if ($rssname=="blog" or $rssname=="Blog")
+{
+ $content = "";
+        $handle = opendir($data_dir);
+        $allpages = array();
+        while( $newfile = readdir($handle) )
+                if(preg_match("/(Entry-[\w]+)/",$newfile) )
+                        $allpages[] = $newfile;
+        $max_pages = sizeof($allpages);
+        if( $max_pages > 20 )
+                $max_pages = 20;
+        $counter = 0;
+        while( $counter < $max_pages ) {
+                $today = array();
+                foreach( $allpages as $page ) {
+                        $filetime = filemtime("$data_dir/$page");
+                                $today[] = $page;
+                }
+                $today=array_reverse($today);
+                if( sizeof($today) > 0 ) {
+	                foreach( $today as $page ){
+		                $filem=file("$data_dir/$page");
+		            $raw = implode("", $filem );
+        			// filter!
+        			$raw = filter( $raw );
+	                $content .="<item>";
+					$content .="<title>".htmlchars(ltrim(stripslashes($filem[0]),'!'))."</title>";
+					$content .="<description>".htmlchars(htmltotxt($raw))."</description>";
+					$content .="<link>".$url."?".$wiki_get."=".$page."</link>";
+					$content .="<pubDate>".strftime("%a, %d %b %Y ", $filetime).date("G:i:s", filemtime("$data_dir/$page")+(3600*$timezone))." +0000</pubDate>";
+					$content .="</item>";
+                }}
+                $counter += sizeof($today);
+                $date -= 86400;
+                $day += 1;
+        }
+        $content.="</channel></rss>";
+        echo $content;
+}
+else{
+
+        $content = "";
+        $handle = opendir($data_dir);
+        $allpages = array();
+        while( $newfile = readdir($handle) )
+                if(preg_match("/([\w]+)/",$newfile) )
+                        $allpages[] = $newfile;
+        $max_pages = sizeof($allpages) / 3;
+        if( $max_pages < 20 )
+                $max_pages = 20;
+        $counter = 0;
+        $date = mktime(12,0,0,date('m'),date('d'));
+        $day = 0;
+        while( $counter < $max_pages && $day < 40 ) {
+                $today = array();
+                foreach( $allpages as $page ) {
+                        $filetime = filemtime("$data_dir/$page");
+                        if( (($filetime + 43199) > $date) && (($filetime - 43200) < $date) )
+                                $today[] = $page;
+                }
+                if( sizeof($today) > 0 ) {
+	                foreach( $today as $page ){
+		            $raw = implode("", file("$data_dir/$page") );
+        			// filter!
+        			$raw = filter( $raw );
+	                $content .="<item>";
+					$content .="<title>$page</title>";
+					$content .="<description>".substr(htmlchars(htmltotxt($raw)), 0, 230)."...</description>";
+					$content .="<link>".$url."?".$wiki_get."=".$page."</link>";
+					$content .="<pubDate>".strftime("%a, %d %b %Y ", $date).date("G:i:s", filemtime("$data_dir/$page")+(3600*$timezone) )." +0000</pubDate>";
+					$content .="</item>";
+                }}
+                $counter += sizeof($today);
+                $date -= 86400;
+                $day += 1;
+        }
+        $content.="</channel></rss>";
+        echo $content;
+}
+  die();
+ }
 
 if( isset( $_GET[$wiki_get] ) )
         $name = "$data_dir/".$_GET[$wiki_get];
+if(!$adminpassword){
+	$name = "$data_dir/".$lang['page_admin'];
+}
 // little security enchancement
         $name = str_replace("..","",$name);
         $name = str_replace("%2E%2E","",$name);
@@ -429,12 +612,34 @@ if( isset($_POST["content"]) ) {
 	}
 	if($testpass == $adminpassword || $passworks=="1"){
 		if( !file_exists( $name )){
-	        //thanks to M.T.Sandikkaya for path correction
+			$dirname= "$data_dir/".$lang['blog_input_page'];
+	        if ($name == $dirname){
+	    	//here
+	    	$date = date("Y-m-d_H-i-s");
+	    	$namePath = ".$path/$data_dir/Entry-".$date;
+	    	$name ="$data_dir/Entry-".$date;
+		    }else{
+			//thanks to M.T.Sandikkaya for path correction
             $namePath = ".$path/$name";
+        	}
             @touch($namePath);
             chmod($name, 0666);
             $already = implode( "", file( "$name" ) );
         }
+        if ( $_POST["blogedit"]== "yes"){
+        $data = rtrim($_POST["content"])."\n";
+        $data2 = rtrim($_POST["subject"])."\n";
+        // join and write
+        $handle = fopen("$name",'w');
+        $data = "!".$data2.$data;
+        if( ! fwrite($handle, $data ) ) {
+                $data_perm = decoct(fileperms($name)) % 1000;
+                $data_owner = (fileowner($name));
+                $data_group = (filegroup($name));
+                die($lang['cantwriteinpage']);
+        }
+        fclose($handle);
+	    }else{
         $data = rtrim($_POST["content"])."\n";
         $data2 = rtrim($_POST["menucontent"])."\n";
         // write file first
@@ -456,7 +661,7 @@ if( isset($_POST["content"]) ) {
                 die($lang['cantwriteinpage']);
         }
         fclose($handle);
-        
+    }
         //if upload something, then do!
 		$pagename = basename($name);
         $filesize = $_FILES['userfile']['size']; // Get file size (in bits)
@@ -473,14 +678,16 @@ if( isset($_POST["content"]) ) {
 		}elseif($filesize > $maxlimit){ // File is more than maximum
    			$error .= $lang['uploadbig'];
 		}
-
-		$file_ext = preg_split("/./",$filename); // Split filename at period (name.ext)
-		$allowed_ext = preg_split("/,/",$allowed_ext); // Create array of extensions
-		foreach($allowed_ext as $ext){
-   		if($ext==$file_ext[1]) $match = "1"; // File is allowed
-		}
-
-		// File extension not allowed
+		$file_ext = explode(".", $filename); // Split filename at period (name.ext). Use explode since it's faster then preg_split. //060218 Maz
+		$last_token = count($file_ext)-1; // Find the last token in the $file_ext array. Filename can contain "." //060218 Maz
+		$allowed_ext = explode(",", $allowed_ext); // Create array of extensions
+ 		foreach($allowed_ext as $ext){
+	   		if(strcmp($ext, $file_ext[$last_token]) == 0) {
+				$match = "1"; // File is allowed
+				break; // abort loop if match is found //060218 Maz
+			}
+ 		}
+ 		// File extension not allowed
 		if(!$match){
    		$error .= $lang['uploadnotallowed'];
 		}
