@@ -1,9 +1,19 @@
 ! Welcome to [Wikepage].
 Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software derived from Tipiwiki2.
 
-Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wiksis.
- ##red##**IMPORTANT:** Please read documentation first, before building your site! (in doc folder)##
-!! Features added to Tipiwiki2
+Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wikepage.
+ ##red##**IMPORTANT:** Please read documentation first,
+ before building your site! (in doc folder)##
+
+!! **2005.2** : Features added to 2005.1
+* Improved css style,
+* Wiki-editable left side menu,
+* Multilanguage site support,
+* Wikepage visuals for your site: [cyrocomwike.gif], [ilove.gif], [wike.gif]
+
+
+
+!! **2005.1** : Features added to Tipiwiki2
 * New css style,
 * Table support,
 * \'_\' type Wiki word support,

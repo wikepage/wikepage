@@ -6,7 +6,7 @@ Cyrocom Wiki & Kişisel Sayfa Yazılımı
  Û  Û  Û  Û  Û Û  Û    Û  Û Û  Û Û    Û   
  Û  Û  Û  Û  ÛÛ   ÛÛÛ  ÛÛÛÛ ÛÛÛÛ Û ÛÛ ÛÛÛ 
  Û  Û  Û  Û  Û Û  Û    Û    Û  Û Û  Û Û   
-  ÛÛ ÛÛ  ÛÛÛ Û  Û ÛÛÛÛ Û    Û  Û ÛÛÛÛ ÛÛÛÛ  Sürüm 2005.1  (Kod: Stranski-Krastanov)
+  ÛÛ ÛÛ  ÛÛÛ Û  Û ÛÛÛÛ Û    Û  Û ÛÛÛÛ ÛÛÛÛ  Sürüm 2005.2  (Kod: Volmer-Weber)
 
 ----------------------------------------------------------------------------------
 Wikepage yazılımı, paylaşma amacıyla yapılmış, herkesin sayfa yapabilmesi ve
@@ -28,6 +28,10 @@ Wikepage iki moda sahiptir:
  ise zaten işinizi biliyorsunuz demektir. Ayarını yapın :)
 -İstiyorsanız duzenle.html ve goster.html uzerinde değişiklikler yapıp tasarımı
  değiştirebilirsiniz.
+-Sitenize yeni dil eklemek istiyorsanız, http://www.cyrocom.com/download adresinden indirin
+ ve sitenizin taban dizinine açın. index.php dosyasında ki tanımlı dil (default language) ayarını yapın
+ (normalde ingilizce). Artık sitenizde [index.php?lng=en|English] [index.php?lng=tr|Turkce] turu
+ linklerle diller arası geçiş yapabilirsiniz.
 -Yönetim linkine girip şifre belirleyin. 
 -Siteniz Wiki modunda çalışmaya başlamıştır.
 -Sitenizin içeriğinin bu şifrenizle korunması için (Kişisel moda geçiş)tekrar yönetime

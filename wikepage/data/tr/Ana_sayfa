@@ -1,10 +1,16 @@
-! [Wikepage] 2005.1\'e hoþgeldiniz.
+! [Wikepage] 2005.2\'e hoþgeldiniz.
 Bu wiki yazýlýmýný denemeyi seçtiniz.. Tebrikler! çünkü wikepage __ilk ve tek türkçe wiki yazýlýmýdýr__.
-Wiksis\'i biliyorsanýz þunu söyleyebiliriz ki Wikepage 2005.1, wiksis\'in yeni ve geliþtirilmiþ sürümüdür. Wikepage 2005.1 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
+Wiksis\'i biliyorsanýz þunu söyleyebiliriz ki Wikepage 2005.2, wiksis\'in yeni ve geliþtirilmiþ sürümüdür. Wikepage 2005.2 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
 
  ##red##**DÝKKAT:** Sitenizi oluþturmaya baþlamadan önce dökümantasyonu okuyun!(doc dizininde)##
 
-!! Özellikleri
+!! **2005.2** : 2005.1\'e eklenen özellikler:
+* Geliþtirilmiþ css stili,
+* Wiki-düzenlenebilir sol menü,
+* Çokludilli site desteði,
+* Siteniz için wikepage ikonlarý: [cyrocomwike.gif], [ilove.gif], [wike.gif]
+
+!! **2005.1** : Özellikleri
 * Çoklu dil desteði,
 * Wiki ve Kiþisel site modu,
 * Geliþmiþ [Wiki_stil] desteði,

@@ -6,6 +6,10 @@ TD {
 
 body {
         background-color: #D6DEEC;
+        background-image: url(earth.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: left top;
         color: #000;
         font: 8pt Tahoma, Verdana, Arial, Helvetica;
 }
@@ -68,7 +72,7 @@ img.wikiimage {
 }
 
 #wikicontent {
-        margin: 0px 5%;
+        margin: 0px 0px;
         padding: 2px 5px;
         border: 1px solid #eee;
         background-color: #f5f5f5;
@@ -113,6 +117,52 @@ img.wikiimage {
   background-color: white;
 }
 
+#menucontent {
+        margin: 0px 0px;
+        padding: 2px 5px;
+        border: 1px solid #eee;
+        background-color: #f5f5f5;
+        color: #000;
+}
+
+#menucontent a {
+        color: #00008b;
+        text-decoration: underline,bold;
+        background-color: #f5f5f5;
+}
+
+#menucontent a:visited {
+        color: #00008b;
+        text-decoration: none;
+        background-color: #f5f5f5;
+}
+
+#menucontent a:hover {
+        color: #00f;
+        background-color: #f5f5f5;
+}
+
+#menucontent span.box {
+        border: 1px solid #ddd;
+        padding: 1px 2px;
+        margin: 1px;
+}
+
+#menucontent pre {
+        border: 1px solid #eee;
+        background-color: #fff;
+        padding: 2px 5px;
+        font-family: monospace;
+}
+
+
+#menucontent table {
+  background-color: #eee;
+}
+#menucontent td {
+  background-color: white;
+}
+
 #footer {
         font-size: 8pt;
         margin: 0px 5%;
@@ -132,3 +182,7 @@ img.wikiimage {
         color: black;
 }
 
+#contentarea {
+	    font-size: 8pt;
+        margin: 0px 5%;
+}

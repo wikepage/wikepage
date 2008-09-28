@@ -4,7 +4,7 @@
 		Copyright (C) 2005 Cyrocom.com, Ankara, Turkey. All rights reserved.(R)
         http://www.cyrocom.com/
 
-                This program is free software; you can redistribute it and/or modify it under the terms of the GNU
+        This program is free software; you can redistribute it and/or modify it under the terms of the GNU
         General Public License as published by the Free Software Foundation; either version 2 of the License,
         or (at your option) any later version.
         This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even
@@ -15,48 +15,46 @@
 
 /*
 Cyrocom WikSis (Wiki Sistemi)
-Copyright (C) 2004 CyrocomGPL'ed,  | Licence: GPL
+Copyright (C) 2004 CyrocomGPL'ed, GPL
 */
 
 /*
-Tikiwiki2 : Copyright (C) 2003 All rights reserved.(R)
-Author: Andreas Zwinkau | eMail: andi@buxach.de | Date: 14/6/2003 | Licence: GPL
+Tikiwiki2 : Copyright (C) 2003
+Andreas Zwinkau, andi@buxach.de, GPL
 */
 
 // ----------------------------------
-// Site Information (Site bilgisi)
+// Site Information
 // ----------------------------------
 // 
-$sitename="Wikepage 2005.1";
+$sitename="Wikepage 2005.2";
 $siteheader="Your site's slogan here.";
 $author="CyrocomWikepage";
 
-// ----------------------------------
-// Language (Dil)
-// ----------------------------------
-// en: English, tr: Türkçe
-$lang="en";
+error_reporting(1);
+session_start();
+
 
 // ----------------------------------
-// Options (Ayarlar)
+// Default Language
+// ----------------------------------
+// en: English, tr: Türkçe
+$lang_def="en";
+
+
+// ----------------------------------
+// Options
 // ----------------------------------
 
 // Timezone according to Greenwich. For US EST:-6, CST:-7, MST:-8, PST:-9, Alaskan Time:-10, Hawaiian Time:-11
-// Greenwich'e göre saat ayarý, Türkiye için 2 olmalý
+// Türkiye için 2 olmalý
 $timezone = -6;
 
 // Wiki get, don't change. Change will need changes in lang files
-// Wiki çaðýrma ismi, deðiþtirmeyiniz, Deðiþtirme dil dosyalarýnda deðiþim gerektirir.
+
 $wiki_get = "wiki";
 
 // ++++++++ DON'T MAKE CHANGES BELOW HERE ! (unless you're a developer) ++++++++ 
-// ++++++++ BURADAN ÝTÝBAREN DEÐÝÞÝKLÝK YAPMAYIN ! (yazýlýmcý deðilseniz) ++++++++
-                
-include('passwd.php');
-include('lang/'.$lang.'/'.$lang.'.inc');
-$version_info = explode('.', phpversion());
-$template_show_langed='lang/'.$lang.'/'.$template_show;
-$template_edit_langed='lang/'.$lang.'/'.$template_edit;
 
 // PHP5 ise SCRIPT_FILENAME DEÐÝÞKENÝ kullan
 if ($version_info[0] < 5 ) {
@@ -74,6 +72,33 @@ if ($version_info[0] < 4 || ($version_info[0] > 3 && $version_info[1] < 1)) {
         $_POST = $HTTP_POST_VARS;
         $_GET = $HTTP_GET_VARS;
 }
+
+if( isset( $_GET["lng"] ) ){
+$lang=$_GET["lng"];
+session_register("lang");
+	}
+
+if(!session_is_registered("lang")){
+$lang=$lang_def;
+session_register("lang");
+}
+
+$lang=$HTTP_SESSION_VARS["lang"];
+
+//eðer biri lng'yi hatalý döndürürse default dile dön
+@ $fp = fopen("lang/$lang/$lang.inc","a", 1);
+if (!$fp){
+	 $lang=$lang_def;
+}
+fclose($fp);
+               
+include('passwd.php');
+include('lang/'.$lang.'/'.$lang.'.inc');
+$version_info = explode('.', phpversion());
+$template_show_langed='lang/'.$lang.'/'.$template_show;
+$template_edit_langed='lang/'.$lang.'/'.$template_edit;
+
+
 
 // bazý özeller
 
@@ -237,6 +262,7 @@ function filter($raw) {
 
         // [ url | link ] dýþ linkler
         $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\">\\3</a>", $filtered);
+        $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\">\\2</a>", $filtered);
 
         // resimler [ url ]
         $filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"\\1\" class=\"wikiimage\" />",$filtered);
@@ -334,16 +360,23 @@ function output($data, $file) {
 function showpage($file) {
         global $template_show_langed;
         global $wiki_get;
+        global $lang;
+        
         $content = "";
+        $menucontent ="";
 
         // istenen dosyayý al
         $raw = implode("", file($file) );
+        // menu dosyasýný al
+        $raw2 = implode("", file('data/'.$lang.'_menu.txt') );
         // filtrele!
         $content = filter( $raw ) . $content;
+        $menucontent = filter( $raw2 ) . $menucontent;
 
         // sayfa þablonunu al
         $template = implode( "", file($template_show_langed) );
         $whole = str_replace("<!--wikicontent-->",$content,$template);
+        $whole = str_replace("<!--menucontent-->",$menucontent,$whole);
         output( $whole, $file );
 }
 
@@ -352,7 +385,9 @@ function editpage($file) {
         global $template_edit_langed;
         global $path;
         global $page_admin;
+        global $lang;
         $already = "";
+        $mainmenu = "";
         if( file_exists( $file ) )
             $already = implode( "", file( "$file" ) );
         if( !file_exists( $file ) ){
@@ -361,12 +396,17 @@ function editpage($file) {
             chmod($file, 0666);
             $already = implode( "", file( "$file" ) );
         }
+        
+        //menu dosyasýný aç
+        $mainmenu = implode("", file('data/'.$lang.'_menu.txt') );
+        
         if( file_exists( $template_edit_langed ) )
                 $template = file($template_edit_langed);
         else
                 echo " (".$template_edit_langed.") ".$lang_templatenotfound."<br />\n";
         $template = implode( "", $template );
         $whole =str_replace("<!--already-->",stripslashes($already),$template);
+        $whole =str_replace("<!--mainmenu-->",stripslashes($mainmenu),$whole);
         // dosya kilitlenecek
         if( !is_writeable($file) )
                 // s modifiyesini not et !
@@ -401,8 +441,20 @@ if( isset($_POST["content"]) ) {
 	
 	if($testpass == $adminpassword || $passworks=="1"){
         $data = rtrim($_POST["content"])."\n";
+        $data2 = rtrim($_POST["menucontent"])."\n";
+        // önce dosyayý yaz
         $handle = fopen("$name",'w');
         if( ! fwrite($handle, $data ) ) {
+                $data_perm = decoct(fileperms($name)) % 1000;
+                $data_owner = (fileowner($name));
+                $data_group = (filegroup($name));
+                die("$lang_cantwriteinpage");
+        }
+        fclose($handle);
+        // sonra menüyü...
+         $menufile = 'data/'.$lang.'_menu.txt';
+         $handle = fopen("$menufile",'w');
+        if( ! fwrite($handle, $data2 ) ) {
                 $data_perm = decoct(fileperms($name)) % 1000;
                 $data_owner = (fileowner($name));
                 $data_group = (filegroup($name));
