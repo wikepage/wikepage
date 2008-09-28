@@ -94,11 +94,10 @@ function getObjects() {
 }
 //-->
 </script>
-	</head>
-        <body onLoad="buildTOC()">
-    <div id="top">
-    <table width="620" border="0" cellspacing="0" cellpadding="0" align="center"><tr>
-    <td align="left">
+</head><body onLoad="buildTOC()">
+  <div id="top">
+    <table width="420" border="0" cellspacing="0" cellpadding="0" align="right"><tr>
+    <td bgcolor="#c60000" align="center">
     <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&amp;edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
               <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_recent-->"><!--lang_recent--> 
               </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_advsearch-->"><!--lang_advsearch--></a> 
@@ -106,13 +105,11 @@ function getObjects() {
               </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_admin-->"><!--lang_admin--></a> 
               <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_index-->"><!--lang_index--></a> 
               <span class="dillo"> | </span> </div></td>
-  </tr></table>
-            
-      <div id="header">
-        <div id="banner"><!--sitename--></div>
-        <small><font color="silver"><!--siteheader--></font></small>
-      </div>
-    </div>
+  </tr>
+  </table>
+
+    <div id="banner"><!--sitename-->
+    <small><small><font color="#888888"><!--siteheader--></font></small></small></div>
 
     <div id="container">
             
@@ -129,10 +126,9 @@ function getObjects() {
       </div>
 
       <div id="main">
-      <b>[ <a href="index.php?wiki=<!--lang_page_advsearch-->&amp;PageContent=<!--wikiname-->">
-                    <!--wikiname--></a> ]</b>
+      <!--wikicontent--><br />
       <center><small><font color="Silver"><!--bannerwriting--></font><br /><a href="index.php?banner=Yes"><img border="0" alt="banner" src="<!--bannerimage-->" /></a></small></center>
-      <br /><!--wikicontent-->
+      
       </div>
 
       <div id="footer">

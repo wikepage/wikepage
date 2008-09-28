@@ -1,9 +1,9 @@
 <?php
 /*
- Cyrocom Wikepage 2006-2 English Language File
+ Wikepage 2007-1 English Language File
  by Sefer Bora LISESIVDIN
 */
-$encoding = "iso-8859-1";
+$encoding = "utf-8";
 $data_dir = "data/en";
 $page_default = "Index";
 $page_admin = "Admin";
@@ -70,10 +70,14 @@ $lang['blog_out']="blog_view";
 $lang['blog_input_page']="Blog_Entry";
 $lang['activate_TOC']="Activate Table of Contents";
 $lang['TOC']="<input type =\"button\" value =\"Table of Contents\" onclick =\"toggleTOC()\"><div id=TOC></div>";
+$lang['nonews']="No News Found";
+$lang['xmlerror']="XML error";
+$lang['atline']="at line";
+$lang['couldnotxml']="could not open XML input";
 $lang['copyleft'] = "<p>Permission is granted to copy, distribute and/or modify this document under the terms of the
  GNU Free Documentation License, Version 1.1 or any later version published by the <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a>. If you don't agree please don't add content. <br />
- <small>Powered by databaseless php wikisite-homepage engine: <a href=\"http://www.cyrocom.com/\">Wikepage</a></small><br />";
+ <small>Powered by databaseless php wiki-blog-rss reader hybrid engine: <a href=\"http://www.wikepage.org/\">Wikepage</a></small><br />";
 $lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<li>One * before a line puts bullets in front of it </li>
 						<li>Links: [Link_type], [http://externallink.com|click] or [http://externallink.com|image.gif] or type URL. For more read Sandbox</li>
