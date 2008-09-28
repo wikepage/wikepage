@@ -50,7 +50,14 @@ function buildTOC() {
       tagDetail[j] = allTags[i].tagName + "|";
       tagDetail[j] = tagDetail[j]+aNum + "|";
         if (allTags[i].childNodes.length > 0) {
-          tagDetail[j] = tagDetail[j]+allTags[i].childNodes[0].nodeValue
+        	if(allTags[i].childNodes[0].nodeValue == null)
+        	{
+        		tagDetail[j] = tagDetail[j]+allTags[i].childNodes[1].nodeValue;
+        	}
+        	else
+        	{
+          	tagDetail[j] = tagDetail[j]+allTags[i].childNodes[0].nodeValue;
+          }
       }
       ;
       j = j + 1;
@@ -97,8 +104,8 @@ function getObjects() {
 </head><body onLoad="buildTOC()">
   <div id="top">
     <table width="420" border="0" cellspacing="0" cellpadding="0" align="right"><tr>
-    <td bgcolor="#c60000" align="center">
-    <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&amp;edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
+    <td bgcolor="#CC7E02" align="center">
+    <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&amp;edit=Yes" style="font-weight: bold;" rel="nofollow"><!--lang_edit--></a> 
               <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_recent-->"><!--lang_recent--> 
               </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_advsearch-->"><!--lang_advsearch--></a> 
               <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_all-->"><!--lang_all--> 
@@ -115,7 +122,7 @@ function getObjects() {
             
       <div id="sidebar">
 		<div id="menu">
-        <br/><!--TOC--><!--menucontent--><br />
+        <br /><!--menucontent--><br />
         <form method="get" action="index.php">
               <b><!--lang_advsearch--></b>
               <input type="hidden" name="wiki" value="<!--lang_page_advsearch-->" />
@@ -124,8 +131,7 @@ function getObjects() {
             </form>
         </div>
       </div>
-
-      <div id="main">
+      <div id="main"><!--lang_TOC--><br />
       <!--wikicontent--><br />
       <center><small><font color="Silver"><!--bannerwriting--></font><br /><a href="index.php?banner=Yes"><img border="0" alt="banner" src="<!--bannerimage-->" /></a></small></center>
       
@@ -139,4 +145,4 @@ function getObjects() {
 
     </div>
 
-  </body></html>
+  </div></body></html>
