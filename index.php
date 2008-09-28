@@ -1,5 +1,5 @@
 <?php
-/*		Cyrocom-WIKEPAGE 2006.1 Opus 6 "Fermi-Dirac" Wiki/Personal Site Engine
+/*		Cyrocom-WIKEPAGE 2006.1a Opus 7 "Fermi-Dirac" Wiki/Personal Site Engine
 		Copyleft (C) 2006, 2005, 2004. Ankara, Turkey.
         http://www.wikepage.org/
 		For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
@@ -39,7 +39,6 @@ $allowed_ext = "jpg,gif,png,jpeg,pdf,doc,xls,ppt,odb,odm,odt,ods,odp";
 // Allow file overwrite? yes/no 
 $overwrite = "no"; 
 
-// Debug mode --> 0
 error_reporting(1);
 
 // Default Language
@@ -72,20 +71,15 @@ if ($version_info[0] < 4 || ($version_info[0] > 3 && $version_info[1] < 1)) {
 }
 
 if( isset( $_GET["lng"] ) ){
-$lang=$_GET["lng"];
-session_register("lang");
-	}
-
-if(!session_is_registered("lang")){
-if($lang){
-	$langu=$lang;
-}else{
-	$langu=$lang_def;
-}
-session_register("lang");
+	$lang_def=$_GET["lng"];
+	$_SESSION['lang'] = $lang_def;
 }
 
-$langu=$HTTP_SESSION_VARS["lang"];
+if(strlen($_SESSION['lang']) < 5 && strlen($_SESSION['lang']) <> 0){
+	$lang_def = $_SESSION["lang"];
+}
+
+$langu=$lang_def;
 
 //if lng variable is wrong, take default
 @ $fp = fopen("lang/$lang.inc","a", 1);
@@ -436,8 +430,8 @@ if( isset( $_GET[$wiki_get] ) )
         $name = str_replace(".php3","_php3",$name);
 if( isset($_POST["content"]) ) {
 // password
-	if ($HTTP_POST_VARS['mypassword'] !=""){
-	$testpass= crypt($HTTP_POST_VARS['mypassword'], "CW");
+	if ($_POST['mypassword'] !=""){
+	$testpass= crypt($_POST['mypassword'], "CW");
 	}else{
 		$testpass="0";
 	}
@@ -512,15 +506,15 @@ if( ! file_exists( "$name" ) )
 if( $_GET["edit"] == "Yes" )
         $edit = True;
 if( $_GET["banner"] == "Yes" ) banner();
-    if( $HTTP_POST_VARS['wiki'] == $page_admin ){
-	if($HTTP_POST_VARS['password0'] == "" ){
+    if( $_POST['wiki'] == $page_admin ){
+	if($_POST['password0'] == "" ){
 	if( isset($adminpassword) ) die($lang['filloldpass']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 	//First password change mode.
-		if($HTTP_POST_VARS['password1'] != "" && $HTTP_POST_VARS['password2'] != "" ){
-		if($HTTP_POST_VARS['password1'] == $HTTP_POST_VARS['password2']){
+		if($_POST['password1'] != "" && $_POST['password2'] != "" ){
+		if($_POST['password1'] == $_POST['password2']){
 		$passworks="1";
 		$fp = fopen("data/passwd.php","w+");
-           	fwrite ($fp, '<? $adminpassword = "'.crypt($HTTP_POST_VARS['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
+           	fwrite ($fp, '<? $adminpassword = "'.crypt($_POST['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
            	die($lang['passsuccess']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 		}
 		die($lang['twononemptypassmustequal']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
@@ -530,8 +524,8 @@ if( $_GET["banner"] == "Yes" ) banner();
 	}else{
 	
 		if($adminpassword)
-		$testpass= crypt($HTTP_POST_VARS['password0'], "CW");
-		if($HTTP_POST_VARS['passwrks'] == ""){
+		$testpass= crypt($_POST['password0'], "CW");
+		if($_POST['passwrks'] == ""){
 			$passworks = "0";
 		}else{
 			$passworks = "1";
@@ -539,11 +533,11 @@ if( $_GET["banner"] == "Yes" ) banner();
 		if($testpass != $adminpassword)
 		die($lang['oldpasswrong']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 		
-	if($HTTP_POST_VARS['password1'] != "" && $HTTP_POST_VARS['password2'] != ""){
-		if($HTTP_POST_VARS['password1'] == $HTTP_POST_VARS['password2']){
+	if($_POST['password1'] != "" && $_POST['password2'] != ""){
+		if($_POST['password1'] == $_POST['password2']){
            	$fp = fopen("data/passwd.php","w+");
-           	fwrite ($fp, '<? $adminpassword = "'.crypt($HTTP_POST_VARS['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
-           	delpagefile($HTTP_POST_VARS['delpage'],$HTTP_POST_VARS['delfile']);
+           	fwrite ($fp, '<? $adminpassword = "'.crypt($_POST['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
+           	delpagefile($_POST['delpage'],$_POST['delfile']);
         }else{
            die(" <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 		}
@@ -551,7 +545,7 @@ if( $_GET["banner"] == "Yes" ) banner();
 		}else{
 			$fp = fopen("data/passwd.php","w+");
            	fwrite ($fp, '<? $adminpassword = "'.$adminpassword.'"; $passworks="'.$passworks.'";?>');           	
-			delpagefile($HTTP_POST_VARS['delpage'],$HTTP_POST_VARS['delfile']);
+			delpagefile($_POST['delpage'],$_POST['delfile']);
 		}
 			
 		exit;
@@ -566,8 +560,8 @@ header ("Content-Type: text/html; charset=".$encoding);
 
 // edit or show page?
 if( $edit ){
-	if($HTTP_POST_VARS['Edit2']== "OK"){
-		$name=$HTTP_POST_VARS['editpagename'];
+	if($_POST['Edit2']== "OK"){
+		$name=$_POST['editpagename'];
 		$name = "$data_dir/".$_GET[$wiki_get];
 		secure($name);
 		editpage2( $name );
