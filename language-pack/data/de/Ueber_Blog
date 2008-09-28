@@ -1,0 +1,8 @@
+! EIN EXPERIMENT: BLOG
+Mit Opus 9 hat Wikepage eine neue Erweiterung: ein Blog. Dieses ist ist so einfach zu bedienen wie das Wiki. Es gibt eine spezielle Wiki-Seite namens **Blog_Entry**. Wenn diese verlinkt wird, erfolgt eine Umleitung auf die Startseite des Blogs. Überschrift und Inhalt des Eintrags können einfach durch Benutzung der klassischen Wiki-Kommandos bearbeitet werden.
+
+Soll das Blog angezeigt werden, reicht die Angabe von **< blog_view >** (ohne Leerzeichen) in einer beliebigen Seite.
+
+Der Blog-Teil von Wikepage hat außerdem eine einfache RSS-Unterstützung (RSS 0.91). Der Feed kann über den Link **index.php?rss=blog** erreicht werden.
+
+Die Wörter Blog_Entry und < blog_view > können in der **data/de/de.inc** Sprachdatei geändert werden. Damit kann der Name des Blogs nach Belieben geändert werden.
