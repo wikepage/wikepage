@@ -1,5 +1,3 @@
-[Wikepage] is a wiki-standart databaseless php powered wiki-software.
-
 !! Markup Language
 * One * before line, make list.
 * One ! before line make <h1> - big title
@@ -44,6 +42,10 @@ Wikepage has table support.Just begin the line with 4 pipes (|), for each column
 ||||**Website**||**Link**||||
 ||||Cyrocom Homepage||[http://www.cyrocom.com/]||||
 ||||SBLisesivdin Homepage||[http://www.cyrocom.com/sblisesivdin]||||
+
+!! RSS Feeds
+Wikepage has a maximum of one RSS feed support per page. To include a RSS feed into any page just begin with 2 special parenthesis ({), then write URL of feed , then  put a pipe (|) and then write how many feed that you want to show in your page, and close with 2 special parenthesis (}).
+{{http://www.wikepage.org/index.php?rss=blog|1}}  
 
 !! Coloring
 For coloring: Just begin with 2 sharps (#) then input color name and 2 sharps more.. then write the writings that will be colored, then 2 sharps to close. Entered colors used in font tag. Colors are Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua and White of course. Or use RGB codes like #FF9900.
