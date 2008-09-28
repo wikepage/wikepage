@@ -1,0 +1,18 @@
+! VELKOMMEN TIL [Wikepage].
+
+Dette er 2006.2 (Maxwell-Boltzmann), tak fordi du valgte Wikepage. Wikepage er wiki standard, nem at anvende, mysql-fri og en lille wiki-blog hybrid-software. Wikepage er en lille wiki. Så forvent ikke de store wikis features fra Wikepage.
+ ##red##**VIGTIGT:** Læs dokumentationen før du opbygger
+ din hjemmeside!##
+
+!! Nyheder
+Hjælp til med at internationalisere Wikepage. Download den seneste English-fil fra [http://www.wikepage.org] og oversæt filen til dit sprog. Du kan maile oversættelsen til (\'\'sblisesivdin-AT-gmail.com\'\').
+!! Index
+* [What_is_wiki] - information og historie om wiki
+* [Wiki_style] - anvendelse og dokumentation
+* [Sandbox] - testområde ...
+* [About_Blog] - Et eksperiment: blog-feature i wikepage? 
+
+! BLOG
+<blog_view>
+
+Wikepage is served by Cyrocom with a free licence (GPL).
