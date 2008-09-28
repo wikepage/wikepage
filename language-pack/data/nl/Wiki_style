@@ -1,0 +1,58 @@
+!! Code gebruik
+* Een * bij aanvang regel, geeft een lijst
+* Een ! bij aanvang regel, geeft een <h1> - grote titel
+* Twee !! bij aanvang regel, geeft een <h2> - middel titel
+* Drie !!! bij aanvang regel, geeft een <h> - kleine titel
+* Twee * voor en na woorden/zinnen maakt ze **vet**
+* Twee _ voor en na woorden/zinnen maakt ze __onderstreept__
+* Twee ' voor en na woorden/zinnen maakt ze ''schuin''
+* Twee : voor en na woorden/zinnen maakt ze ::bekaderd::
+
+##red##Je kunt klikken op de **Bewerk** link rechtsboven om de inhoud van de pagina weer te geven.##
+
+!! Links
+* Wikepage gebruikt [Wiki_woord] type links met '_' als spatie. Bij een nieuwe pagina maak een link in de pagina bijvoorbeeld [Woord]. Sla dat op, als je daarna klikt op deze nieuwe link, kun je een pagina maken.
+* Een link naar en externe pagina gaat als volgt: typ de URL tussen blokhaken. Bijvoorbeeld:[http://www.wikepage.org/]. 
+Het zelfde geldt voor email: [sblisesivdin@gmail.com] .
+* Een extra toevoeging is een commentaar bij de link, zoals:
+[http://www.cyrocom.com|klik hier], of een interne link [Index|de index]
+* Plaatjes kunnen je ook weergeven door te tussen blokhaken te zetten.
+* Plaatje in een kader, het gebruik is: {a|b|c} waarbij (a)thumbnail, (b)commentaar, (c)origineel plaatje. Het orgineel zal een breedte krijgen van maximaal 468 pixels. Als je klikt op de thumbnail zal het origineel verschijnen. Voorbeeld: {wike.gif|stuk tekst|wike.gif}
+* Je kunt naar interne plaatjes verwijzen verwijzen die zich in de data/files map bevinden.
+Bijvoorbeeld :[wike.gif]. Als je gebruik wilt maken van een gelinkt plaatje, gebruik je dit: [http://www.cyrocom.com/|wike.gif]
+ PS: Je kunt niet linken naar externe URL plaatjes, alleen lokaal!!
+
+!! Speciale Pagina's
+* De informatie in [Recent_aangepast] kan gemaakt worden door''< recentaangepast >'' (zonder spaties) te zetten in de bron pagina. 
+* Het zelfde geldt voor het de zoekpagina [Zoek] kan gemaakt worden door''< zoek pagina >'' (zonder spaties) te zetten in de bron pagina.
+* Idem voor [Alle_paginas].. typ ''< alles >'' (zonder spaties).
+* En ook voor de Admin-pagina,, typ ''< admin >'' (zonder spaties)
+
+!! Variabel Systeem
+Het Wikepage systeem een set van commando's. Er zijn er drie:
+
+* de lng variabele (taal): geeft een afkorting van de taal, zoals "en" voor Engels, "nl" voor Nederlands. Gebruik (op elke pagina): [lng=en|English], [lng=en|en.gif]
+* de rss variabele: "yes" voor recente aanpassingen in de rss output en "blog" vor de rss output van de blog. Gebruik: [rss=blog|Blog RSS Output], [rss=yes|rss_wiki.gif]
+* de file variabele: Gebruik voor verwijzingen naar de data/files map. Gebruik: [file=filename.pdf|Informatie over het bestand]
+
+!! Sjabloon Systeem
+
+Wanneer je een andere pagina opmaak wilt geven dan kan dat. Gewoon een kwestie van een nieuwe pagina maken. En deze plaatsen (met ftp) in de themes-map.
+Je kun in je link dan verwijzen hiernaar. Bijvoorbeeld:
+
+[Zoek|index2.html]
+
+!! Tabellen
+Een tabel begint met 4 pipes (|), voor elke kolom zet je 2 pipes (|) neer, en sluit af met 4 pipes (|). Voorbeeld (zie bron van de pagina):
+||||**Website**||**Link**||||
+||||Cyrocom Homepage||[http://www.cyrocom.com/]||||
+||||SBLisesivdin Homepage||[http://www.cyrocom.com/sblisesivdin]||||
+
+!! RSS Feeds
+Wikepage heeft als maximum: een RSS feed per pagina. Om een RSS feed op een pagina te plaatsen: begin met twee haakjes ({), typ de URL van de feed, zet er een pipe  (|) achter waarna je aangeeft hoeveel feed je op de pagina wilt hebben. Sluit af met twee haakjes (}).
+Voorbeeld (zie bron van de pagina):
+{{http://www.wikepage.org/index.php?rss=blog|1}}  
+
+!! Kleuren
+Om tekst te kleuren: Zet twee hekjes (#) dan de kleurnaam en daarna een hekje. Typ de tekstinhoud en sluit af met twee hekjes. De gebruikte kleuren zijn: Black (zwart), Silver (lichtgrijs), Gray (grijs), Maroon (donkerbruin), Red (rood), Purple (paars), Fuchsia (lila), Green (groen), Lime (lichtgroen), Olive (olijfgroen), Yellow (geel), Navy (donkerblauw), Blue (blauw), Teal (grijsblauw), Aqua (turkooi) en White (wit). Je kunt ook RGB codes (#FF9900) gebruiken.
+##blue##Blauwe tekst.##

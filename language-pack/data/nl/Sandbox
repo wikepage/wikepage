@@ -1,0 +1,40 @@
+!hallo..
+!! een kleine titel...
+!!! een klein titeltje
+
+een citaat:
+ Hebban olla vogala nestas hagunnan hinase hic enda thu wat 
+ unbidan we nu
+
+__lijntje__ **vet** ''italic'' of een  ::kader::
+
+* lijst
+* etc..
+* etc..
+
+---
+
+*dit werkt niet
+* dit wel
+
+**Plaatje:**
+[wike.gif]
+
+**Linkje**
+* Statische link: [Index]
+* Statische link met uitleg: [Index|Index page of this site]
+* URL link met uitleg: [http://www.wikepage.org/|Wikepage homesite]
+* URL link: [http://www.cyrocom.com]
+* Link naar plaatje: [http://www.cyrocom.com/|wike.gif]
+* Email: [sblisesivdin@gmail.com]
+* Plaatje in kader: het eerst plaatje is de thumbnail, de tweede het orgineel {wike.gif|wikepage|wike.gif}
+
+
+**Tabel**
+||||Cel 11||Cel 12||||
+||||Cel 21||Cel 22||||
+
+
+##red##Vandaag is rood.##
+
+---blub
