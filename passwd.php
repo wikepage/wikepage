@@ -1,1 +1,0 @@
-<? $adminpassword = "CWrES4WpGdw9M"; $passworks="1";?>

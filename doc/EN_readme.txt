@@ -1,12 +1,5 @@
-Cyrocom Wiki & Homepage Software
------------------------------------------------------------------------------------------
-
- л  л  л ллл л  л лллл лллл лллл лллл лллл
- л  л  л  л  л л  л    л  л л  л л    л   
- л  л  л  л  лл   ллл  лллл лллл л лл ллл 
- л  л  л  л  л л  л    л    л  л л  л л   
-  лл лл  ллл л  л лллл л    л  л лллл лллл  Version 2005.2 (Code: Volmer-Weber)
-
+Cyrocom Wikisite/Homesite Software
+WIKEPAGE Version 2005.3 (Code: Frank-Van Der Merwe)
 -----------------------------------------------------------------------------------------
 Wiki is a kind of knowledge sharing formation. Wikepage is a wiki-standart, easy
 to use and small wiki software derived from Tipiwiki2 (http://tipiwiki.sourceforge.net/).
@@ -45,7 +38,5 @@ Wiksis is a open software licenced with GNU/GPL. For more information:
 
 *IN ADDITION
 -If you chmod the folders truly, wikepage 90% works.
--Some hosting firms uses safe_mode in their PHP config. At this condition
- wikepage can't create new files under data folder.
 - In Administration area there are 3 password field. Last two of them must
  be used if and only if you want to change your password.

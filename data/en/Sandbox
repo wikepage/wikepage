@@ -19,11 +19,14 @@ __underlined__ **bold** \'\'italic\'\' or ::in box::
 *list don\'t work if used like this.
 * must be like this
 
-[http://www.cyrocom.com/sblisesivdin|Lisesivdin homepage] is Wikepage\'d!
+[http://lisesivdin.freefronthost.com/|Lisesivdin homepage] is Wikepage\'d!
 
 http://www.cyrocom.com
-
+**Picture:**
 [wike.gif]
+**Linked Picture:**
+[http://www.cyrocom.com/|wike.gif]
+
 
 ##red##This color is really sexy.##
 

@@ -1,30 +1,35 @@
 ! Welcome to [Wikepage].
-Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software derived from Tipiwiki2.
+This is the 2005.3 (Frank - van der Merwe), latest of the 2005 series. 2005.3 is a mostly an \'\'optimization\'\' version. Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software derived from Tipiwiki2.
 
 Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wikepage.
  ##red##**IMPORTANT:** Please read documentation first,
  before building your site! (in doc folder)##
 
+!! **2005.3** : Features added to 2005.2
+* Corrected css style for Firefox and Opera,
+* Smaller code and smaller zip with new features,
+* Simple Banner support,
+* Linked pictures support,
+
 !! **2005.2** : Features added to 2005.1
 * Improved css style,
 * Wiki-editable left side menu,
 * Multilanguage site support,
-* Wikepage visuals for your site: [cyrocomwike.gif], [ilove.gif], [wike.gif]
-
+* wikepage visuals for your site: [wike.gif]
 
 
 !! **2005.1** : Features added to Tipiwiki2
 * New css style,
 * Table support,
 * \'_\' type Wiki word support,
-* 2 important security flaw closed,
+* 2 important security flaws closed,
 * I18n support
 * Administration Area,
 * Password protected pages,
 * ##blue##Coloring## feature. 
 
 !! News
-Please change the files in lang/en for give Wikepage, I18n support in your language! You can email me from \'\'master-AT-cyrocom.com\'\'.
+Please help the internationalization works of Wikepage. Just translate file in lang/en to your language and mail it! (\'\'master-AT-cyrocom.com\'\').
 !! Index
 * [What_is_wiki] - information and history about wiki
 * [Wiki_style] - usage and documentation

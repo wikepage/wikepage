@@ -11,11 +11,11 @@
 
 ##red##You can click **Edit** link above this page to view this page\'s source.##
 !! Links
-* Wikepage used [Wiki_word] type links whish used \'_\' as whitespace. For make a new page just make a link in a page like [Word] and then save and use the link. When you use link, page created automaticly.
+* Wikepage used [Wiki_word] type links whish used \'_\' as whitespace. For make a new page just make a link in a page like [Word] and then save and use the link. When you use link, page\'ll created.
 * If you want to link to something external, you could just type the url and if it is valid, it will be clickable
 * to make external links more beautiful, there is another version link can be used to create something [http://www.cyrocom.com|like this]
-* If you put the url to a picture between such [ ] brackets, the image will be displayed. For example the logo below
-[wike.gif]
+* If you put the url to a picture between such [ ] brackets, the image will be displayed.
+For example :[wike.gif], But if you want to use linked image then: [http://www.cyrocom.com/|wike.gif]
 !! Special Pages
 * Information in [Last_changes] page is created with writing \'\'< lastchanges >\'\' (without whitespaces) in source of page. 
 * Information in [Search] page is created with \'\'< search >\'\' like above.
