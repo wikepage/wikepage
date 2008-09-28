@@ -1,16 +1,16 @@
 Cyrocom Wikisite/Personal site Builder
-WIKEPAGE Version 2005.4 Opus 5 (Code: Bose-Einstein)
+WIKEPAGE Version 2006.1 Opus 6 (Code: Fermi-Dirac)
 -----------------------------------------------------------------------------------------
 Wiki is a kind of knowledge sharing formation. Wikepage is a wiki-standart, easy
 to use and small wiki software derived from Tipiwiki2 (http://tipiwiki.sourceforge.net/).
 Wikepage has some security features that Tipiwiki does not have, like password protected
-structure, and 3 patched important security flaw. And extra features of course...
+structure, and 4 patched important security flaw, table support, upload support, multilanguage
+and multisite support...etc...
 
 Wikepage has two modes:
 
 -Wiki Mode: Pages can change without entering password.
 -Personal Mode: Pages can change only with entering password. 
-
 
 *INSTALL:
 -Open index.php file with notepad-like pogram and change the site information, language
@@ -27,7 +27,7 @@ Wikepage has two modes:
  password.
 -Your site is working now in Wiki mode!
 -You can change mode in Administration area with entering your password.
--In wiki mode you must enter password to change a page. 
+-In wiki mode you must enter password "everytime" to change a page. 
 
 You can found more documentation in your installed site.
 
@@ -36,6 +36,6 @@ Wikepage is a open software licenced with GNU/GPL. For more information:
 [ www.gnu.org/copyleft/gpl.html ]
 
 *IN ADDITION
--If you chmod the folders truly, wikepage 90% works.
-- In Administration area there are 3 password field. Last two of them must
- be used if and only if you want to change your password.
+-If you chmod the folders true, wikepage 90% works.
+-File create, upload and delete support may not be work with safe_mode=on
+
