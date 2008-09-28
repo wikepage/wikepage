@@ -5,7 +5,7 @@ Cyrocom Wiki & Homepage Software
  л  л  л  л  л л  л    л  л л  л л    л   
  л  л  л  л  лл   ллл  лллл лллл л лл ллл 
  л  л  л  л  л л  л    л    л  л л  л л   
-  лл лл  ллл л  л лллл л    л  л лллл лллл  Version 2005.1 (Code: Stranski-Krastanov)
+  лл лл  ллл л  л лллл л    л  л лллл лллл  Version 2005.2 (Code: Volmer-Weber)
 
 -----------------------------------------------------------------------------------------
 Wiki is a kind of knowledge sharing formation. Wikepage is a wiki-standart, easy
@@ -27,6 +27,10 @@ Wikepage has two modes:
 -Be sure that your PHP don't work in safe_mode. In safe_mode wikepage can't make pages.
 -If you want to change design, change the "show.html","edit.html" and "wikepage.css"
  files under "lang/en/" directory.
+-If you want to add new language to your site, download from http://www.cyrocom.com/download
+ and then extract it to base folder of wikepage. Then you can change default language variable
+ in index.php's source code. And if you want to make a multilanguage site you can easily change
+ language in your site by [index.php?lng=en|English] [index.php?lng=tr|Turkce] type links.
 -Visit your site. Go to "Administration area" with using "Admin" link and change your
  password.
 -Your site is working now in Wiki mode!

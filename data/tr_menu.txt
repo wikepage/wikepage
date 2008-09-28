@@ -1,0 +1,24 @@
+**Ana Menü**
+[Ana_sayfa]
+[Son_deðiþiklikler]
+[Sayfa_bul]
+[Tüm_sayfalar]
+[Yönetim]
+[Kumluk]
+[Wiki_stil]
+
+ **Bilgi**
+ Bu menü içeriðini
+ sayfanýn üstünde
+ bulunan \'\'Düzenle\'\'
+ ye týklayarak
+ kolayca
+ deðiþtirebilirsiniz.
+
+[tr.gif] [index.php?lng=tr|Turkce]
+[en.gif] [index.php?lng=en|English]
+
+
+
+
+[wike.gif]
