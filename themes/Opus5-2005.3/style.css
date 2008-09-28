@@ -1,0 +1,213 @@
+TD {
+	color			: #000000;
+	font-family		: Arial, Helvetica, Tahoma, Verdana;
+	font-size		: 8pt;
+}
+
+INPUT {
+background-color: transparent;
+border-bottom-width: 1px;
+border-color: #316B94;
+border-left-width: 1px;
+border-right-width: 1px;
+border-top-width: 1px;
+color: #000000;
+font-family: Arial, Helvetica, Tahoma, Verdana;
+font-size: 10px;
+font-weight: normal;
+text-indent: 2px;
+}
+
+
+body {
+        background: #fff url(back.gif) repeat-x;    
+        font: 8pt Arial, Helvetica, Tahoma, Verdana;
+}
+
+H1 {
+font: 16pt Arial, Helvetica, Tahoma, Verdana;
+font-weight: bold;
+}
+
+H2 {
+font: 12pt Arial, Helvetica, Tahoma, Verdana;
+}
+
+H3 {
+font: 11pt Arial, Helvetica, Tahoma, Verdana;
+}	
+
+.dillo { display: none; }
+
+hr { display: none; }
+
+hr.wiki {
+        display: block;
+        margin: 2px;
+        height: 1px;
+        color: #404040;
+        width: 100%;
+}
+
+img.wikiimage {
+        max-height: 400px;
+        max-width: 800px;
+}
+
+#wikepage {
+        text-align: left;
+        margin: 0px 5%;
+        color: #202020;
+        font: 14pt Arial, Helvetica, Tahoma, Verdana;
+}
+
+#title {
+        color: #555;
+        background-color: #fff;
+        border: 0px;
+        padding: 1px 3px;
+        margin: 8px 0%;
+        text-align: left;
+}
+
+#title a {
+        color: #555;
+        text-decoration: none;
+}
+
+
+#wikicontrols {
+        margin: 2px 0%;
+}
+
+#wikicontrols a {
+        color: #666;
+        background-color: #fff;
+        text-decoration: none;
+        border: 0px;
+        padding: 1px 3px;
+        font-size: 8pt;
+}
+
+#wikicontrols a:hover {
+        color: #123456;
+        border-color: #eee;
+        background-color: #F2F5FC;
+}
+
+#wikicontent {
+        margin: 0px 0px;
+        padding: 2px 5px;
+        border: 0px;
+        background-color: #ffffff;
+        color: #000;
+}
+
+#wikicontent a {
+        color: #123456;
+        text-decoration: underline;
+        background-color: #ffffff;
+}
+
+#wikicontent a:visited {
+        color: #123456;
+        text-decoration: none;
+        background-color: #ffffff;
+}
+
+#wikicontent a:hover {
+        color: #1F5B93;
+        background-color: #ffffff;
+}
+
+#wikicontent span.box {
+        border: 1px solid #ddd;
+        padding: 1px 2px;
+        margin: 1px;
+}
+
+#wikicontent pre {
+        border: 1px solid #eee;
+        background-color: #f5f5f5;
+        padding: 2px 5px;
+        font-family: monospace;
+}
+
+
+#wikicontent table {
+  background-color: #eee;
+}
+#wikicontent td {
+  background-color: white;
+}
+
+#menucontent {
+        margin: 0px 0px;
+        padding: 2px 5px;
+        border: 0px;
+        background-color: #ffffff;
+        color: #000;
+        font: 9pt Tahoma, Verdana, Arial, Helvetica;
+}
+
+#menucontent a {
+        color: #123456;
+        text-decoration: underline,bold;
+        background-color: #ffffff;
+}
+
+#menucontent a:visited {
+        color: #123456;
+        text-decoration: none;
+        background-color: #ffffff;
+}
+
+#menucontent a:hover {
+        color: #1F5B93;
+        background-color: #ffffff;
+}
+
+#menucontent span.box {
+        border: 1px solid #ddd;
+        padding: 1px 2px;
+        margin: 1px;
+}
+
+#menucontent pre {
+        border: 1px solid #eee;
+        background-color: #f5f5f5;
+        padding: 2px 5px;
+        font-family: monospace;
+}
+
+
+#menucontent table {
+  background-color: #eee;
+}
+#menucontent td {
+  background-color: white;
+}
+
+#footer {
+        font-size: 8pt;
+        margin: 0px 5%;
+}
+
+#footer a {
+        color: silver;
+}
+
+#header {
+        font-size: 7pt;
+        margin: 5px 5%;
+        text-align: left;
+}
+
+#header a {
+        color: black;
+}
+
+#contentarea {
+	    font-size: 8pt;
+        margin: 0px 5%;
+}
