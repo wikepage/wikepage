@@ -1,5 +1,5 @@
 <?php
-/*		Cyrocom-WIKEPAGE 2006.2 Opus 9 "Maxwell-Boltzmann" Wiki/Personal Site Engine
+/*		Cyrocom-WIKEPAGE 2006.2a Opus 10 "Maxwell-Boltzmann" Wiki/Personal Site Engine
 		Copyleft (C) 2006, 2005, 2004. Ankara, Turkiye.
         http://www.wikepage.org/
 		For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
@@ -264,7 +264,7 @@ global $data_dir,$wiki_get;
 				$raw = implode("", $filem );
         	// filter!
         		$raw = filter( $raw, blog );
-				$content .="<i>".strftime("%a, %d %b %Y ", $filetime).date("G:i:s", filemtime("$data_dir/$page")+(3600*$timezone))."</i><br/>\n";
+				$content .="<i>".strftime("%a, %d %b %Y ", filemtime("$data_dir/$page")).date("G:i:s", filemtime("$data_dir/$page")+(3600*$timezone))."</i><br/>\n";
 				$content .=$raw."</p>\n";
                 }}
                 $counter += sizeof($today);
@@ -281,21 +281,28 @@ function filter($raw, $type) {
         $filtered = stripslashes(htmlchars("\n\n".$raw));
         // php-special
         $filtered = str_replace("\r\n","\n",$filtered);	
-        // [ url | link ] outlinks
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\|([\w\:\#\- ]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+            //variable
+		$filtered = preg_replace("/\[(file)\=([\w\.:\/~@\,\?\%=\+\-;#&]+)\|([\w\s]+)\]/i","<a href=\"data/files/\\2\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" alt=\"\" /></a>", $filtered);
+		$filtered = preg_replace("/\[([\w\s]+)\=([\w\s]+)\|([\w\s]+)\]/i","<a href=\"index.php?\\1=\\2\">\\3</a>", $filtered);
+		$filtered = preg_replace("/\[([\w\s]+)\=([\w\s]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"index.php?\\1=\\2\" rel=\"nofollow\"><img src=\"data/files/\\3\" border=\"0\" class=\"wikiimage\" alt=\"\" /></a>", $filtered);
+		    //template
+		$filtered = preg_replace("/\[([\w\s]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(htm|html))\]/i","<a href=\"index.php?$wiki_get=\\1&template=\\2\">\\1</a>", $filtered);
+		// [ url | link ] outlinks
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" alt=\"outlink\" /></a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\|([\w\:\#\- ]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" alt=\"\" /></a>", $filtered);
         $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"index.php?$wiki_get=\\1\">\\2</a>", $filtered);
-        // linked picture [ url | [picture] ]  
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"data/files/\\3\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
-        $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"data/files/\\2\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+		// linked picture [url|picture]
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"data/files/\\3\" border=\"0\" class=\"wikiimage\" alt=\"\" /></a>", $filtered);
+        $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"index.php?$wiki_get=\\1\" rel=\"nofollow\"><img src=\"data/files/\\2\" border=\"0\" class=\"wikiimage\" alt=\"\" /></a>", $filtered);
   		// pictures [ url ]
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+\.(png|gif|jpg))\]/","<img src=\"\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
-  		$filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"data/files/\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
-        // plain URLs
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+\.(png|gif|jpg))\]/","<img src=\"\\1\" border=\"0\" class=\"wikiimage\" alt=\"\" />",$filtered);
+  		$filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"data/files/\\1\" border=\"0\" class=\"wikiimage\" alt=\"\" />",$filtered);
+        // variable
+		// plain URLs
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" alt=\"\" /></a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" alt=\"\" /></a>", $filtered);
         // []'ed words
-        $filtered = preg_replace("/\[([\w]+)\]/","<a href=\"index.php?$wiki_get=\\1\">\\1</a>", $filtered);
+        $filtered = preg_replace("/\[([\w\s]+)\]/","<a href=\"index.php?$wiki_get=\\1\">\\1</a>", $filtered);
         // Headers <h1><h2><h3>
         if ($type=="blog"){
         $filtered = preg_replace("/\n(!!!)(.+)\n/","</p>\n<b>\\2</b>\n<p>",$filtered);
@@ -340,7 +347,7 @@ function filter($raw, $type) {
        	$filtered = preg_replace("/(.+)\|\|/U","\\1</td><td>", $filtered);
        	$filtered = preg_replace("/<\/table><br \/>\n<table>/","", $filtered);
        	//font color
-       	$filtered = preg_replace("/\#\#(.+)\#\#/U","<font color=\\1>", $filtered);
+       	$filtered = preg_replace("/\#\#(.+)\#\#/U","<font color=\"\\1\">", $filtered);
        	$filtered = preg_replace("/(.+)\#\#/U","\\1</font>", $filtered);
        	// html beauty
        	$filtered = str_replace("</li>","</li>\n",$filtered);
@@ -380,7 +387,7 @@ function output($data, $file) {
         $data = str_replace("<!--lang_lastupdate-->",$lang['lastupdate'],$data);
         $data = str_replace("<!--lang_editing-->",$lang['editing'],$data);
         if($passworks == "0"){
-	        $buf=$lang['pass']."<input type=\"password\" name=\"mypassword\">";
+	        $buf=$lang['pass']."<input type=\"password\" name=\"mypassword\" />";
         }else{
 	        $buf="";
         }
@@ -420,7 +427,14 @@ function showpage($file) {
         $content = filter( $raw ) . $content;
         $menucontent = filter( $raw2 ) . $menucontent;
         // load template
-        $template = implode( "", file('theme/'.$theme.'/index.html') );
+        // Checks Query string for Template variable, and uses specified template or defaults to index.html
+        $templatefile = $_GET['template'];
+        
+        if($templatefile == ""){
+        	$templatefile = "index.html";
+        }
+
+        $template = implode( "", file('theme/'.$theme.'/'.$templatefile) );
         $whole = str_replace("<!--wikicontent-->",$content,$template);
         $whole = str_replace("<!--menucontent-->",$menucontent,$whole);
         output( $whole, $file );
@@ -440,8 +454,9 @@ function editpage($file) {
          else
                  echo " (Newentry) ".$lang['filenotfound']."<br />\n";
          $template = implode( "", $template );
-         $whole = str_replace("<!--subject-->",ltrim(stripslashes($already[0]),'!'),$template);
-         $whole =str_replace("<!--already-->",stripslashes(implode("",array_slice($already,1))),$whole);
+		$whole = str_replace("<!--subject-->",ltrim(stripslashes($already[0]),'!'),$template);
+		$whole = str_replace("<!--submit-->",$lang['submit'],$whole);
+         $whole = str_replace("<!--already-->",stripslashes(implode("",array_slice($already,1))),$whole);
 	    }else{
 		 if( file_exists( $file ) ) $already = implode( "", file( "$file" ) );
          //load menu file
@@ -452,9 +467,10 @@ function editpage($file) {
                  echo " (Edit) ".$lang['filenotfound']."<br />\n";
          $template = implode( "", $template );
          $whole =str_replace("<!--mainmenu-->",stripslashes($mainmenu),$template);
+		$whole = str_replace("<!--submit-->",$lang['submit'],$whole);
          $whole =str_replace("<!--already-->",stripslashes($already),$whole);
     	}
-        $uploadcode = "Select file for upload:<input type=\"file\" name=\"userfile\"><input type=\"hidden\" name=\"wiki\" value=\"".$pagename."\">";
+        $uploadcode=$lang['uploadnote']."<input type=\"file\" name=\"userfile\"><input type=\"hidden\" name=\"wiki\" value=\"".$pagename."\" />";
         $whole =str_replace("<!--uploadsystem-->",stripslashes($uploadcode),$whole);
         // locking file
         if( file_exists($file) && !is_writeable($file) )
@@ -720,7 +736,7 @@ if( $_GET["banner"] == "Yes" ) banner();
 		if($_POST['password1'] == $_POST['password2']){
 		$passworks="1";
 		$fp = fopen("data/passwd.php","w+");
-           	fwrite ($fp, '<? $adminpassword = "'.crypt($_POST['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
+           	fwrite ($fp, '<?php $adminpassword = "'.crypt($_POST['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
            	die($lang['passsuccess']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 		}
 		die($lang['twononemptypassmustequal']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
@@ -742,7 +758,7 @@ if( $_GET["banner"] == "Yes" ) banner();
 	if($_POST['password1'] != "" && $_POST['password2'] != ""){
 		if($_POST['password1'] == $_POST['password2']){
            	$fp = fopen("data/passwd.php","w+");
-           	fwrite ($fp, '<? $adminpassword = "'.crypt($_POST['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
+           	fwrite ($fp, '<?php $adminpassword = "'.crypt($_POST['password1'], "CW").'"; $passworks="'.$passworks.'";?>');
            	delpagefile($_POST['delpage'],$_POST['delfile']);
         }else{
            die(" <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
@@ -750,7 +766,7 @@ if( $_GET["banner"] == "Yes" ) banner();
 		
 		}else{
 			$fp = fopen("data/passwd.php","w+");
-           	fwrite ($fp, '<? $adminpassword = "'.$adminpassword.'"; $passworks="'.$passworks.'";?>');           	
+           	fwrite ($fp, '<?php $adminpassword = "'.$adminpassword.'"; $passworks="'.$passworks.'";?>');           	
 			delpagefile($_POST['delpage'],$_POST['delfile']);
 		}
 			
