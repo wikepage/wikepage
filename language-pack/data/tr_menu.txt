@@ -1,21 +1,21 @@
 
 * [Ana_sayfa]
-* [Son_degisiklikler]
+* [Son_deðiþiklikler]
 * [Sayfa_bul]
-* [Tum_sayfalar]
-* [Yonetim]
+* [Tüm_sayfalar]
+* [Yönetim]
 * [Kumluk]
 * [Wiki_stil]
 * [Blog_hakkinda]
 
-**Languages**
-[lng=tr|tr.gif] [lng=tr|Turkce]
-[lng=en|en.gif] [lng=en|English]
+[tr.gif] [index.php?lng=tr|Turkce]
+[en.gif] [index.php?lng=en|English]
+
 
 [http://www.cyrocom.com/|wike.gif]
 
 [nofollow.gif]
 
-[rss=yes|rss_wiki.gif]
+[index.php?rss=yes|rss_wiki.gif]
 
-[rss=blog|rss_blog.gif]
+[index.php?rss=blog|rss_blog.gif]
