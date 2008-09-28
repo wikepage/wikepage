@@ -57,9 +57,6 @@ $lang['pass'] = "Enter password: ";
 $lang['mainmenu'] = "Main Menu ";
 $lang['pagecontents'] = "Page Contents ";
 $lang['navi'] = "Navigation";
-$lang['ok'] = "OK";
-$lang['clickoktoedit'] = "Click Ok to edit page";
-$lang['backtopage'] = "Back to previous page";
 $lang['copyleft'] = "<p>Permission is granted to copy, distribute and/or modify this document under the terms of the
  GNU Free Documentation License, Version 1.1 or any later version published by the <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a>. If you don't agree please don't add content. </p>

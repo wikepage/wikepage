@@ -1,5 +1,6 @@
 ! Welcome to [Wikepage].
-This is the 2006.1a (Fermi-Dirac), Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software.
+
+This is the 2006.1b (Fermi-Dirac), Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software.
 
 Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wikepage.
  ##red##**IMPORTANT:** Please read documentation first,
@@ -11,6 +12,11 @@ Please help the internationalization works of Wikepage. Just translate file in l
 * [What_is_wiki] - information and history about wiki
 * [Wiki_style] - usage and documentation
 * [Sandbox] - test area...
+
+!! **2006.1b** : Features added to 2006.1a
+* Ok.. Edit confirmation box is not a good idea :) Secure again without edit box
+* A outlink bug issue solved
+* Upload defaults raised to 1Mb. (8,5Mbits)(you can change it what you want at index.php). Old was only 122Kb (1Mbits). Sorry for this. 
 
 !! **2006.1a** : Features added to 2006.1
 * A PHP5 bug issue solved.
