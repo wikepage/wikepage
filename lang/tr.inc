@@ -38,6 +38,7 @@ $lang['oldpasswrong'] = "Eski Þifrenizi yanlýþ girdiniz.";
 $lang['processesok'] = "Ýþlemleriniz yapýldý";
 $lang['filloldpass'] = "Eski þifre bolumunu doldurunuz!";
 $lang['twopassmustequal'] = "Her iki þifre alanýda ayný olmak zorundadýr.";
+$lang['uploadnote'] = "Yüklenecek dosyayý seçiniz:";
 $lang['uploadexists'] = "- Dosya zaten var";
 $lang['uploadempty'] = "- Dosya boyutu sýfýr.<br>";
 $lang['uploadbig'] = "- Dosya boyutu çok büyük.<br>";
@@ -59,6 +60,7 @@ $lang['page_index'] = "Ana_sayfa";
 $lang['lastupdate'] = "Son güncelleme: ";
 $lang['editing'] = "düzenleniyor ";
 $lang['pass'] = "Þifrenizi giriniz: ";
+$lang['submit'] = "Gönder";
 $lang['mainmenu'] = "Ana Menü ";
 $lang['pagecontents'] = "Sayfa Ýçeriði ";
 $lang['navi'] = "Navigasyon";
@@ -66,6 +68,8 @@ $lang['blogsubject']="Konu";
 $lang['blogpage']="Ýçerik";
 $lang['blog_out']="blog_izle";
 $lang['blog_input_page']="Blog_Girdi";
+$lang['activate_TOC']="Ýçindekileri Aktifleþtir";
+$lang['TOC']="<input type =\"button\" value =\"Ýçindekiler\" onclick =\"toggleTOC()\"><div id=TOC></div>";
 $lang['copyleft'] = "<p>Bu wiki sitesinde yayýnlanan tüm içeriðin kopyalanmasý, daðýtýlmasý veya deðiþtirilmesi 
 üzerinde GNU-FDL Sürüm 1.1 yada <a href=\"http://www.fsf.org/\">FSF</a> tarafýndan çýkarýlan daha sonraki lisans 
 haklarý geçerlidir. Kabul etmiyorsanýz lütfen içerik eklemeyiniz.
