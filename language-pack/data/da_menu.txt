@@ -1,0 +1,21 @@
+ 
+* [Index]
+* [Seneste_rettelser]
+* [Søg]
+* [Alle_sider]
+* [Admin]
+* [Sandkasse]
+* [Wiki_style]
+* [Om_Blog]
+
+**Sprog**
+[da.gif] [index.php?lng=da|Danish]
+
+
+[http://www.cyrocom.com/|wike.gif]
+
+[nofollow.gif]
+
+[index.php?rss=yes|rss_wiki.gif]
+
+[index.php?rss=blog|rss_blog.gif]

@@ -1,0 +1,38 @@
+!hej folkens..
+!!en mindre titel...
+!!! mindste titel
+
+lydtest
+ en
+ to
+ phhh
+
+__underlined__ **bold** \'\'italic\'\' eller ::i boks::
+
+* lister
+* igen
+* og igen
+
+---
+
+*list virker ikke hvis anvendt som her.
+* skal være sådan her
+
+[http://lisesivdin.freefronthost.com/|Lisesivdin hjemmeside] er Wikepage\'d!
+
+[http://www.cyrocom.com]
+
+**Billede:**
+[wike.gif]
+
+**Linket billede:**
+[http://www.cyrocom.com/|wike.gif]
+
+**Tabel**
+||||Celle 11||Celle 12||||
+||||Celle 21||Celle 22||||
+
+
+##red##Denne farve er sexet.##
+
+---blub

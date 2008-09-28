@@ -1,0 +1,8 @@
+! EN EKSPERIMENTERENDE BLOG
+Fra Opus 9, har wikepage fået en ny feature: Blog. Wikepage\'s blog er ligeså nem som wiki. Der er en speciel wiki-side kaldet: **Blog_Entry**. Hvis du linker til denne side og klikker på den, vil du blive sendt videre til blog indtastsiden. Du vil kunne redigere dit emne og brødtekst ved hjælp af klassiske wiki-kommandoer.
+
+Hvis du vil se din blog kan du indsætte **< blog_view >** (uden mellemrum) på en hvilken som helst af dine sider.
+
+Blog-delen af wikepage har fået en simpel rss feedout også (RSS 0.91)! Rss output kan tages fra **index.php?rss=blog** .
+
+Blog_Entry, < blog_view > ord kan ændres fra **data/da/da.inc** sprogfilen. Du kan ændre blog til nyheder eller noget andet interessant.

@@ -1,0 +1,33 @@
+[Wikepage] er en wiki-standard mysql-fri php powered wiki-software.
+
+!! Tags & Markeringer
+* En * før linje opretter liste.
+* En ! før linje opretter <h1> - stor overskrift
+* To !! før linje opretter <h2> - mellem overskrift
+* Tre !!! før linje opretter <h3> - lille overskrift
+* To * før og efter ord eller sætninger vil gøre dem **fede**
+* To _ før og efter ord eller sætninger vil gøre dem __understreget__
+* To \' før og efter ord eller sætninger vil gøre dem \'\'kursiv\'\'
+* To : før og efter ord eller sætninger vil gøre dem ::i ramme::
+
+##red##Du kan klikke på **Rediger**-linket ovenfor for at se denne sides kilde.##
+
+!! Links
+* Wikepage benytter [Wiki_word] type links som anvender \'_\' som mellemrum. For at oprette en ny side, opret da et link på en side, fx [Word] og gem herefter og anvend linket. Når du benytter linket, vil siden blive oprettet.
+* Ønsker du at linke til noget eksternt, skal du bare indtaste url\'en (stien) og hvis den er gyldig, vil den være klikbar
+* For at gøre eksterne links pænere, er der en anden slags link der kan bruges til at oprette dem [http://www.cyrocom.com|som denne]
+* Hvis du indsætter stien til et billede mellem sådanne [ ] klammer, vil billedet blive vist.
+Fx :[wike.gif], hvis du vil have et linket billede, så er det således: [http://www.cyrocom.com/|wike.gif]
+!! Specielle sider
+* Information på [Last_changes] siden oprettes ved at skrive \'\'< lastchanges >\'\' (uden mellemrum) i kilden på siden. 
+* Information på [Search] siden oprettes med \'\'< search >\'\' som ovenfor.
+* Og information på [All_pages]... skriv da bare \'\'< allpages >\'\'.
+* Skal administrationssiden inkluderes på nogle af dine andre sider, skriv da bare \'\'< admin >\'\' som ovenfor.
+!! Tabeller
+Wikepage understøtter. Start linjen med 4 pipes (|), for hver kolonne indsæt  2 pipes (|), og for slutlinje indsæt yderligere 4 pipes (|). Det er det hele! Du kan se denne sides kilde for at se tabellen nedenunder denne sætning.
+||||**Hjemmeside**||**Link**||||
+||||Cyrocom Homepage||http://www.cyrocom.com/||||
+||||SBLisesivdin Homepage||http://www.cyrocom.com/sblisesivdin||||
+!! Farvelægning
+For farvelægning: Begynd med 2 havelåger (#) indtast farvenavn og så 2 havelåger igen ... indtast derefter teksten der skal farves, afslut med 2 havelåger for at lukke. Benyttede farver i font-tag. Farverne er: Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua og White selvfølgelig. Eller anvendRGB-koder, fx #FF9900.
+##blue##For eksempel blå skrift. Klik rediger på denne side for at se.##
