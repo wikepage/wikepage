@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="<!--encoding-->"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3c.org/TR/xhtml1/DTD/transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+        <head>
+        <title><!--sitename--> <!--wikiname--></title>
+        <meta name="format" content="text/xhtml" />
+        <meta name="robots" content="index,follow" />
+        <meta name="security" content="public" />
+        <meta name="charset" content="<!--encoding-->" />
+        <meta name="generator" content="wikepage" />
+        <meta name="description" content="<!--wikiname-->" />
+        <meta name="author" content="<!--author-->" />
+        <meta name="keywords" content="<!--wikiname-->" />
+        <link rel="stylesheet" type="text/css" href="theme/<!--theme-->/style.css" />
+        <script type="text/javascript">
+/*Created by: Stephen Morley :: http://sbm.customer.netspace.net.au */
+var stateTOC = 'ON';
+function toggleTOC() {
+  if (stateTOC == 'ON') {
+    stateTOC = 'OFF'
+    document.getElementById('TOC').style.display = "none";
+  }
+  else {
+    stateTOC = 'ON'
+    document.getElementById('TOC').style.display = "inline";
+  }
+}
+
+function buildTOC() {
+  validTagList = '. H1 H2 H3 H4 H5 H6 .';
+  if (document.body.childNodes) {
+    allTags = getObjects();
+  }
+  else if (document.all) {
+    allTags = document.all;
+  }
+  else if (document.layers) {
+    alert('Netscape layers? What to do, what to do ....');
+  }
+
+  var tagDetail = new Array(1);
+  j = 0;
+  aNum = 0;
+  for(i = 0; i < allTags.length; i++) {
+    if (validTagList.indexOf(' '+allTags[i].tagName+' ') > 0) {
+      aNum = aNum + 1;
+      var aNode = document.createElement("A");
+      aNode.id = 'Z'+aNum;
+      allTags[i].appendChild(aNode);
+      tagDetail[j] = allTags[i].tagName + "|";
+      tagDetail[j] = tagDetail[j]+aNum + "|";
+        if (allTags[i].childNodes.length > 0) {
+          tagDetail[j] = tagDetail[j]+allTags[i].childNodes[0].nodeValue
+      }
+      ;
+      j = j + 1;
+    }
+  }
+  var ulNode = document.createElement("UL");
+  tocId = document.getElementById('TOC');
+  tocId.appendChild(ulNode);
+
+  for(i = 0; i < tagDetail.length; i++) {
+    thisDetail = tagDetail[i].split("|");
+
+    var liNode = document.createElement("LI");
+    liNode.className = thisDetail[0];
+    ulNode.appendChild(liNode);
+
+    var aNode = document.createElement("A");
+    aNode.className = thisDetail[0];
+    aNode.href = '#Z'+thisDetail[1];
+    liNode.appendChild(aNode);
+    aNode.innerHTML = thisDetail[2];
+  }
+}
+
+function getObjects() {
+  var obj = new Array(1);
+  j = 0;
+  obj[j] = document.documentElement;
+  traverse( document.documentElement );
+
+  function traverse(node) {
+    obj[j] = node;
+    j = j + 1;
+    if (node.childNodes != null) {
+      for (var i=0; i < node.childNodes.length; i++) {
+        traverse(node.childNodes.item(i));
+      }
+    }
+  }
+  return obj;
+}
+//-->
+</script>
+</head><body onLoad="buildTOC()">
+  <div id="top">
+    <table width="420" border="0" cellspacing="0" cellpadding="0" align="right"><tr>
+    <td bgcolor="#c60000" align="center">
+    <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&amp;edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_recent-->"><!--lang_recent--> 
+              </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_advsearch-->"><!--lang_advsearch--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_all-->"><!--lang_all--> 
+              </a> <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_admin-->"><!--lang_admin--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=<!--lang_page_index-->"><!--lang_index--></a> 
+              <span class="dillo"> | </span> </div></td>
+  </tr>
+  </table>
+
+    <div id="banner"><!--sitename-->
+    <small><small><font color="#888888"><!--siteheader--></font></small></small></div>
+
+    <div id="container">
+            
+      <div id="sidebar">
+		<div id="menu">
+        <br/><!--TOC--><!--menucontent--><br />
+        <form method="get" action="index.php">
+              <b><!--lang_advsearch--></b>
+              <input type="hidden" name="wiki" value="<!--lang_page_advsearch-->" />
+              <input type="hidden" name="PageName" value="" />
+              <input type="text" name="PageContent" size="18" />
+            </form>
+        </div>
+      </div>
+
+      <div id="main">
+      <!--wikicontent--><br />
+      <center><small><font color="Silver"><!--bannerwriting--></font><br /><a href="index.php?banner=Yes"><img border="0" alt="banner" src="<!--bannerimage-->" /></a></small></center>
+      
+      </div>
+
+      <div id="footer">
+        <!--lang_lastupdate--><!--lastupdate-->
+        
+<div align="center"><p><font color="Silver"> <!--copyleft--> </font></p></div>
+      </div>
+
+    </div>
+
+  </body></html>
