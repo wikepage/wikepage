@@ -1,5 +1,5 @@
 <?php
-/*		Cyrocom-WIKEPAGE 2006.1a Opus 7 "Fermi-Dirac" Wiki/Personal Site Engine
+/*		Cyrocom-WIKEPAGE 2006.1b Opus 8 "Fermi-Dirac" Wiki/Personal Site Engine
 		Copyleft (C) 2006, 2005, 2004. Ankara, Turkey.
         http://www.wikepage.org/
 		For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
@@ -32,12 +32,12 @@ $theme="2006-1";
 
 // Upload config
 // ------------------
-// Set maximum file limit (in bits)
-$maxlimit = 1000000; 
+// Set maximum file limit (in bits) (~1Mb in default)
+$maxlimit = 8500000; 
 // Set allowed extensions (split using comma)
 $allowed_ext = "jpg,gif,png,jpeg,pdf,doc,xls,ppt,odb,odm,odt,ods,odp";
 // Allow file overwrite? yes/no 
-$overwrite = "no"; 
+$overwrite = "yes"; 
 
 error_reporting(1);
 
@@ -246,10 +246,11 @@ function filter($raw) {
         $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\3 <img src=\"data/files/ext.gif\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
         $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w ]+)\]/i","<a href=\"\\1\">\\2</a>", $filtered);
         // linked picture [ url | [picture] ]  
-        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"data/files/\\3\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"\\3\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
         $filtered = preg_replace("/\[([\w\.\:\~@\?~\%=\+\-\/]+)\|([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/i","<a href=\"\\1\" rel=\"nofollow\"><img src=\"data/files/\\2\" border=\"0\" class=\"wikiimage\" /></a>", $filtered);
   		// pictures [ url ]
-        $filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"data/files/\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
+        $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.\:\@\?~\%=\+\-\/]+\.(png|gif|jpg))\]/","<img src=\"\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
+  		$filtered = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"data/files/\\1\" border=\"0\" class=\"wikiimage\" />",$filtered);
         // plain URLs
         $filtered = preg_replace("/\[((http|ftp|https|mailto):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\|([\w\:\#\- ]+)\]/i","<a href=\"\\1\">\\3</a>", $filtered);
         // []'ed words
@@ -362,27 +363,13 @@ function showpage($file) {
         $whole = str_replace("<!--menucontent-->",$menucontent,$whole);
         output( $whole, $file );
 }
-// if edit clicked..
-function editpage($file) {
-        global $path, $page_admin, $langu, $lang, $encoding, $wiki_get;
-		$pagename = basename($file);
-        $template = "<html><head><title>Edit ".$pagename."?</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=".$encoding."\"></head><body><p>".$lang['clickoktoedit']." \"".$pagename."\"</p><form name=\"form1\" method=\"post\" action=\"\"><input type=\"submit\" name=\"Edit2\" value=\"OK\">  <input type=\"button\" value=\"".$lang['backtopage']."\" onClick=\"javascript: history.go(-1)\"><input type=\"hidden\" name=\"editpagename\" value=\"".$pagename."\"></form></body></html>";
-        output($template, $file );
-}
 
-function editpage2($file) {
+function editpage($file) {
         global $path, $page_admin, $langu, $lang;
         $already = "";
         $mainmenu = "";
         if( file_exists( $file ) )
             $already = implode( "", file( "$file" ) );
-        if( !file_exists( $file ) ){
-	        //thanks to M.T.Sandikkaya for path correction
-            $namePath = ".$path/$file";
-            @touch($namePath);
-            chmod($file, 0666);
-            $already = implode( "", file( "$file" ) );
-        }
         //load menu file
         $mainmenu = implode("", file('data/'.$langu.'_menu.txt') );
         if( file_exists( "edit.html" ) )
@@ -395,7 +382,7 @@ function editpage2($file) {
         $whole =str_replace("<!--already-->",stripslashes($already),$whole);
         $whole =str_replace("<!--mainmenu-->",stripslashes($mainmenu),$whole);
         // locking file
-        if( !is_writeable($file) )
+        if( file_exists($file) && !is_writeable($file) )
                 //note s modify!
                 $whole = preg_replace("/<form .*<\/form>/s","<h3>".$lang['sorrypagelocked']."</h3>", $whole);
         output($whole, $file );
@@ -430,12 +417,24 @@ if( isset( $_GET[$wiki_get] ) )
         $name = str_replace(".php3","_php3",$name);
 if( isset($_POST["content"]) ) {
 // password
+	if (strlen($_POST["content"]) == 0){
+		editpage($name);
+		exit;
+	}
+	
 	if ($_POST['mypassword'] !=""){
 	$testpass= crypt($_POST['mypassword'], "CW");
 	}else{
 		$testpass="0";
 	}
 	if($testpass == $adminpassword || $passworks=="1"){
+		if( !file_exists( $name )){
+	        //thanks to M.T.Sandikkaya for path correction
+            $namePath = ".$path/$name";
+            @touch($namePath);
+            chmod($name, 0666);
+            $already = implode( "", file( "$name" ) );
+        }
         $data = rtrim($_POST["content"])."\n";
         $data2 = rtrim($_POST["menucontent"])."\n";
         // write file first
@@ -560,14 +559,8 @@ header ("Content-Type: text/html; charset=".$encoding);
 
 // edit or show page?
 if( $edit ){
-	if($_POST['Edit2']== "OK"){
-		$name=$_POST['editpagename'];
-		$name = "$data_dir/".$_GET[$wiki_get];
-		secure($name);
-		editpage2( $name );
-	}else{
+	secure($name);
 	editpage( $name );
-	}
 }else{
     showpage( $name );
 }
