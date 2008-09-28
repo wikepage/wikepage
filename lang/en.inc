@@ -2,43 +2,56 @@
 /*
  Cyrocom Wikepage Language Files
 
- Turkish Language File
+ English Language File
  by Sefer Bora LISESIVDIN
- Dec 3, 2004
 */
 $encoding = "iso-8859-1";
 $data_dir = "data/en";
 $page_default = "Index";
 $page_admin = "Admin";
-$template_show = "show.html";
-$template_edit = "edit.html";
-$lang_searchpage = "Search page";
-$lang_orsearchcontent = "or search content";
-$lang_search = "Search";
-$lang_searchingpage = "Searching page ";
-$lang_searchingcontent = "Searching content ";
-$lang_nottochangepass = "If you don't want to change your password, ENTER YOUR PASSWORD IN FIRST FIELD!";
-$lang_oldadminpass ="Administration Password";
-$lang_adminpass = "New Administration Password";
-$lang_againadminpass = "Again New Administration Password (for control)";
-$lang_passless = "Page editing without password";
-$lang_change = "Change";
-$lang_abbrev_findpage = "findpage";
-$lang_abbrev_admin = "admin";
-$lang_abbrev_allpages = "allpages";
-$lang_abbrev_recentchanges = "recentchanges";
-$lang_templatenotfound = " template not found!";
-$lang_sorrypagelocked = "Sorry, page is locked!";
-$lang_cantwriteinpage = "Error: can't write in $name (it has $data_perm permissions by $data_owner:$data_group owner:group.) !";
-$lang_passmodeerror = "Error: Site is personal mode. Content changes can be made with true entered password. You enter wrong password";
-$lang_returnhomepage = "Back to home page";
-$lang_passsuccess = "Your password formed successfuly.";
-$lang_twononemptypassmustequal = "You must enter password at first and two fields must be same.";
-$lang_oldpasswrong = "You entered your old password wrong.";
-$lang_processesok = "Processes ok.";
-$lang_filloldpass = "Please enter old password!";
-$lang_twopassmustequal = "Two password fields must be same.";
-$lang_writingrules = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
+$lang['searchpage'] = "Search page";
+$lang['orsearchcontent'] = "or search content";
+$lang['search'] = "Search";
+$lang['searchingpage'] = "Searching page ";
+$lang['searchingcontent'] = "Searching content ";
+$lang['nottochangepass'] = "If you don't want to change your password, ENTER YOUR PASSWORD IN FIRST FIELD!";
+$lang['oldadminpass'] ="Administration Password";
+$lang['adminpass'] = "New Administration Password";
+$lang['againadminpass'] = "Again New Administration Password (for control)";
+$lang['passless'] = "Page editing without password";
+$lang['change'] = "Change";
+$lang['abbrev_findpage'] = "findpage";
+$lang['abbrev_admin'] = "admin";
+$lang['abbrev_allpages'] = "allpages";
+$lang['abbrev_recentchanges'] = "recentchanges";
+$lang['filenotfound'] = " file not found!";
+$lang['sorrypagelocked'] = "Sorry, page is locked!";
+$lang['cantwriteinpage'] = "Error: can't write in $name (it has $data_perm permissions by $data_owner:$data_group owner:group.) !";
+$lang['passmodeerror'] = "Error: Site is personal mode. Content changes can be made with true entered password. You enter wrong password";
+$lang['returnhomepage'] = "Back to home page";
+$lang['passsuccess'] = "Your password formed successfuly.";
+$lang['twononemptypassmustequal'] = "You must enter password at first and two fields must be same.";
+$lang['oldpasswrong'] = "You entered your old password wrong.";
+$lang['processesok'] = "Processes ok.";
+$lang['filloldpass'] = "Please enter old password!";
+$lang['twopassmustequal'] = "Two password fields must be same.";
+$lang['edit'] = "Edit ";
+$lang['recent'] = "Recent Changes";
+$lang['advsearch'] = "Advanced Search ";
+$lang['all'] = "All Pages";
+$lang['admin'] = "Administration ";
+$lang['index'] = "Index ";
+$lang['lastupdate'] = "Last Update: ";
+$lang['editing'] = "editing ";
+$lang['ifuveapass'] = "If you have a password: ";
+$lang['mainmenu'] = "Main Menu ";
+$lang['pagecontents'] = "Page Contents ";
+$lang['navi'] = "Navigation";
+$lang['copyleft'] = "<p>Permission is granted to copy, distribute and/or modify this document under the terms of the
+ GNU Free Documentation License, Version 1.1 or any later version published by the <a href=\"http://www.fsf.org/\">
+ Free Software Foundation</a>. If you don't agree please don't add content. </p>
+ <small>Powered by mysqlless php wikisite-homepage engine: <a href=\"http://www.cyrocom.com/\">Wikepage</a></small><br/><p></p>";
+$lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<li>One * before a line puts bullets in front of it </li>
 						<li>Links: [Link_type], [http://externallink.com|click] or [http://externallink.com|image.gif] or type URL
 						<li>One or more ! make it a headline </li>
@@ -55,4 +68,5 @@ $lang_writingrules = "<ul id=\"footer\" style=\"text-align: left;\"> <small>
 						<font color=\"Blue\">Blue</font>, <font color=\"Teal\">Teal</font>, <font color=\"Aqua\">Aqua</font> 
 						and <font color=\"White\">White</font> of course. Or use RGB codes like <font color=\"#FF9900\">#FF9900</font> or <a href=\"http://www.yourhtmlsource.com/stylesheets/namedcolours.html\" target=\"_blank\">try more</a></li></small>
                       </ul>";
-?>
+
+ ?>
