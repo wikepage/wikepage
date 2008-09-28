@@ -15,32 +15,19 @@
 !! Baðlar
 * Normal olarak yeni bir otomatik bað açmak için kelime yada boþluk yerine _ ile baðlý kelimeler grubunu [] içine yazmak link için yeterlidir. Örneðin:[Kelime] ve [Kelime_grubu] Yazdýðýnýzda otomatik olarak oluþan bu linklere gidip düzenle diyerek bu yeni sayfalarý oluþturabilirsiniz. Bu kadar basit.
 * Dýþ bað açmak için URL\'yi girin, eðer geçerli bir URL ise aktifleþecektir.
-* Daha görsel dýþ baðlar için [geçerli url|bað] yazmanýz yeterli olur. Örneðin [http://www.cyrocom.com|bunun gibi]. Ayný özellik statik sayfalar içinde geçerlidir: [Ana_sayfa|Bu sitenin ana sayfasi].
-* data/files dizini altindaki bir resmi [ ] arasýna yazarsanýz resim gösterilir. Örneðin: [logo.png], eðer linkli resim isterseniz: [http://www.cyrocom.com/|wike.gif]
-* Köþeli parantez içine eðer bir resmin URL\'sini girerseniz o resim gösterilir.
- PS: URL resimlere bað eklenmemektedir. Sadece statik resimlere bað ekleyebilirsiniz.
-
+* Daha görsel dýþ baðlar için [geçerli url|bað] yazmanýz yeterli olur. Örneðin [http://www.cyrocom.com|bunun gibi].
+* __Önemli__ bir özellikte resim baðý eðer bir resmi bað þeklinde [ ] arasýna yazarsanýz resim gösterilir.
+Örneðin: [logo.png], eðer linkli resim isterseniz: [http://www.cyrocom.com/|wike.gif]
 !! Özel sayfalar
 * [Son_deðiþiklikler] deki içeriði herhangi bir sayfaya\'\'< sondeðiþiklikler >\'\' (boþluksuz) yazarak oluþturabilirsiniz.
 * [Sayfa_bul] daki içeriði ayný þekilde < sayfabul > la oluþturabilirsiniz.
 * Ve [Tüm_sayfalar].. bunun içinde < tümsayfalar > yazmanýz yeterli.
 * Yönetim kýsmýný herhangi bir sayfaya eklemek içinde < yönetim > yazmanýz yeterli.
-
-!! Deðiþken sistemi
-Wikepage komut sistemine sahiptir. Þu an için üç komut deðiþkeni vardýr: 
-* lng deðiþkeni: Sitenin dilini deðiþtirmek için dilin iki harfli kýsaltmasýna eþitlenir. Örneðin: Ýngilizce için \"en\", Türkçe için \"tr\" gibi. Kullanýmý (herhangi bir sayfada): [lng=tr|Turkce], [lng=tr|tr.gif]
-* rss deðiþkeni: Son deðiþiklikler sayfasýnýn rss çýktýsý için \"yes\", blog rss çýktýsý için \"blog\" a eþitlenir. Kullanýmý: [rss=blog|Blog RSS], [rss=yes|rss_wiki.gif]
-* file deðiþkeni: data/files dizini içindeki dosyalara link vermeye yarar. Kullanýmý: [file=dosyaadi.pdf|Dosya bilgisi]
-
-!! Þablon sistemi
-Eðer sitenizde ki bir yada birden fazla sayfa için farklý bir þablon kullanmak istiyorsanýz, yeni þablon sistemini kullanabilirsiniz. Örneðin \"2006.2\" þablonunu 2006.2a sürümü ile kullanýyorsunuz. Bu þablondaki \"index.html\" sayfalarýn genel olarak kullanýldýðý þablon dosyasýdýr. Eðer \"index2.html\" adýnda yeni bir þablon dosyasýný \"Kumluk\" sayfasýný göstermek için kullanmak istiyorsanýz, bu þablon dosyasýný \"2006.2\" þablon dizinine kopyalayýn ve herhangi bir sayfada kumluk sayfasýna gidebilmek için þu þekilde bir bað kullanýn: [Kumluk|index2.html]
-
 !! Tablolar
 Wikepage\'de tablo yapmak için 4 boru (|) iþareti ile satýrý baþlatýn, her sütun ,için 2 boru koyun ve satýrý sonlandýrmak için 4 boru koyun.
 ||||**Þehir**||**Plaka No**||||
 ||||Ankara||06||||
 ||||Ýstanbul||34||||
-
 !! Renkli yazý
 Wikepade renkli yazý yazmak için 2 diyez (#) ile baþlayýn, renk girin 2 diyez ile kapayýn. Renkli yazýlacak yazýyý girin ve 2 diyez ile tamamen kapatýn. Girilen renk deðeri direkt font tag'ýnda yazýldýðýndan ingilizce karþýlýðýný kullanýn. Renkler Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua ve White. Yada RGB kodlarýný kullanabilirsiniz: #FF9900 gibi.
 ##blue## Mesela mavi yazý böyle yazýlýr##

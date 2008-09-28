@@ -1,5 +1,5 @@
 Cyrocom Wiki sitesi/Kiþisel site Yazýlýmý
-WIKEPAGE Opus 10 Sürüm 2006.2a (Kod ismi: Maxwell-Boltzmann)
+WIKEPAGE Sürüm 2006.2 (Kod ismi: Maxwell-Boltzmann)
 -----------------------------------------------------------------------------------------
 Wikepage yazýlýmý, paylaþma amacýyla yapýlmýþ, herkesin sayfa yapabilmesi ve
 paylaþabilmesi amacýyla yapýlmýþtýr.
