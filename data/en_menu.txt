@@ -9,12 +9,13 @@
 * [About_Blog]
 
 **Languages**
-[lng=en|en.gif] [lng=en|English]
+[en.gif] [index.php?lng=en|English]
+
 
 [http://www.cyrocom.com/|wike.gif]
 
 [nofollow.gif]
 
-[rss=yes|rss_wiki.gif]
+[index.php?rss=yes|rss_wiki.gif]
 
-[rss=blog|rss_blog.gif]
+[index.php?rss=blog|rss_blog.gif]
