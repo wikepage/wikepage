@@ -1,0 +1,37 @@
+! [Wikepage] 2005.3\'e hoþgeldiniz.
+Bu wiki yazýlýmýný denemeyi seçtiniz.. Tebrikler! çünkü wikepage __ilk ve tek türkçe wiki yazýlýmýdýr__.
+Wiksis\'i biliyorsanýz þunu söyleyebiliriz ki Wikepage 2005.3, wiksis\'in yeni ve geliþtirilmiþ sürümüdür. Wikepage 2005.3 basit ve küçük bir wiki ve/veya kiþisel sayfa oluþturma yazýlýmýdýr.
+
+ ##red##**DÝKKAT:** Sitenizi oluþturmaya baþlamadan önce dökümantasyonu okuyun!(doc dizininde)##
+
+!! **2005.3** : 2005.2\'ye eklenen özellikler:
+* Firefox ve Opera için düzeltilmiþ css stili,
+* Yeni özelliklere raðmen daha küçük kod ve daha küçük zip boyutu,
+* Basit reklam desteði,
+* Linkli resim desteði,
+
+!! **2005.2** : 2005.1\'e eklenen özellikler:
+* Geliþtirilmiþ css stili,
+* Wiki-düzenlenebilir sol menü,
+* Çokludilli site desteði,
+* Siteniz için wikepage ikonlarý: [cyrocomwike.gif], [ilove.gif], [wike.gif]
+
+!! **2005.1** : Özellikleri
+* Çoklu dil desteði,
+* Wiki ve Kiþisel site modu,
+* Geliþmiþ [Wiki_stil] desteði,
+* Toplamý 60K\'dan küçük (iki dil dosyalarýyla beraber),
+* Veritabaný gerektirmez,
+* Arama desteði,
+* URL resim desteði,
+* Ve birçok özellik,
+
+!! Haberler
+Wikepage\'in yerelleþtirme çalýþmalarýna yardýmcý olmak istemez misiniz? Cyrocom\'da [http://www.cyrocom.com/index.php?wiki=Development|ilgili sayfaya] giderek gerekli dosyayý indirin. Çevirin ve (\'\'master-AT-cyrocom.com\'\') adresine gönderin. Toplam süre yaklaþýk 30 dakikadýr.
+
+!! Ýçindekiler
+* [Wiki_nedir] - açýklama ve wiki tarihi
+* [Wiki_stil] - kullaným ve dokümantasyon
+* [Kumluk] - denemelerinizi yapmanýz için açýk alan
+
+Programýn sahibi [Cyrocom], size ücretsiz ve GPL lisanslý sunuyor.
