@@ -11,29 +11,29 @@
         <meta name="description" content="<!--wikiname-->" />
         <meta name="author" content="<!--author-->" />
         <meta name="keywords" content="<!--wikiname-->" />
-        <link rel="stylesheet" type="text/css" href="wikepage.css" />
+        <link rel="stylesheet" type="text/css" href="theme/<!--theme-->/style.css" />
         </head>
         <body>
         
                 
 
 	
-<table border="0" cellpadding="1" cellspacing="1" bgcolor="#316B94" width="750" align="center">
+<table border="0" bgcolor="#dddddd" cellpadding="1" cellspacing="1" width="750" align="center">
     <tr> 
       
-    <td bgcolor="#FFFFFF" width="750"> 
-      <table border="0" cellpadding="0" cellspacing="0" width="750">
+    <td  bgcolor="#eeeeee" width="750"> 
+      <table bgcolor="#dddddd" border="0" cellpadding="0" cellspacing="0" width="750">
         <tr height="20">     
         <td width="600"> 
-            <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&edit=Yes" style="font-weight: bold;">Edit</a> 
-              <span class="dillo"> | </span> <a href="index.php?wiki=Recent_changes">Recent 
-              changes</a> <span class="dillo"> | </span> <a href="index.php?wiki=Search">Advanced Search</a> 
-              <span class="dillo"> | </span> <a href="index.php?wiki=All_pages">All 
-              pages</a> <span class="dillo"> | </span> <a href="index.php?wiki=Admin">Administration</a> 
-              <span class="dillo"> | </span> <a href="index.php?wiki=Index">Index</a> 
+            <div id="wikicontrols"> <a href="index.php?wiki=<!--wikiname-->&edit=Yes" style="font-weight: bold;"><!--lang_edit--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=Recent_changes"><!--lang_recent--> 
+              </a> <span class="dillo"> | </span> <a href="index.php?wiki=Search"><!--lang_advsearch--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=All_pages"><!--lang_all--> 
+              </a> <span class="dillo"> | </span> <a href="index.php?wiki=Admin"><!--lang_admin--></a> 
+              <span class="dillo"> | </span> <a href="index.php?wiki=Index"><!--lang_index--></a> 
               <span class="dillo"> | </span> </div>
           </td>
-          <td width="150" valign="middle"><div id="wikicontrols">
+          <td width="150" ><div id="wikicontrols">
             <form method="get" action="index.php">
               <b>Search:</b>
               <input type="hidden" name="wiki" value="Search">
@@ -47,17 +47,17 @@
       <table border="0" cellpadding="0" cellspacing="0" width="750">
         <tr height="110"> 
             
-          <td valign="center" width="230" background="<!--logo-->" align="left" height="110">
+          <td valign="center" width="230" background="theme/<!--theme-->/<!--logo-->" align="left" height="110">
           	<div id="wikepage"><!--sitename--></div>
             <div id="header"><!--siteheader--></div>
           </td>
-          <td valign="center" align="center" height="110" width="520">
+          <td valign="center" background="theme/<!--theme-->/besa.png" align="center" height="110" width="520">
           <center><small><font color="Silver"><!--bannerwriting--></font><br><a href="index.php?banner=Yes"><img border="0" src="<!--bannerimage-->"></a></small> </center>
           </td>
           </tr>
           <tr height="20"> 
             
-          <td align="center" width="230">Last update: 
+          <td align="center" width="230"><!--lang_lastupdate--> 
             <!--lastupdate-->
           </td>
             
@@ -76,14 +76,14 @@
           </tr>
           <tr> 
             
-          <td width="230" valign="top"> 
+          <td width="230" bgcolor="#ffffff" valign="top"> 
             <div id="menucontent">
         <!--menucontent-->
         </div><p>
         </p>    
         </td>
             
-          <td width="520" valign="top"> 
+          <td width="520"  bgcolor="#ffffff" valign="top"> 
             <div id="wikicontent"> 
               <!--wikicontent-->
             </div>
@@ -94,8 +94,6 @@
     </tr>
   </table>
 <div id="footer"><p>
-<div align="center"><font color="Silver"> Powered by mysqlless php wikisite-homepage engine:<a href="http://www.cyrocom.com/"><b>Wikepage!</b></a> </font></div><br>
-<div align="center"><font color="Silver"> Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License,<br> Version 1.1 or any later version published by the <a href="http://www.fsf.org/">Free Software Foundation</a>.</font></div><br>
-</div>               
+<div align="center"><font color="Silver"> <!--copyleft--> </p></div>              
 </body>
 </html>

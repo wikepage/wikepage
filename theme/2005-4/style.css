@@ -63,7 +63,7 @@ img.wikiimage {
 
 #title {
         color: #555;
-        background-color: #fff;
+        background-color: #eee;
         border: 0px;
         padding: 1px 3px;
         margin: 8px 0%;
@@ -82,7 +82,7 @@ img.wikiimage {
 
 #wikicontrols a {
         color: #666;
-        background-color: #fff;
+        background-color: #ddd;
         text-decoration: none;
         border: 0px;
         padding: 1px 3px;

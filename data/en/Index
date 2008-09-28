@@ -1,11 +1,23 @@
 ! Welcome to [Wikepage].
-This is the 2005.3 (Frank - van der Merwe), latest of the 2005 series. 2005.3 is a mostly an \'\'optimization\'\' version. Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software derived from Tipiwiki2.
+This is the 2005.4 (Bose-Einstein), Thanks for choosing Wikepage. Wikepage is wiki standart, easy to use, mysqlless and small wiki software derived from Tipiwiki2.
 
 Wikepage is a small wiki. So please don\'t wait powerful wiki\'s features from Wikepage.
  ##red##**IMPORTANT:** Please read documentation first,
  before building your site! (in doc folder)##
 
-!! **2005.3** : Features added to 2005.2
+!! **2005.4** : Features added to 2005.3
+* Spammer enemy: Nofollow outlinks,
+* New theme,
+* Optimized code,
+* Code comments are english now,
+* Redesigned folder structure,
+* Single file i18n support,
+* Theme support,
+* From now on, outlinks are signed with [ext.gif],
+
+
+!! **2005.3a** : Features added to 2005.2
+* An important security flaw closed,
 * Corrected css style for Firefox and Opera,
 * Smaller code and smaller zip with new features,
 * Simple Banner support,
