@@ -1,0 +1,36 @@
+[Wikepage] ist eine auf Wiki-Standards aufbauende, php-basierte, ohne MYSQL laufende Wiki-Software.
+
+!! Markup Language
+* Ein * vor der Zeile erstellt eine Liste.
+* Ein ! vor der Zeile schreibt einen <h1> - großen Titel.
+* Zwei !! vor der Zeile schreibt einen <h2> - mittelgroßen Titel.
+* Drei !!! vor der Zeile schreibt einen <h3> - kleinen Titel.
+* Zwei * vor und hinter Wörtern oder Phrasen schreibt diese **fett**.
+* Zwei _ vor und hinter Wörtern oder Phrasen schreibt diese __unterstrichen__
+* Zwei \' vor und hinter Wörtern oder Phrasen schreibt diese \'\'kursiv\'\'
+* Zwei : vor und hinter Wörtern oder Phrasen setzt diese ::in eine Box::
+
+##red##**Bearbeiten**-Link anklicken um den Quelltext der Seite anzusehen.##
+
+!! Links
+* Wikepage nutzt Links des Typs [Wiki_Wort], bei Leerzeichen mit einem \'_\'. Um eine neue Seite zu erstellen, einfach einen Link, z.B. [Wort], in einer Seite anlegen, abspeichern und dem Link folgen. Die Seite wird dann automatisch erstellt.
+* Wenn ein externer Link gesetzt werden soll, kann entweder einfach die URL angegeben werden. Ist sie korrekt, kann sie angeklickt werden.
+* Um externe Links ansehnlicher zu gestalten, gibt es noch eine weitere Möglichkeit. Links können auch [http://www.cyrocom.com|so] angegeben werden.
+* Um ein Bild anzuzeigen, wird einfach die URL zum Bild zwischen zwei [ ] Klammern gesetzt.
+Zum Beispiel:[wike.gif]. Soll das Bild verlinkt sein, muss es so angegeben werden: [http://www.cyrocom.com/|wike.gif]
+
+!! Spezielle Seiten
+* Eine [letzte_Aenderungen]-Seite wird erstellt, indem ein \'\'< letzteÄnderungen >\'\' (ohne Leerzeichen) in den Quelltext der Seite geschrieben wird.
+* Die Suchseite ([Suchen]) wird erstellt, wenn ein \'\'< findeSeite >\'\' wie oben eingefügt wird.
+* Alle Seiten werden, wie [alle_Seiten|hier], aufgelistet, wenn \'\'< alleSeiten >\'\' eingefügt wird.
+* Ein Administrationsbereich wird durch das Einfügen von \'\'< admin >\'\' angezeigt.
+
+!! Tabellen
+Wikepage unterstützt die Erstellung von Tabellen. Dazu die Zeile mit 4 pipes (|) beginnen, Spalten mit 2 pipes (|) abgrenzen und am Ende wieder 4 pipes (|) schreiben. Der Seitenquelltext zeigt die nachfolende Tabelle.
+||||**Website**||**Link**||||
+||||Cyrocom Homepage||http://www.cyrocom.com/||||
+||||SBLisesivdin Homepage||http://www.cyrocom.com/sblisesivdin||||
+
+!! Einfärben
+Um etwas farbig darzustellen vor den einzufärbenden Text zwei Rauten (#) stellen, den Farbnamen schreiben und wieder mit 2 Rauten (#) schließen. Der nachfolgende Text wird eingefärbt, wiederum 2 Rauten (#) beenden die Einfärbung. Folgende Farben sind möglich: Black (schwarz), Silver (silber), Gray (grau), Maroon (rotbraun), Red (rot), Purple (violett), Fuchsia (pink), Green (grün), Lime (hellgrün), Olive (dunkelgrün), Yellow (gelb), Navy (dunkelblau), Blue (blau), Teal (mintgrün), Aqua (hellblau) and White (weiß). Auch RGB-Farben wie #990000 sind möglich
+##blue##Ein Beispiel für blauen Text. **Bearbeiten**-Link klicken um den Quelltext der Seite anzusehen.##
