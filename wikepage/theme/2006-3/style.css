@@ -1,12 +1,11 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family:"Trebuchet MS", Arial, Verdana;
+  font-family: Tahoma, Arial, Verdana;
   color:#555555;
-  background-color:#FFFFFF;
+  background-color:#fff;
   font-size: 87.5%;
   line-height: 135%;
-  text-align: center;
 }
 
 INPUT {
@@ -24,21 +23,21 @@ text-indent: 2px;
 }
 
 #top {
-  background-color: #98b072;
+  background-color: #002C4A;
 }
 
 #header {
   margin: 0em auto;
-  padding: 4em 0em 1.1em 0em;
-  width: 44em;
+  padding: 1em 0em 1.1em 0em;
+  width: 46em;
   text-align: left;
-  color: #667C9E;
+  color: #004A84;
 }
 
 #container {
   margin: 0em auto 1em auto;
-  width: 46em;
-  text-align: left;
+  width: 48em;
+  text-align: justify;
 }
 
 #main {
@@ -65,21 +64,20 @@ html>body #main {
   text-align: center;
 }
 
-
-
-
 /* Classes */
 
-h1.banner {
+#banner {
   color: #FFFFFF;
   font-size: 160%;
   font-weight: normal;
-  border-bottom:1px dotted #ffffff;
+  border-bottom:1px dashed #888;
+  padding-bottom: 5px;
   margin: 0em;
 }
+
 h1 {
   font-family:Century Gothic, georgia, helvetica, times, sans-serif;
-  color: #728C40;
+  color: #855201;
   font-size: 170%;
   font-weight: normal;
   margin: .8em 0em .4em 0em;
@@ -89,7 +87,7 @@ h1 {
 
 h2 {
   font-family:Century Gothic, georgia, helvetica, times, sans-serif;
-  color: #728C40;
+  color: #855201;
   font-size: 130%;
   font-weight: normal;
   margin: .8em 0em .4em 0em;
@@ -99,7 +97,7 @@ h2 {
 
 h3 {
   font-family:Century Gothic, georgia, helvetica, times, sans-serif;
-  color: #728C40;
+  color: #855201;
   font-size: 100%;
   font-weight: normal;
   margin: .8em 0em .4em 0em;
@@ -118,24 +116,25 @@ p.address {
 
 img {
   border: none;
+  max-width: 468px;
 }
 
 a {
-  color: #2a65ad;
+  color: #CC7E02;
 }
 
 a:visited {
-  color: #2a65ad;
+  color: #CC7E02;
 }
 
 a:hover {
-  color: #4d87ce;
+  color: #CC7E02;
 }
 
 ul {
   padding: 0em 0em 0em .9em;
   margin: 0em;
-  list-style-type: square;
+  list-style-type: disc;
 }
 
 ul ul {
@@ -155,15 +154,18 @@ dl {
 }
 
 #main pre {
-        border: 1px solid #ccc;
-        background-color: #f5f5f5;
-        padding: 2px 5px;
-        font-family: monospace;
+  background: url(quote.gif) no-repeat;
+  color: #666;
+  display: block;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  padding-left: 28px;
+  font-family: monospace;
 }
 
 
 #main table {
-  background-color: #eee;
+  background-color: #fff;
   border: 1px solid #ddd;
 }
 #main td {
@@ -182,12 +184,13 @@ dl {
 }
 
 #wikicontrols {
-        margin: 2px 0%;
+        width: 46em;
+		margin: 2px 0%;
 }
 
 #wikicontrols a {
         color: #ddd;
-        background-color: #98b072;
+        background-color: #002C4A;
         text-decoration: none;
         border: 0px;
         padding: 1px 3px;
@@ -195,9 +198,54 @@ dl {
 }
 
 #wikicontrols a:hover {
-        color: #123456;
+        color: #F99901;
         border-color: #eee;
-        background-color: #98b072;
+        background-color: #002C4A;
+}
+#TOC {
+  margin: 0px;
+  display: inline;
+  border-style: none;
+}
+
+#TOC a.:link {
+  color:blue;text-decoration:none
+}
+#TOC a:visited {
+  color:orange;text-decoration:none
+}
+#TOC a:hover {
+  color:red;text-decoration:underline
+}
+#TOC a:active {
+  color:green;text-decoration:underline
+}
+
+#TOC li.H1 {
+  font: normal normal normal 8pt Tahoma, Arial, Verdana;
+  list-style-type: none;
+  margin-left: 0px;
+}
+#TOC li.H2 {
+  font: normal normal normal 8pt Tahoma, Arial, Verdana;
+  list-style-type: none;
+  line-height:16px;
+  margin-left: 10px;
+}
+#TOC li.H3 {
+  font: normal normal normal 8pt Tahoma, Arial, Verdana;
+  list-style-type: none;
+  line-height:16px;
+  margin-left: 20px;
+}
+
+#images {
+  float: right;
+  background-color: #f5f5f5;
+  border:1px solid #ccc;
+  font-size: 70%;
+  padding: 0.3em;
+  margin-left: 1em;
 }
 
 .dillo { display: none; }

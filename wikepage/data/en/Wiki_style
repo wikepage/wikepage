@@ -16,10 +16,13 @@
 * Wikepage used [Wiki_word] type links whish used \'_\' as whitespace. For make a new page just make a link in a page like [Word] and then save and use the link. When you use link, page\'ll created.
 * If you want to link to something external, you could just type the url like [http://www.wikepage.org/] and if it is valid, it will be clickable
 * To make external links more beautiful, there is another version link can be used to create something [http://www.cyrocom.com|like this], or to a static page [Index|like this]
+* If you write a email address (without mailto:) between [ ], email address will be displayed like [sblisesivdin@gmail.com].
 * If you put the url of a picture between such [ ] brackets, the image will be displayed.
+* Boxed image, using:{a|b|c} (a)thumbnail image, (b)caption (c)original image. Original image will be resized to width of 468 pixels, if bigger than that. If you click, you can view original image. Example: {wike.gif|Caption of image|wike.gif}
 * You can use static picture\'s names which can be found in data/files folder.
 For example :[wike.gif], But if you want to use linked image then: [http://www.cyrocom.com/|wike.gif]
- PS: You can\'t link URL pictures. Only local pictures can be linked.
+ PS: You can\'t link URL pictures.
+ Only local pictures can be linked.
 
 !! Special Pages
 * Information in [Last_changes] page is created with writing \'\'< lastchanges >\'\' (without whitespaces) in source of page. 
