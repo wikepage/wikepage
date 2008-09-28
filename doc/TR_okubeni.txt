@@ -1,0 +1,52 @@
+
+Cyrocom Wiki & Kişisel Sayfa Yazılımı
+----------------------------------------------------------------------------------
+
+ Û  Û  Û ÛÛÛ Û  Û ÛÛÛÛ ÛÛÛÛ ÛÛÛÛ ÛÛÛÛ ÛÛÛÛ
+ Û  Û  Û  Û  Û Û  Û    Û  Û Û  Û Û    Û   
+ Û  Û  Û  Û  ÛÛ   ÛÛÛ  ÛÛÛÛ ÛÛÛÛ Û ÛÛ ÛÛÛ 
+ Û  Û  Û  Û  Û Û  Û    Û    Û  Û Û  Û Û   
+  ÛÛ ÛÛ  ÛÛÛ Û  Û ÛÛÛÛ Û    Û  Û ÛÛÛÛ ÛÛÛÛ  Sürüm 2005.1  (Kod: Stranski-Krastanov)
+
+----------------------------------------------------------------------------------
+Wikepage yazılımı, paylaşma amacıyla yapılmış, herkesin sayfa yapabilmesi ve
+paylaşabilmesi amacıyla yapılmıştır.
+
+Wikepage iki moda sahiptir:
+
+-Wiki Modu: Sayfalar şifre girmeden değiştirilebilir.
+-Kişisel Modu: Sayfalar ancak şifre ile değiştirilebilir. 
+
+
+*KURULUM:
+-index.php dosyasını notepad benzeri bir programla açın. Ve kodun başında ki site
+ bilgisi, dil ve ayarları kendinize göre yapın.
+-Kurulum için internet sitenizin kurmak istediğiniz dizinine dosyaları kopyalayın.
+-Daha sonra data dizinini ve içindeki dizinleri dosyaları yazılabilir hale getirin.
+ (FTP yazılımınızla yapabilirsiniz Chmod 777)
+-PHP'nizin safe_mode'da çalıştırmayın. Wiki sayfalarını oluşturtmaz. safe_mode zorunlu
+ ise zaten işinizi biliyorsunuz demektir. Ayarını yapın :)
+-İstiyorsanız duzenle.html ve goster.html uzerinde değişiklikler yapıp tasarımı
+ değiştirebilirsiniz.
+-Yönetim linkine girip şifre belirleyin. 
+-Siteniz Wiki modunda çalışmaya başlamıştır.
+-Sitenizin içeriğinin bu şifrenizle korunması için (Kişisel moda geçiş)tekrar yönetime
+ gelip şifresiz yazma modunu kapatın.
+
+Artık sayfalarınıza ulaşabilirsiniz. Hazır gelen kurulumda size wikiyi ve yazım kurallarını
+öğreten sayfalar bulunur.
+
+*LİSANS
+Program GNU/GPL lisanslıdır. Lisans koşulları için:
+[ http://www.gnu.org ]
+
+*DİKKAT EDİLMESİ GEREKENLER
+-Dizin yazma, kullanıcı ayarlarını doğru yaptıysanız, yazılımınızın çalışması lazım. Mozilla
+ browserlarda oluşturulmak istenen sayfa isimlerine garip karakterler atabiliyor. Bunun için
+ sayfa isimlerinde ingilizce karakterler kullanmaya özen gösterin.
+
+-Ayrıca safe_mode'u bazı hosting firmaları kullanabiliyor. O zaman tabiiki dosya
+ oluşturulamamadan doğan bir sorun doğar.
+ 
+-Yönetimde 3 adet şifre alanı görünmektedir. Son ikisi sadece şifrenizi değiştirmek
+istiyorsanız kullanmak içindir.
