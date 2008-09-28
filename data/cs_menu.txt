@@ -1,0 +1,22 @@
+ 
+* [Index]
+* [Poslední_zmìny]
+* [Hledání]
+* [V¹echny_stránky]
+* [Admin]
+* [Sandbox]
+* [Wiki_styl]
+* [O_Blogu]
+* [Záznam_blogu]
+
+**Languages**
+[lng=cs|cs.gif] [lng=cs|Czech]
+[lng=en|en.gif] [lng=en|English]
+
+[http://www.cyrocom.com/|wike.gif]
+
+[nofollow.gif]
+
+[rss=yes|rss_wiki.gif]
+
+[rss=blog|rss_blog.gif]

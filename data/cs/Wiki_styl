@@ -1,0 +1,46 @@
+[Wikepage] je software podle wiki standardu s pou¾itím PHP bez databáze.
+
+!! Znaèkovací jazyk
+* Jedna * pøed øádkem oznaèuje seznam.
+* Jeden ! pøed øádkem oznaèuje <h1> - velký nadpis
+* Dva !! pøed øádkem oznaèují <h2> - støední nadpis
+* Tøi !!! pøed øádkem oznaèují <h3> - malý nadpis
+* Dvì * pøed a za slovem nebo frází oznaèují **tuèné**
+* Dvì _ pøed a za slovem nebo frází oznaèují __podtr¾ené__
+* Dvì \' pøed a za slovem nebo frází oznaèují \'\'kurzívu\'\'
+* Dvì : pøed a za slovem nebo frází oznaèují ::text v rámeèku::
+
+##red##Kliknìte na odkaz **Editace** nahoøe na stránce a zobrazte si zdrojový kód.##
+
+!! Odkazy
+* Wikepage pou¾ívá tento typ [Wiki_slova] pro vnitøní odkazy, kde podtr¾ítko \'_\' nahrazuje mezeru. Novou stránku vytvoøíte zadáním názvu napø. [Slovo] a ulo¾ením jako odkaz. Pou¾itím odkazu se vytvoøí nová prázdná stránka.
+* Pokud chcete odkazovat nìkam ven, napi¹te adresu URL jako [http://www.wikepage.org/] a pokud bude platná, bude klikatelná.
+* Lep¹í vzhled externích odkazù zajistíte jejich pojmenováním, zde je napøíklad externí odkaz [http://www.cyrocom.com|jako tento], nebo pro statickou stránku [Index|jako tato].
+* Pokud vlo¾íte mezi hranaté závorky [ ] URL obrázku, zobrazí se na stránce.
+* Mù¾ete pou¾ít názvy souborù obrázkù v adresáøi data/file, napøíklad:[wike.gif], ale pokud chcete aby byl obrázek zároveò odkazem, vlo¾te: [http://www.cyrocom.com/|wike.gif].
+ P.S.: Nemù¾ete linkovat externí, pouze internì ulo¾ené obrázky.
+
+!! Speciální stránky
+* Informace na stránce [Poslední_zmìny] jsou vytvoøeny vlo¾ením \'\'< lastchanges >\'\' (bez mezer) do zdrojového kódu stránky. 
+* Informace na stránce [Hledání] page jsou vytvoøeny podobnì vlo¾ením \'\'< search >\'\'.
+* Informace [V¹echny_stránky]... vlo¾te \'\'< allpages >\'\'.
+* Pokud chcete vlo¾it administraèní sekci do nìkteré z jiných stránek, zapi¹te \'\'< admin >\'\', podobnì jako v pøíkladech vý¹e.
+
+!! Systém promìnných
+Wikepage obsahuje sadu pøíkazù. Zde jsou tøi z nich:
+* Promìnná lng: Musí být vlo¾ena jako dvoupísmenná zkratka jazyka, napø. \"en\" pro angliètinu nebo \"cs\" pro èe¹tinu. Pou¾ití (na kterékoliv stránce): [lng=en|English], [lng=en|en.gif].
+* Promìnná rss: \"yes\" pro RSS výstup posledních zmìn stránek a \"blog\" pro RSS výstup záznamù blogu. Pou¾ití: [rss=blog|RSS výstup blogu], [rss=yes|rss_wiki.gif]
+* Promìnná file: Pou¾ita pro odkaz na soubor v adresáøi data/files. Pou¾ití [file=filename.pdf|Informace o souboru].
+
+!! Systém vzorù (template)
+Pokud chcete pro nìkteré stránky pou¾ít odli¹ný styl, mù¾ete vyu¾ít systém vzorù. Napøíklad pou¾íváte systém 2006.2a s tématem s názvem \"2006.2\", kde je obsa¾en soubor \"index.html\", co¾ je základní vzor pro v¹echny stránky. Pokud vytvoøíte jiný vzor, nazvìte jej \"index2.html\" a vlo¾te do adresáøe téma 2006.2. Jestli¾e chcete zobrazit napøíklad stránku \"Hledání\" s novým vzorem, pou¾ijte jeho název v odkazu: [Search|index2.html].
+
+!! Tabulky
+Wikepage podporuje tvorbu tabulek. Okraj øádku tabulky oznaèíte vlo¾ením 4 svislých èárek (|), ka¾dý sloupec oddìlují 2 èárky (|) a pro ukonèení pou¾ijte opìt 4 èárky (|). To je v¹e! Pøíklad vidíte pod tímto odstavcem.
+||||**Web**||**Odkaz**||||
+||||Cyrocom Homepage||[http://www.cyrocom.com/]||||
+||||SBLisesivdin Homepage||[http://www.cyrocom.com/sblisesivdin]||||
+
+!! Barvy
+Obarvení textu: Zaènìte 2 køí¾ky (#), vlo¾te název barvy a opìt 2 køí¾ky, pal napi¹te text, který má být obarven, a ukonèete 2 køí¾ky. Názvy barev jsou shodné jako pro tag font v HTML. Základní jsou Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua a White, nebo mù¾ete pou¾ít RGB kód jako napø. #FF9900.
+##blue##Pøíklad modrého textu. Kliknìte na Editaci pro zobrazení zdroje.##
