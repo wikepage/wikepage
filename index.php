@@ -1,6 +1,6 @@
 <?php
-/*	Wikepage 2007.2 Opus 13 "Landauer-Büttiker" Wiki/Blog Hybrid Engine
-	Copyleft (C) 2007 - 2004. Ankara, Turkiye.
+/*	Wikepage N "Hertzsprung-Russel" Wiki/Blog Hybrid Engine
+	Copyleft (C) 2008 - 2004. Ankara, Turkiye.
 	http://www.wikepage.org/
 	For latest licence please visit [ www.gnu.org/copyleft/gpl.html ]
 	derived from Tipiwiki2 : Copyleft (C) 2003, Andreas Zwinkau, andi@buxach.de, GPL
@@ -14,21 +14,14 @@ $pagevars=array(
 // Site Owner
 // ----------
 "author" => "Wikepage",
-// Banner Information
-// ------------------
-"bannerwriting" => "ADVERTISEMENT",
-//Use http:// for external links..
-"bannerlink" => "http://www.wikepage.org/",
-// Remove // before $bannerimage for activate banner.
-"bannerimage" => "wikebanner.gif",
 // Theme
-"theme" => "2007-2",
+"theme" => "2008-1",
 //Maximum Number of Blog entries per page
-"blogmax" => 5,
+"blogmax" => 9,
 // Upload config
 // ------------------
 // Set maximum file limit (in bits) (~1Mb in default)
-"maxlimit" => 8500000,
+"maxlimit" => 9999999,
 // Set allowed extensions (split using comma)
 "allowed_ext" => "jpg,gif,png,jpeg,pdf,doc,xls,ppt,odb,odm,odt,ods,odp",
 // Allow file overwrite? yes/no 
@@ -44,12 +37,11 @@ error_reporting(0);
  ++++++++ DON'T MAKE CHANGES BELOW HERE ! ++++++++ 
 */
 /* required for XHTML 1.0 Strict compilance */
-$opus="13";
+$opus="14";
 ini_set('arg_separator.output','&amp;');
 ini_set('url_rewriter.tags', "a=href,area=href,frame=src,input=src,fieldset=");
 session_start();
 $wiki_get="wiki";
-$pagevars["bannerimage"]="data/files/".$pagevars["bannerimage"];
 $version_info=explode('.', phpversion());
 if ($version_info[0] < 5 ) {
 	$servpath=$HTTP_SERVER_VARS['PATH_TRANSLATED'];
@@ -451,6 +443,12 @@ function filter($raw, $type) {
 	// pictures [ url ]
 	$filtered=preg_replace("/\[((http|ftp|https):\/\/[\w\.\:\@\?~\%=\+\-\/]+\.(png|gif|jpg))\]/","<img src=\"\\1\" class=\"wikiimage\" alt=\"\" />",$filtered);
 	$filtered=preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","<img src=\"data/files/\\1\" class=\"wikiimage\" alt=\"\" />",$filtered);
+	//Flash video	
+	$filtered=preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(flv))\]/i","<p id=\"player1\"><a href=\"http://www.macromedia.com/go/getflashplayer\">Get Flash Player</a> to view video.</span></p><script type=\"text/javascript\">var s1 = new SWFObject(\"flvplayer.swf\",\"single\",\"320\",\"260\",\"7\");s1.addParam(\"allowfullscreen\",\"true\");s1.addVariable(\"file\",\"data/files/\\1\");s1.addVariable(\"height\",\"260\");s1.addVariable(\"width\",\"320\");s1.write(\"player1\");</script>", $filtered);
+	//Flash object
+	$filtered=preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(swf))\|([\w ]+)\|([\w ]+)\]/i","<object width=\"\\3\" height=\"\\4\" classid=\"clsid:d27cdb6e-ae6d-11cf-96b8-444553540000\" codebase=\"http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0\"> <param name=\"movie\" value=\"data/files/\\1\" />  <embed src=\"data/files/\\1\" width=\"\\3\" height=\"\\4\" type=\"application/x-shockwave-flash\" pluginspage=\"http://www.macromedia.com/go/getflashplayer\" /></object>", $filtered);
+	// Youtube
+	$filtered=preg_replace("/\[(youtube)\=([\w\s]+)\]/i","<object width=\"425\" height=\"355\"><param name=\"movie\" value=\"http://www.youtube.com/v/\\1\&rel=1\"></param><param name=\"wmode\" value=\"transparent\"></param><embed src=\"http://www.youtube.com/v/\\1\&rel=1\" type=\"application/x-shockwave-flash\" wmode=\"transparent\" width=\"425\" height=\"355\"></embed></object>",$filtered);
 	// plain URLs
 	$filtered=preg_replace("/\[((http|ftp|https):\/\/[\w\.\:\@\?~\%=\+\-\/]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" class=\"wikiimage\" alt=\"outlink\" /></a>", $filtered);
 	$filtered=preg_replace("/\[((http|ftp|https):\/\/[\w\.:\/~@\,\?\%=\+\-;#&]+)\]/i","<a href=\"\\1\" rel=\"nofollow\">\\1 <img src=\"data/files/ext.gif\" class=\"wikiimage\" alt=\"outlink\" /></a>", $filtered);
@@ -647,19 +645,6 @@ function editpage($file) {
 	if( file_exists($file) && !is_writeable($file) )
 		$whole=preg_replace("/<form .*<\/form>/s","<h3>".$lang['sorrypagelocked']."</h3>", $whole);
 	output($whole, $file );
-}
-
-function banner() {
-	global $pagevars;
-	$fp=fopen("data/bannercount.txt","r+");
-	$count=fread($fp, filesize("data/bannercount.txt"));
-	$count++;
-	fclose($fp);
-	$fp=fopen("data/bannercount.txt", "w+");
-	fputs($fp, $count);
-	fclose($fp);
-	echo "<html><head><meta http-equiv=\"refresh\" content=\"0;URL=".$pagevars["bannerlink"].">";
-	exit;
 }
 
 function htmltotxt($string) {
@@ -887,7 +872,6 @@ if( ! file_exists( "$name" ) )
 	$edit=True;
 if( $_GET["edit"]=="Yes" )
 	$edit=True;
-if( $_GET["banner"]=="Yes" ) banner();
 if( $_POST['wiki']==$page_admin ){
 	if($_POST['password0']=="" ){
 		if( isset($adminpassword) ) die($lang['filloldpass']." <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");

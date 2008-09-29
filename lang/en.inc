@@ -1,6 +1,6 @@
 <?php
 /*
- Wikepage 2007-2 English Language File
+ Wikepage 2008-1 English Language File
  by Sefer Bora LISESIVDIN
 */
 $encoding = "utf-8";
