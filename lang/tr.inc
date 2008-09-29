@@ -64,9 +64,10 @@ $lang['submit'] = "Gönder";
 $lang['mainmenu'] = "Ana Menü ";
 $lang['pagecontents'] = "Sayfa Ýçeriði ";
 $lang['navi'] = "Navigasyon";
-$lang['blogsubject']="Konu";
-$lang['blogpage']="Ýçerik";
 $lang['blog_out']="blog_izle";
+$lang['blog_archive']="blog_arsiv";
+$lang['blog_subject']="Konu";
+$lang['blog_page']="Ýçerik";
 $lang['blog_input_page']="Blog_Girdi";
 $lang['activate_TOC']="Ýçindekileri Aktifleþtir";
 $lang['TOC']="<input type =\"button\" value =\"Ýçindekiler\" onclick =\"toggleTOC()\"><div id=TOC></div>";
@@ -74,6 +75,11 @@ $lang['nonews']="Haber Bulunamadý";
 $lang['xmlerror']="XML hatasý";
 $lang['atline']="satýrýnda";
 $lang['couldnotxml']="XML girdisini açamadý";
+$lang['couldnotversioninfo']="Sistem internete baðlanamýyor. Sürüm bilgisi kontrol edilemez ve RSS girdi alýnamaz.";
+$lang['newversion']="Wikepage'in yeni bir sürümü var! Lütfen güncelleþtirin.";
+$lang['next']="Ýleri";
+$lang['prev']="Geri";
+$lang['noimage']="Resimsiz...";
 $lang['copyleft'] = "<p>Bu wiki sitesinde yayýnlanan tüm içeriðin kopyalanmasý, daðýtýlmasý veya deðiþtirilmesi 
 üzerinde GNU-FDL Sürüm 1.1 yada <a href=\"http://www.fsf.org/\">FSF</a> tarafýndan çýkarýlan daha sonraki lisans 
 haklarý geçerlidir. Kabul etmiyorsanýz lütfen içerik eklemeyiniz.

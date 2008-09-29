@@ -1,4 +1,3 @@
-
 * [Ana_sayfa]
 * [Son_degisiklikler]
 * [Sayfa_bul]
@@ -7,12 +6,13 @@
 * [Kumluk]
 * [Wiki_stil]
 * [Blog_hakkinda]
+* [Blog_arsivi]
 
 **Languages**
 [lng=tr|tr.gif] [lng=tr|Turkce]
 [lng=en|en.gif] [lng=en|English]
 
-[http://www.cyrocom.com/|wike.gif]
+[http://www.wikepage.org/|wike.gif]
 
 [nofollow.gif]
 
