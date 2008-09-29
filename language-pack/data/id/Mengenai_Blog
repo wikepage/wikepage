@@ -1,0 +1,8 @@
+! UJICOBA: BLOG
+Mulai dari Opus 9, wikepage dilengkapi dengan kelengkapan baru yang disebut Blog. Blog wikepage sama mudahnya seperti wiki. Anda memiliki halaman wiki khusus yang dinamai: **Masukan_Baru_Blog**. Jika anda mengklik dan menuju halaman ini, anda akan diarahkan menuju halaman masukan baru blog. Anda dapat dengan mudah mengubah judul dan isi masukan blog anda dengan menggunakan perintah wiki klasik.
+
+Sangat mudah jika anda ingin menampilkan blog anda, hanya dengan meletakkan **< lihat_blog >** (tanpa spasi) pada semua halaman yang diinginkan.
+
+Bagian blog pada wikepage juga sangat dengan mudah dikeluarkan RSS feed-nya (RSS 0.91)! Keluaran RSS dapat diambil dari **index.php?rss=blog** .
+
+Kata Masukan_Baru_Blog atau < lihat_blog > dapat diganti dari berkas bahasa **data/id/id.inc**. Anda juga dapat mengubah blog sebagai berita atau sesuatu yang lebih menarik lagi.

@@ -1,0 +1,39 @@
+!Halo Cah..
+!! ini subjudul...
+!!! sub dari subjudul
+
+percobaan suara
+ memulai quote dengan satu spasi
+
+__bergarisbawah__ **tebal** \'\'miring\'\' atau ::terkotaki::
+
+* daftar
+* lagi
+* dan lagi
+
+---
+
+*daftar tidak bekerja jika dituliskan seperti ini.
+* harus ditulis seperti ini
+
+**Gambar:**
+[wike.gif]
+
+**Pranala**
+* Pranala halaman statis: [Halaman_depan]
+* Pranala halaman statis dengan keterangan: [Halaman_depan|Halaman depan situs ini]
+* Pranala URL dengan keterangan: [http://www.wikepage.org/|Situs Wikepage]
+* URL sederhana: [http://www.cyrocom.com]
+* Gambar berpranala: [http://www.cyrocom.com/|wike.gif]
+* Pos-e: [sblisesivdin@gmail.com]
+* Gambar dalam kotak: Gambar pertama adalah gambar kecil yang kedua dalam ukuran asli {wike.gif|wikepage|wike.gif}
+
+
+**Tabel**
+||||Sel 11||Sel 12||||
+||||Sel 21||Sel 22||||
+
+
+##red##Warna ini benar-benar keren.##
+
+---blub

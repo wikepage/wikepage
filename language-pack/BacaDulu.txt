@@ -1,0 +1,44 @@
+Wikepage 2007.2 Opus 13 "Landauer-Büttiker" Wiki/Blog Hybrid Engine
+---
+
+Wikepage adalah wiki-standar, ukuranya kecil dan mudah digunakan, perangkat lunak wiki/blog hybrid berasal 
+dari Tipiwiki2 (http://tipiwiki.sourceforge.net/). Wikepage dilengkapi dengan kelengakapan keamanan yang
+tidak dimiliki oleh Tipiwiki, seperti struktur yang terproteksi kata sandi, dan penutupan celah keamanan,
+mendukung impor dan expor RSS feed, mendukung tabel, mendukung unggah berkas, mendukung multi-bahasa
+dan multi-situs ...dan masih banyak lainnya...
+
+Wikepage terdiri dari dua mode:
+
+- Mode Wiki     : Blog dan Halaman dapat diubah tanpa menggunakan kata sandi.
+- Mode Personal : Blog dan Halaman dapat diubah hanya jika memasukan kata sandi yang benar.
+
+* PEMASANGAN:
+  - Buka berkas index.php dengan menggunakan program seperti notepad dan ubah informasi situs, bahasa,
+    dan opsi lainnya untuk situs anda.
+  - Unggah seluruh berkas ke dalam direktori hosting anda dengan menggunakan FTP client.
+  - Posisikan seluruh berkas dalam folder data dan seluruh berkas dan subfolder didalamnnya dalam CHMOD 777,
+    (sekurangnya 755, akan tetapi bisa jadi tidak berfungsi).
+  - Pastikan PHP anda tidak dalam safe_mode. Wikepage tidak bisa menciptakan halaman dalam safe_mode.
+  - Jika anda menghendaki menambahkan bahasa baru dalam situs anda, silahkan unduh dari
+    http://www.wikepage.org/ dan ekstrak ke dalam folder utama wikepage. Kemudian anda dapat mengubah
+    variabel bahasa baku di kode sumber dalam berkas index.php. Dan jika anda menginginkan situs anda
+    multi bahasa, anda dapat dengan mudah mengubah bahasa dalam situs anda dengan menuliskan pranala
+    [index.php?lng=en|English] [index.php?lng=id|Indonesia].
+  - Kujungi situs anda. Secara otomatis anda akan diarahkan ke halaman Admin. Anda WAJIB menyetel kata sandi.
+  - Situs anda kini bekerja dalam Mode Wiki!
+  - Anda dapat mengubah mode dari bagian Administrasi dengan memasukan kata sandi.
+  - Dalam Mode Personal, anda harus memasukan kata sandi "setiap" mengubah halaman.
+  - Jika anda akan menggunakan Blog, anda dapat mengirim masukan baru dari halaman Adminitrasi atau ketikan
+    pranala [index.php?Blog_Entry|Submit new link].
+  - Anda dapat menampilkan Blog dengan menuliskan "<blog_view>" kedalam halaman manapun dari situs anda.
+
+Anda akan mendapati lebih banyak dokumentasi dalam situs anda yang telah terpasang.
+
+* LISESI
+Wikepage adalah perangkat lunak terbuka yang dilisensi oleh GNU/GPL. Untuk informasi lebih lanjut:
+[ www.gnu.org/copyleft/gpl.html ]
+
+* TAMBAHAN
+  - Jika CHMOD folder anda benar, 90% wikepage bekerja dengan baik.
+  - Penciptaan, dukungan unggah, dan hapus berkas mungkin tidak bekerja dengan safe_mode=on.
+
