@@ -1,0 +1,45 @@
+ส่วนนี้เป็นหน้าการทดลองเขียนคำสั่ง ผู้รู้อื่นๆจะช่วยสอนหรือแนะนำการใช้คำสั่งต่างๆ เชิญในกระบะทราย(SandBox)นี้เลยครับ
+!สวัสดีครับ นี่เป็นตัวอักษรขนาดหัวเรื่องใหญ่..
+!! สวัสดีครับ นี่เป็นตัวอักษรขนาดหัวเรื่องรอง..
+!!! สวัสดีครับ นี่เป็นตัวอักษรขนาดหัวข้อสำคัญ..
+
+
+อยากรู้คำสั่งว่ามีรูปแบบเป็นอย่างไร หรือลองทดสอบพิมพ์คำสั่งในกระบะทรายนี้ดู 
+ให้คลิกที่คำว่า ##red##แก้ไข ## จากแถบเมนูด้านบนครับ
+
+sound test
+ quotes begin with a single space
+
+__underlined__ **bold** \'\'italic\'\' or ::in box::
+
+* lists
+* over
+* and over
+
+---
+
+*list don\'t work if used like this.
+* must be like this
+
+**รูปแบบคำสั่งเชื่อมโยงภาพในระบบมาแสดง:**
+[chid.jpg]
+หมายเหตุ:เป็นการอ้างอิงภาพที่มีในระบบนี้มาแสดงเท่านั้น ซึ่งต้องส่งไฟล์เข้าเก็บไว้ในระบบก่อน
+
+**รูปแบบคำสั่งการเชื่อมโยงเว็ปไซท์:Links**
+* Static page link: [Index]
+* Static page link with explanation: [Index|Index page of this site]
+* URL link with an explanation: [http://www.wikepage.org/|Wikepage homesite]
+* Simple URL: [http://www.cyrocom.com]
+* Linked picture: [http://www.cyrocom.com/|wike.gif]
+* Email: [sblisesivdin@gmail.com]
+* Boxed image: First image is thumbnail and second is the original {wike.gif|wikepage|wike.gif}
+
+
+**รูปแบบคำสั่งสร้างตาราง : Table**
+||||Cell 11||Cell 12||||
+||||Cell 21||Cell 22||||
+
+
+##red##This color is really sexy.##
+
+---blub
