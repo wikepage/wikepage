@@ -1,0 +1,42 @@
+Wikepage 2007.2 Opus 13 "Landauer-B�ttiker" Wiki/Blog Hybrid Engine
+---
+
+Wikepage e\' un programma simil-wiki, facile da usare ed un piccolo ibrido wiki/blog derivato da
+Tipiwiki2 (http://tipiwiki.sourceforge.net/). Wikepage ha alcune funzioni di sicurezza che
+Tipiwiki non ha, come la struttura protetta da password, e la correzione di gravi
+falle di sicurezza, supporto all\'importazione e all\'esportazione di feed RSS, supporto alle tabelle, supporto al caricamento di file,
+supporto multilingua e multisito...eccetera...
+
+Wikepage ha due modalita\':
+
+-Modalita\' Wiki: Le pagine e gli articoli del blog possono essere modificati senza inserire la password.
+-Modalita\' Personale: Le pagine e gli articoli del blog possono essere modificati solo inserendo la password.
+
+*INSTALLAZIONE:
+-Aprite il file index.php file con un programma tipo Blocco Note e modificate le informazioni sul sito, la lingua
+ e altre opzioni per il vostro sito.
+-Inserite tutti i file nella cartella principale del vostro spazio web usando un client FTP.
+-Attivate il Chmod 777, (o almeno il 755 ma non sempre funziona) per i file nella cartella dei dati e
+ per i file nelle sottocartelle della cartella dei dati.
+-Assicuratevi che il vostro codice PHP non funzioni in modalita\' sicura. Con la modalita\' sicura wikepage non puo\' creare le pagine.
+-Se volete aggiungere nuove lingue al vostro sito, scaricatele dal sito http://www.wikepage.org/
+ ed estraetele nella cartella principale di wikepage. Poi potete modificare la variabile della lingua predefinita
+ nel codice sorgente del file index.php. Inoltre se volete un sito multilingua potete 
+ modificare facilmente la lingua del sito digitando dei collegamenti come ad esempio [index.php?lng=en|English] [index.php?lng=tr|Turkce].
+-Visitate il vostro sito. Sarete reindirizzati automaticamente alla pagina di Amministrazione. DOVETE impostare una password.
+-Ora il vostro sito funziona in modalita\' Wiki!
+-Potete effettuare modifiche nell\'are amministrazione inserendo la vostra password.
+-In modalita\' wiki dovete inserire la password ogni volta che modificate una pagina.
+-Se volete usare il Blog, potete inserire nuovi articoli dalla pagina di Amministrazione o dal collegamento [index.php?Blog_Entry|Submit new link].
+- Potete visualizzare il vostro blog inserendo "<blog_view>" in una qualsiasi pagina.
+
+Potete trovare altra documentazione nel sito che avete installato.
+
+*LICENZA
+Wikepage e\' un programma a codice aperto rilasciato secondo la licenza GNU/GPL. Per maggiori informazioni:
+[ www.gnu.org/copyleft/gpl.html ]
+
+*IN AGGIUNTA
+-Se attivate la variabile true al chmod delle cartelle, wikepage funzionera\' al 90%.
+-La creazione di file, il supporto al caricamento e all\'eliminazione non funzionano con la modalita\' sicura attiva (safe_mode=on)
+

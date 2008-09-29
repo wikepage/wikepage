@@ -1,0 +1,52 @@
+!! Evidenziazione della lingua
+* Un * prima della riga crea un elenco.
+* Un ! prima della riga crea <h1> - un titolo grande
+* Due ! (!!) prima della riga creano <h2> - un titolo medio
+* Tre ! (!!!) prima della riga creano <h3> - un titolo piccolo
+* Due * (**) prima e dopo una parola o una frase la trasformano in **grassetto**
+* Due _ (__) prima e dopo una parola o una frase la rendono __sottolineata__
+* Due \\' (\\'\\') prima  dopo una parola o una frase la trasformano in \\'\\'corsivo\\'\\'
+* Due : (::) prima e dopo una parola o una frase creano una ::cornice:: attorno al testo
+
+##red##Potete cliccare il collegamento **Modifica** in cima a questa pagina per vedere il codice sorgente di questa pagina.##
+
+!! Collegamenti
+* Wikepage usa il tipo di collegamenti [Parola_del_Wiki] i quali usano \\'_\\' come spazi vuoti. Per creare unanuova pagina basta creare un collegamento in una pagina chiamata ad esempio [Parola] e quindi salvarla e usare il collegamento. Quando userete il collegamento la pagina verrà creata.
+* se volete collegare una fonte esterna, dovete solamente digitare l\'indirizzo url come ad esempio [http://www.wikepage.org/] e se e\' valido verra\' reso cliccabile
+* Per rendere i collegamenti esterni piu\' attraenti, c\'e\' un\'altra versione del collegamento che puo\' essere usata per creare qualcosa [http://www.cyrocom.com|come questo], o una pagina statica [Indice|come questa]
+* Se scrivete un indirizzo email (senza il prefisso mailto:) tra le parentesi quadre ([ ]), l\'indirizzo email verra\' visualizzato come ad esempio [sblisesivdin@gmail.com].
+* Se inserite l\'indirizzo url di un\'immagine tra due parentesi quadre ([ ]), l\'immagine verra\' visualizzata.
+* Le immagini incorniciate, usando:{a|b|c} (a)miniatura dell\'immagine, (b)percorso (c)immagine originale. L\'immagine originale verra\' ridimensionata ad una larghezza di 468 pixel, se supera quella dimensione. Se ci fate click, potrete vedere l\'immagine originale. Ad esempio: {wike.gif|Percorso dell\'immagine|wike.gif}
+* Potete usare il nome dell\'immagine statica che puo\' essere trovato nella cartella data/files.
+Per esempio :[wike.gif], ma se volete potete usare un\'immagine collegata come: [http://www.cyrocom.com/|wike.gif]
+ PS: Non potete collegare delle immagini tramite indirizzi URL.
+ Solo le immagini locali possono essere collegate.
+
+!! Pagine speciali
+* Le informazioni nella pagina [Ultime_modifiche] sono create mediante la scrittura \\'\\'< ultimemodifiche >\\'\\' (senza spazi) nel codice della pagina. 
+* le informazioni nella pagina [Cerca] sono create con il collegamento \\'\\'< cerca >\\'\\' come riportato qui sopra.
+* E per le informazioni in [Tutte_le_pagine].. basta scrivere \\'\\'< tuttelepagine >\\'\\'.
+* Se volet includere l\'area di amministrazione in una qualasiasi delle vostre pagine, basta scrivere \\'\\'< amministrazione >\\'\\' come riportato qui sopra.
+
+!! Sistema di variabili
+Il sistema Wikepage ha un set di comandi. Di recente ce ne sono tre:
+* variabile lng: deve essere impostata all\'abbreviazione di due lettere dlla lingua, come ad esempio \"en\" per l\'Inglese, \"tr\" per il Turco. Uso (in ogni pagina): [lng=en|Inglese], [lng=en|en.gif]
+* variabile rss: \"si\" per le modifiche recenti in uscita sul feed rss e \"blog\" per il feed rss in uscita del blog. Uso: [rss=blog|RSS in uscita del Blog], [rss=yes|rss_wiki.gif]
+* variabile file: Usato per il collegamento nella cartella data/files. Uso [file=nomedelfile.pdf|Informazioni sul file]
+
+!! Sistema di Template
+Se volete usare un altro stile per una qualunque delle vostre pagine, ora potete usare un nuovo sistema di template. Per esempio For potete usare la versione 2006.2a con un tema chiamato \"2006.2\", dovrebbe esserci un file chiamato \"index.html\" che altro non e\' che il template generale per tutte le pagine. Poi potete creare una nuova pagina template chiamata \"index2.html\", ed inserirla nella cartella del tema 2006.2. Se volete visualizzare con la funzione \"Cerca\" tutte le pagine con il nuovo template, usate questo tipo di collegamento: [Cerca|index2.html]
+
+!! Tabelle
+Wikepage ha il supporto per le tabelle. Inziate la riga con quattro barrette verticali (|), per ogni colonna inserite due barrette (|), e per ogni termine di riga altre quattro barrette (|). Questo e\' quanto! Potete visualizzare il codice sorgente di questa pagina per vedere la tabella in fondo a questo paragrafo.
+||||**Sito Web**||**Collegamento**||||
+||||Sito web della Cyrocom||[http://www.cyrocom.com/]||||
+||||sito personale di SBLisesivdin||[http://www.cyrocom.com/sblisesivdin]||||
+
+!! Feed RSS
+Wikepage dispone al massimo di un supporto feed RSS per pagina. Per includere un feed RSS in ogni pagina iniziate con due parentesi graffe ({), poi scrivete l\'indirizzo URL del feed , poi inserite una barretta verticale (|) e scrivete quanti feed volete visualizzare nella vostra pagina, e chiudete con due parentesi graffe (}).
+{{http://www.wikepage.org/index.php?rss=blog|1}}  
+
+!! Scrivere in caratteri colorati
+Per scrivere con i caratteri colorati: Iniziate semplicemente con due cancelletti (#) poi inserite il nome del colore e ancora due cancelletti.. poi scrivete quello che volte rendere colorato, ed infine altri due cancelletti per chiudere. Inserite i colori usati nei tag dei font. I colori sono Nero, Grigio argento, Grigio, Marrone, Rosso, Viola, Fucsia, Verde, Verde Lime, Verde Oliva, Giallo, Blu Oltremare, Blu, Celestino, Celeste e ovviamente Bianco. Potete anche usare i codici RGB come ad esempio #FF9900.
+##blue##Ad esempio per scrivere in blu. Clicca sulla modifica di questa pagina per visualizzarlo.##

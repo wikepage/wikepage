@@ -1,0 +1,21 @@
+* [Indice]
+* [Modifiche_recenti]
+* [Ricerca]
+* [Tutte_le_pagine]
+* [Amministrazione]
+* [Area_protetta]
+* [Modalita\'_Wiki]
+* [Informazioni_sul_Blog]
+* [Archivio_del_Blog]
+
+**Lingue**
+
+[lng=it|it.gif] [lng=it|Italian]
+
+[http://www.wikepage.org/|wike.gif]
+
+[nofollow.gif]
+
+[rss=yes|rss_wiki.gif]
+
+[rss=blog|rss_blog.gif]

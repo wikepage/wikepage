@@ -1,0 +1,39 @@
+!salve gente..
+!! un titolo piu\' piccolo...
+!!! titolo piccolissimo
+
+ancora un test
+ le citazioni iniziano con un singolo spazio
+
+__sottolineato__ **grassetto** \\'\\'corsivo\\'\\' o ::incorniciato::
+
+* elenchi
+* ancora
+* e ancora
+
+---
+
+*gli elenchi non funzionano se usati cosi\'.
+* ma in questo modo
+
+**Immagine:**
+[wike.gif]
+
+**Collegamenti**
+* Collegamento ad una pagina statica: [Indice]
+* Collegamento ad una pagina statica con un commento: [Indice|La pagina principale di questo sito]
+* Collegamento ad un URL con un commento: [http://www.wikepage.org/|Sito ufficiale di Wikepage]
+* Indirizzo URL semplice: [http://www.cyrocom.com]
+* Immagine collegata: [http://www.cyrocom.com/|wike.gif]
+* Indirizzo e-mail: [sblisesivdin@gmail.com]
+* Immagine incorniciata: La prima immagine e\' un\'anteprima  la seconda e\' l\'originale {wike.gif|wikepage|wike.gif}
+
+
+**Tabella**
+||||Cella 11||Cella 12||||
+||||Cella 21||Cella 22||||
+
+
+##red##Questo colore e\'davvero sexy.##
+
+---blub
