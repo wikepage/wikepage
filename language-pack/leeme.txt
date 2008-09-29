@@ -1,0 +1,52 @@
+Wikepage 2007.2 Opus 13 "Landauer-B¸ttiker" Motor Híbrido Wiki/Blog
+---
+
+Wikepage es un software híbrido para Wiki/Blog, fácil de usar y pequeño, derivado 
+de Tipiwiki2 (http://tipiwiki.sourceforge.net/). Wikepage presenta algunas 
+características de seguridad que Tipiwiki no posee, como una estructura protegida 
+por contraseña, y parches para un número importante de fallos de seguridad, soporte 
+para la importación y exportación de feed RSS, tablas, subida de archivos, multi-sitio 
+y multi-lenguaje, etc...
+
+Wikepage tiene dos modos de funcionamiento:
+
+-Modo Wiki: Las páginas y entradas de Blog pueden ser cambiadas sin requerir contraseña.
+-Mode Personal: Las páginas y entradas de Blog sólo pueden ser cambiadas introduciendo
+ la contraseña.
+
+*INSTALACIÓN:
+-Abre el archivo index.php con un editor de texto (como notepad) y cambia la información
+ del sitio, lenguaje y resto de opciones para tu página.
+-Sube todos los archivos a tu directorio en tu servicio de hosting, por medio de un
+ cliente FTP.
+-Cambia los permisos de los archivos en el directorio data y los subdirectorios del mismo,
+ haciendo un chmod 777 (como mínimo necesitas los permisos 755, pero dependiendo de la 
+ configuración del host no siempre funciona. Si es el caso, usa 777).
+-Asegúrate de que tu instalación de PHP no está configurada en safe_mode. Si safe_mode
+ está activado, Wikepage no puede crear nuevas páginas.
+-Si quieres añadir un nuevo lenguaje a tu sitio, descarga el archivo de idioma de 
+ http://www.wikepage.org/ y entonces extrae su contenido al directorio principal de
+ Wikepage. Puedes cambiar la variable del lenguaje por defecto en el código fuente de
+ index.php. Y si quieres crear un sitio multi-lenguaje puedes cambiar fácilmente el
+ lenguaje mediante enlaces del tipo [index.php?lng=en|Inglés] [index.php?lng=tr|Turco]
+-Accede a tu sitio. Se te lleva de forma automática a la página de Admin. DEBES establecer
+ una contraseña para el sitio ahora.
+-Tu sitio comienza a trabajar en Modo Wiki (sin pedir clave para editar).
+-Puedes cambiar el modo en el área de Administración, introduciendo tu clave, y desmarcando
+ la casilla "Allow page edit without password" ("Permitir editar páginas sin contraseña").
+-En modo personal tienes que introducir la contraseña cada vez que cambies una página.
+-Si quieres usar el Blog, puedes enviar nuevas entradas desde la página de Administración
+ o por medio de enlaces del tipo [index.php?wiki=Blog_Entry|Subir nueva entrada].
+-Puedes ver tu Blog desde cualquier página poniendo "<blog_view>" en el texto.
+
+Encontrarás más información en tu sitio una vez instalado
+
+*LICENCIA
+Wikepage es un software libre licenciado bajo GNU/GPL. Para más información:
+[ www.gnu.org/copyleft/gpl.html ]
+
+*ADEMÁS
+-Si has hecho chmod sobre los directorios correctamente, tienes un 90% de probabilidades de
+ que Wikepage funcione. Comprueba esto primero si algo falla.
+-La creación, subida y borrado de ficheros puede no funcionar si safe_mode=on
+
