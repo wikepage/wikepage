@@ -1,17 +1,21 @@
 ! Willkommen bei [Wikepage].
-Dies ist Version 2006.2 (Maxwell-Boltzmann). Danke für die Entscheidung für Wikepage. Wikepage baut auf Wiki-Standards auf, ist leicht zu bedienen, läuft ohne MySQL und ist eine sehr kleine Wiki-Software.
+**Opus 13, 2007.2 (Landauer-Büttiker)**
 
-Wikepage ist ein kleines Wiki. Bitte erwartet keine mächtigen Wiki-Eigenschaften von Wikepage.
+Danke, dass Du Wikepage nutzt! Wikepage ist eine standardkonforme, einfache zu nutzende, datenbankfreie und kleine Wiki/Blog/RSS-Reader Hybrid-Software.
+
  ##red##**WICHTIG:** Bitte zuerst die Dokumention lesen,
  bevor eine Seite erstellt wird! (findet sich im doc-Ordner)##
 
 !! Neuigkeiten
-Bitte helft die Internationalisierung von Wikepage voranzutreiben. Dazu die Dateien in lang/en in der entsprechenden Sprache übersetzen und mailen. (\'\'sblisesivdin-AT-gmail.com\'\')
+Bitte helft die Internationalisierung von Wikepage voranzutreiben. Einfach die aktuelle englische Sprachdatei von  [http://www.wikepage.org] herunterladen und in die eigene Sprache übersetzen. Und mailen an: (\'\'sblisesivdin-AT-gmail.com\'\')
 !! Index
 * [Was_ist_ein_Wiki] - Informationen zu Wikis und ihrer Geschichte
 * [Wiki_Stil] - Verwendung und Dokumentation
 * [Sandkasten] - zum Austoben und Testen...
 * [Ueber_Blog] - Ein Experiment: Bloggen mit Wikepage? 
+
+!! Wikepage.org RSS-Feed
+{{http://www.wikepage.org/index.php?rss=blog|5}}
 
 !! Blog
 <blog_ansicht>

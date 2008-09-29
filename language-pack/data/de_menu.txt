@@ -1,19 +1,20 @@
 
 * [Index]
-* [letzte_Aenderungen]
+* [Letzte_Aenderungen]
 * [Suchen]
-* [alle_Seiten]
+* [Alle_Seiten]
 * [Admin]
 * [Sandkasten]
 * [Wiki_Stil]
 * [Ueber_Blog]
+* [Blog_Archiv]
 
 **Sprachen**
 [en.gif] [index.php?lng=en|English]
 [de.gif] [index.php?lng=de|Deutsch]
 
 
-[http://www.cyrocom.com/|wike.gif]
+[http://www.wikepage.org/|wike.gif]
 
 [nofollow.gif]
 

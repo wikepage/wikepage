@@ -3,9 +3,7 @@
 !!! kleinster Titel
 
 Soundtest
- eins
- zwei
- phhh
+ Zitate beginnen mit einer einzelner Leerstelle
 
 __unterstrichen__ **fett** \'\'kursiv\'\' oder ::in einer Box::
 
@@ -18,15 +16,17 @@ __unterstrichen__ **fett** \'\'kursiv\'\' oder ::in einer Box::
 *Listen funktionieren nicht, wenn sie so benutzt werden.
 * sie müssen so aussehen.
 
-[http://lisesivdin.freefronthost.com/|Die Homepage] läuft mit Wikepage!
-
-http://www.cyrocom.com
-
 **Bild:**
 [wike.gif]
 
-**Verlinktes Bild:**
-[http://www.cyrocom.com/|wike.gif]
+**Links:**
+* Statischer Link: [Index]
+* Staticher Link mit Erläuterung: [Index|Index page of this site]
+* URL mit Erläuterung: [http://www.wikepage.org/|Wikepage homesite]
+* Einfache URL: [http://www.cyrocom.com]
+* Verlinktes Bild: [http://www.cyrocom.com/|wike.gif]
+* Email: [sblisesivdin@gmail.com]
+* Gerahmtes Bild: Das erste Bild ist ein Thumbnail, das zweite das Original {wike.gif|wikepage|wike.gif}
 
 **Table**
 ||||Zelle 11||Zelle 12||||
