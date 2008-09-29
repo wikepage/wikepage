@@ -1,0 +1,39 @@
+!Hola amigos..
+!! Un título más pequeño...
+!!! El título más pequeño disponible
+
+Probando probando
+ las citas comienzan con un único espacio en blanco
+
+__subrayado__ **negrita** \'\'cursiva\'\' o ::en cajas::
+
+* listas
+* más
+* y más
+
+---
+
+*las listas no funcionan si se usan así.
+* Tiene que ser así
+
+**Imagen:**
+[wike.gif]
+
+**Enlaces**
+* Enlace estático a una página: [Indice]
+* Enlace estático a una página con epxlicación: [Indice|Página de índice del sitio]
+* Enlaces URL con explicación: [http://www.wikepage.org/|Página principal de Wikepage]
+* URL sencilla: [http://www.cyrocom.com]
+* Imagen enlazada: [http://www.cyrocom.com/|wike.gif]
+* Email: [sblisesivdin@gmail.com]
+* Imagen en caja: La primera imagen es la miniatura y la segunda es el original {wike.gif|wikepage|wike.gif}
+
+
+**Tabla**
+||||Celda 11||Celda 12||||
+||||Celda 21||Celda 22||||
+
+
+##red##Este color es realmente sexy.##
+
+---blub

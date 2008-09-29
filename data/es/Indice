@@ -1,0 +1,22 @@
+! Bienvenido a Wikepage
+**Opus 13, 2007.2 (Landauer-Büttiker)**
+Gracias por escoger Wikepage. Wikepage es un software híbrido wiki-blog-rss, un wiki estándar, fácil de usar, y sin base de datos.
+
+ ##red##**IMPORTANTE:** Por favor lea la documentación primero, antes de construir su sitio.##
+
+!! Noticias
+Por favor, colabore con la internacionalización de Wikepage. Simplemente descargue el último archivo en Inglés desde [http://www.wikepage.org] y traduzca el contenido a su idioma. Puede enviar el resultado a [sblisesivdin@gmail.com].
+
+!! Índice
+* [Que_es_el_wiki] - información e historia sobre el wiki
+* [Estilo_Wiki] - uso y documentación.
+* [Sandbox] - área de test...
+* [Acerca_del_blog] - Un experimento: característica de blog de wikepage
+
+!! RSS feed de Wikepage.org 
+{{http://www.wikepage.org/index.php?rss=blog|5}}
+
+! Blog
+<blog_view>
+
+Wikepage está proporcionado por Cyrocom con una licencia libre (GPL).
