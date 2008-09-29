@@ -1,0 +1,8 @@
+! UN ESPERIMENTO: IL BLOG
+Dalla versione Opus 9, Wikepage ha una nuova funzione: il Blog. Il blog di Wikepage e\' facile come il wiki. Avete una pagina speciale del wiki denominata: **Articolo_del_Blog**. Se create un collegamento a questa pagina e lo cliccate, sarete reindirizzati alla pagina dell\'articolo del blog. Dovrete  solamnte modificare il titolo e il contenuto dell\'articolo, usando i classici comandi del wiki.
+
+Se volete visualizzare il vostro blog potete inserire **< blog_view >** (senza spazi) in una qualunque delle vostre pagine.
+
+Il blog di Wikepage ha anche un feed rss semplice (RSS 0.91)! La fonte del feed rss puo\' essere visualizzata da **index.php?rss=blog** .
+
+Le parole Blog_Entry, < blog_view > possono essere modificate dal file della lingua **data/it/it.inc**. Potete modificare il blog come le notizie o qualcosa di piu\' interessante.
