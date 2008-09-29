@@ -1,0 +1,20 @@
+* [Halaman_depan]
+* [Perubahan_terbaru]
+* [Cari]
+* [Seluruh_halaman]
+* [Admin]
+* [BakPasir]
+* [Gaya_wiki]
+* [Mengenai_Blog]
+* [Arsip_Blog]
+
+**BAHASA**
+[lng=en|en.gif] [lng=en|English]
+[lng=id|id.gif] [lng=id|Indonesia]
+
+[http://www.wikepage.org/|wike.gif]
+[nofollow.gif]
+
+**RSS**
+[rss=yes|rss_wiki.gif]
+[rss=blog|rss_blog.gif]

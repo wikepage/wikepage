@@ -1,0 +1,53 @@
+!! Bahasa Markup
+* Satu * (tanda bintang) sebelum baris kalimat, menghasilkan daftar.
+* Satu ! (tanda seru) sebelum baris kalimat, mengahasilkan <h1> - judul utama
+* Dua !! (tanda seru) sebelum baris kalimat, mengahasilkan <h2> - sub judul
+* Tiga !!! (tanda seru) sebelum baris kalimat, mengahasilkan <h3> - sub-sub judul
+* Dua * (tanda bintang) sebelum dan sesudah kata atau kalimat akan menjadikan **tebal**
+* Dua _ (tanda underscore)sebelum dan sesudah kata atau kalimat akan menjadikan __bergarisbawah__
+* Dua \' (tanda apostrophe)sebelum dan sesudah kata atau kalimat akan menjadikan \'\'miring\'\'
+* Dua : (tanda kolon) sebelum dan sesudah kata atau kalimat akan menjadikan ::terkotaki::
+
+##red##Anda dapat mengklik pada pranala **Ubah** di atas halaman ini untuk melihat kode sumber halaman.##
+
+!! Pranala
+* Wikepage menggunakan gaya pranala [Wiki_word] yang menggunakan \'_\' sebagai spasi. Untuk membuat halaman baru cukup dengan menciptakan pranala pada sebuah halaman, contoh: [Kata] dan kemudian simpan dan gunakan pranala tersebut. Ketika anda menggunakan pranala tersebut, maka halaman akan tercipta.
+* Jika anda menginginkan membuat pranala luar (eksternal), anda cukup mengetikan URL-nya, seperti contoh [http://www.wikepage.org/] dan dapat diklik jika URL tersebut benar.
+* Untuk membuat pranala luar yang lebih bagus, terdapat cara lain dalam penulisan pranala, contohnya [http://www.cyrocom.com/|seperti ini], atau untuk halaman statis [Halaman_depan|seperti ini].
+* Jika anda menuliskan alamat pos-e (e-mail) (tanpa mailto:) diantara [ ], alamat pos-e akan ditampilkan seperti [sblisesivdin@gmail.com].
+* Jika anda meletakan URL dari sebuah gambar diantara kurung kotak [ ], maka gambar akan ditampilkan.
+* Gambar dalam kotak, gunakan:{a|b|c} (a)gambar kecil, (b)Keterangan gambar (c)gambar asli. Jika gambar asli lebih besar dari 468 pixel, maka gambar akan di ubah ukurannya dengan lebar 468 pixel. Dan bila gambar tersebut diklik, anda dapat melihat gambar aslinya. Contoh: {wike.gif|Keterangan gambar|wike.gif}
+* Nada dapat menggunakana gambar statis yang namanya ditemukan di dalam folder data/files.
+Sebagai contoh :[wike.gif],
+tetapi jika anda menginginkan gambar tersebut sebagai pranala luar, maka: [http://www.cyrocom.com/|wike.gif]
+ Catatan: Anda tidak dapat menggunakan gambar dari URL luar.
+ Hanya gambar lokal yang dapat dipergunakan!
+
+!! Halaman Khusus
+* Informasi dari halaman [Perubahan_terbaru] diciptakan dari menuliskan \'\'< perubahanterbaru >\'\' (tanpa spasi) pada kode sumber halaman. 
+* Informasi dari halaman [Cari] diciptakan dengan \'\'< temukanhalaman >\'\' seperti di atas.
+* Dan informasi halaman [Seluruh_halaman].. cukup menulis \'\'< seluruhhalaman >\'\'.
+* JIka anda menginginkan menambahkan area admnistrasi pada salah satu halaman situs, cukup tuliskan \'\'< admin >\'\' seperti di atas.
+
+!! Sistem Variabel
+Sistem wikepage memiliki seperangkat perintah. Ini adalah tiga yang terbaru:
+* Variable lng  : harus diisi dengan dua huruf singkatan bahasa, seperti \"en\" untuk English, \"tr\" untuk Turkish, atau \"id\" untuk Indonesia. Penggunaan (untuk semua halaman): [lng=id|Indonesia], [lng=id|id.gif]
+* Variabel rss  : \"yes\" untuk keluaran rss yang terakhir diperbarui dan \"blog\" untuk keluaran rss blog. Penggunan: [rss=blog|Keluaran RSS Blog], [rss=yes|rss_wiki.gif]
+* Variabel file : Digunakan untuk menautkan berkas yang terdapat di dalam folder data/files. Penggunaan: [file=filename.pdf|Informasi mengenai berkas]
+
+!! Sistem Template
+Jika anda menginginkan menggunakan template halaman yang berbeda untuk halaman yang berbeda pula, sekarang anda dapat menggunakan sistem template yang baru. Misal anda mengunakan 2006.2a dengan nama tema \"2006.2\", yang didalamnya terdapat \"index.html\" sebagai halaman template umum untuk semua halaman. Kemudian buat halaman template baru yang dinamai \"index2.html\", letakkan dalam folder theme 2006.2. Jika anda menginginkan menampilkan halaman \"Cari\" dengan template yang baru, gunakan pranala berikut: [Cari|index2.html]
+
+!! Tabel
+Wikepage memiliki dukungan untuk tabel. Hanya dengan memulai baris dengan 4 pipa (|), untuk antarkolomnya cukup ketikkan 2 pipa (|), dan sebagai penutup baris ketikkan 4 pipa (|) lagi. Itu semua sudah cukup! Anda dapat melihat kode sumber halaman untuk tabel di bawah ini.
+||||**Situsweb**||**Pranala**||||
+||||Halaman depan Cyrocom||[http://www.cyrocom.com/]||||
+||||Halaman depan SBLisesivdin||[http://www.cyrocom.com/sblisesivdin]||||
+
+!! RSS Feed
+Wikepage memiliki dukungan maksimal satu RSS feed perhalaman. Untuk menambahkan RSS feed kehalaman manapun cukup dengan mengetikan 2 kurung kurawal buka ({) di awal, kemudian diikuti URL dari feed , kemudian pipa (|) yang diikuti angka banyaknya feed yang ingin ditampilkan pada halaman tersebut, dan akhiri dengan 2 kurung kurawal tutup (}).
+{{http://www.wikepage.org/index.php?rss=blog|1}}  
+
+!! Pewarnaan
+Untuk mewarnai: Cukup dimualai dengan 2 tanda pagar (#) kemudian masukan \'\'nama warna\'\' dan 2 tanda pagar lagi, kemudian tulis tulisan yang akan diwarnai, ketikkan 2 tanda pagar lagi sebagai penutup. Nama warna yang dapat digunakan antara lain Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua dan juga White. Atau gunakan kode RGB seperti contoh #FF9900.
+##blue##Contoh untuk menulis dengan warna biru. Klik **ubah** untuk melihat kode sumber halaman ini.##
