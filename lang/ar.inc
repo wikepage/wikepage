@@ -1,9 +1,9 @@
 <?php
 /*
- Wikepage 2007-1 English Language File
+ Wikepage 2007-2 English Language File
  by Salam Aljehni (salamj@gmail.com)
 */
-$encoding = "Windows-1256";
+$encoding = "utf-8";
 $data_dir = "data/ar";
 $page_default = "ÇáÈÏÇíÉ";
 $page_admin = "ÇáÅÏÇÑÉ";
@@ -63,21 +63,27 @@ $lang['pass'] = "ÃÏÎöá ßáãÉ ãÑæÑ: ";
 $lang['submit'] = "ÅÑÓÇá";
 $lang['mainmenu'] = "ÇáŞÇÆãÉ ÇáÃÓÇÓíÉ ";
 $lang['pagecontents'] = "ãÍÊæíÇÊ ÇáÕİÍÉ ";
-$lang['navi'] = "ÇáÅÈÍÇÑ"; //bad 
-$lang['blogsubject']="ÇáãæÖæÚ";
-$lang['blogpage']="ÇáãÊä";
+$lang['navi'] = "ÅÈÍÇÑ";
 $lang['blog_out']="ÚÑÖ_ÇáãÏæäÉ";
-$lang['blog_input_page']="ãÏÎá_ãÏæäÉ";
-$lang['activate_TOC']="ÊİÚíá ŞÇÆãÉ ÇáãÍÊæíÇÊ";
-$lang['TOC']="<input type =\"button\" value =\"ŞÇÆãÉ ÇáãÍÊæíÇÊ\" onclick =\"toggleTOC()\"><div id=TOC></div>";
+$lang['blog_archive']="ÃÑÔíİ_ÇáãÏæäÉ";
+$lang['blog_subject']="ÇáãæÖæÚ:";
+$lang['blog_page']="ÇáãÊä:";
+$lang['blog_input_page']="ÅÏÎÇá_ãÏæäÉ";
+$lang['activate_TOC']="ÊİÚíá ÌÏæá ÇáãÍÊæíÇÊ";
+$lang['TOC']="<div id=\"TOC\"><input type =\"button\" value =\"ÌÏæá ÇáãÍÊæíÇÊ\" onclick =\"toggleTOC()\"></div>";
 $lang['nonews']="áÇ íæÌÏ ÃÎÈÇÑ";
 $lang['xmlerror']="ÎØÃ XML";
 $lang['atline']="İí ÇáÓØÑ";
-$lang['couldnotxml']="áÇ íãßä İÊÍ ãÏÎá ÇáÜ XML";
+$lang['couldnotxml']="áÇ íãßä İÊÍ ãáİ ÇáÜXML ÇáãÏÎá";
+$lang['couldnotversioninfo']="áÇ íãßä ááäÙÇã ÇáÇÊÕÇá ÈÇáÇäÊÑäÊ. áÇ íãßä ÇÓÊíÑÇÏ ÚäÇæíä ÇáÜ RSS æ áÇ íãßä ÇáÊÍßã ÈÇáÅÕÏÇÑ";
+$lang['newversion']="åäÇß ÅÕÏÇÑ ÃÍÏË ãä ÕİÍÉ Çáæíßí¡ ãä İÖáß Şã ÈÇáÊÍÏíË ááÅÕÏÇÑ ÇáÌÏíÏ.";
+$lang['next']="ÇáÊÇáí";
+$lang['prev']="ÇáÓÇÈŞ";
+$lang['noimage']="áÇ ÕæÑ ...";
 $lang['copyleft'] = "<p>ÇáÓãÇÍíÉ ããäæÍÉ áäÓÎ æ ÊæÒíÚ æ / Ãæ ÊÚÏíá åĞÇ ÇáãÓÊäÏ Öãä ÔÑæØ ÇÊİÇŞíÉ
  GNU ÇÊİÇŞíÉ ÇáÊæËíŞ ÇáÍÑ, ÇáÅÕÏÇÑ 1.1 Ãæ Ãí ÅÕÏÇÑ áÇÍŞ ãä ŞÈá <a href=\"http://www.fsf.org/\">
  Free Software Foundation</a>. ÅĞÇ áã Êßä ãæÇİŞÇ ãä İÖáß áÇ ÊŞã ÈÅÖÇİÉ Ãí ãÍÊæì. <br />
- <small>ÈÏÚã ãä databaseless php wikisite-homepage engine: <a href=\"http://www.cyrocom.com/\">Wikepage</a></small><br />";
+ <small>ÈÏÚã ãä databaseless php wikisite-homepage engine: <a href=\"http://www.wikepage.org/\">Wikepage</a></small><br />";
 $lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: right;\"> <small>
 						<li>äÌãÉ æÇÍÏÉ * ŞÈá ÇáßáãÉ ÊÖÚ ŞÈáåÇ ßÑÉ ÕÛíÑÉ</li>
 						<li>ÇáÇÑÊÈÇØÇÊ : [äæÚ_ÇáÇÑÊÈÇØ], [http://externallink.com|ÇÖÛØ] Ãæ [http://externallink.com|image.gif] Ãæ ÇßÊÈ ÇáÜ URL </li>
@@ -97,3 +103,4 @@ $lang['writingrules'] = "<ul id=\"footer\" style=\"text-align: right;\"> <small>
                       </ul>";
 
  ?>
+ 

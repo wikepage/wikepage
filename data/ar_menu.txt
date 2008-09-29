@@ -5,11 +5,13 @@
 * [ÇáÅÏÇÑÉ]
 * [ÓÇÍÉ_ÇáÊÌÇÑÈ]
 * [ÇáÓÊÇíá]
-* [Íæá]
+* [Íæá_ÇáãÏæäÉ]
+* [ÃÑÔíİ_ÇáãÏæäÉ]
 
 **áÛÇÊ**
 
-[lng=ar|ar.gif] [lng=ar|Arabic]
+[lng=ar|ar.gif] [lng=ar|ÇáÚÑÈíÉ]
+[lng=en|en.gif] [lng=en|English]
 
 [http://www.wikepage.org/|wike.gif]
 
@@ -18,5 +20,3 @@
 [rss=yes|rss_wiki.gif]
 
 [rss=blog|rss_blog.gif]
-
-
