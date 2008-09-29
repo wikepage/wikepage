@@ -1,5 +1,3 @@
-[Wikepage] ist eine auf Wiki-Standards aufbauende, php-basierte, ohne MYSQL laufende Wiki-Software.
-
 !! Markup Language
 * Ein * vor der Zeile erstellt eine Liste.
 * Ein ! vor der Zeile schreibt einen <h1> - großen Titel.
@@ -15,21 +13,37 @@
 !! Links
 * Wikepage nutzt Links des Typs [Wiki_Wort], bei Leerzeichen mit einem \'_\'. Um eine neue Seite zu erstellen, einfach einen Link, z.B. [Wort], in einer Seite anlegen, abspeichern und dem Link folgen. Die Seite wird dann automatisch erstellt.
 * Wenn ein externer Link gesetzt werden soll, kann entweder einfach die URL angegeben werden. Ist sie korrekt, kann sie angeklickt werden.
-* Um externe Links ansehnlicher zu gestalten, gibt es noch eine weitere Möglichkeit. Links können auch [http://www.cyrocom.com|so] angegeben werden.
-* Um ein Bild anzuzeigen, wird einfach die URL zum Bild zwischen zwei [ ] Klammern gesetzt.
-Zum Beispiel:[wike.gif]. Soll das Bild verlinkt sein, muss es so angegeben werden: [http://www.cyrocom.com/|wike.gif]
+* Um externe Links ansehnlicher zu gestalten, gibt es noch eine weitere Möglichkeit. Links können auch [http://www.cyrocom.com|so] oder für statische Seiten [Index|so] angegeben werden.
+* Eine e-mail Adresse (ohne mailto:) zwischen [ ], wird so [sblisesivdin@gmail.com] angezeigt.
+* Wird die URL eines Bildes zwischen [ ] gesetzt, so wird es angezeigt.
+* Gerahmtes Bild, drei Argumente in { }: {a|b|c} (a)Thumbnail, (b)Überschrift (c)Original. Das Original wird auf eine Breite von 468 Pixel skaliert, falls es größer ist. Ein Klick zeigt dann das Originalbild an. Beispiel: {wike.gif|Caption of image|wike.gif}
+* Bilder im data/files Verzeichnis können über ihren Namen verlinkt werden, z.B. [wike.gif]. Um das Bild als Link zu nutzen schreibt man  [http://www.cyrocom.com/|wike.gif]
+ PS: Es können nur lokale Bilder verlinkt werden!
 
 !! Spezielle Seiten
-* Eine [letzte_Aenderungen]-Seite wird erstellt, indem ein \'\'< letzteÄnderungen >\'\' (ohne Leerzeichen) in den Quelltext der Seite geschrieben wird.
+* Eine [Letzte_Aenderungen]-Seite wird erstellt, indem ein \'\'< LetzteÄnderungen >\'\' (ohne Leerzeichen) in den Quelltext der Seite geschrieben wird.
 * Die Suchseite ([Suchen]) wird erstellt, wenn ein \'\'< findeSeite >\'\' wie oben eingefügt wird.
 * Alle Seiten werden, wie [alle_Seiten|hier], aufgelistet, wenn \'\'< alleSeiten >\'\' eingefügt wird.
 * Ein Administrationsbereich wird durch das Einfügen von \'\'< admin >\'\' angezeigt.
+
+!! Variablensystem
+Das Wikepage-System besitzt Kommando-Gruppen. Momentan sind es drei:
+* lng Variable: ist eine zweibuchstabig Abkürzung der Sprache, wie \"en\" für Englisch, \"tr\" für Türkisch. Anwendung (auf jeder Seite): [lng=en|English], [lng=en|en.gif]
+* rss Variable: \"yes\" für kürzlich geänderten rss-Output und \"blog\" für rss-Output vom Blog. Anwendung: [rss=blog|Blog RSS Output], [rss=yes|rss_wiki.gif]
+* file Variable: Benutzt um Dateien in den data/files Ordner zu verlinken. Anwendung [file=filename.pdf|Information about file]
+
+!! Template System
+Möchte man einen anderen Stil für irgendeine Seite nutzen, so kann man nun auf das neue Template-System zurückgreifen. Im Moment ist z.B. 2007.2 geladen mit dem Theme \"2007.2\", denn es gibt eine Datei \"index.html\", die das Template für alle Seiten bereitstellt. Möchte man einen anderen Stil nutzen, so erstellt man eine Datei \"index2.htm\" im Ordner theme. Möchte man dann z.B. die \"Suchen\" Seite im neuen Stil sehen so geht man zu [Suchen|index2.html].
 
 !! Tabellen
 Wikepage unterstützt die Erstellung von Tabellen. Dazu die Zeile mit 4 pipes (|) beginnen, Spalten mit 2 pipes (|) abgrenzen und am Ende wieder 4 pipes (|) schreiben. Der Seitenquelltext zeigt die nachfolende Tabelle.
 ||||**Website**||**Link**||||
 ||||Cyrocom Homepage||http://www.cyrocom.com/||||
 ||||SBLisesivdin Homepage||http://www.cyrocom.com/sblisesivdin||||
+
+!! RSS Feeds
+Wikepage unterstützt max. einen RSS-Fees pro Seite. Um einen RSS-Fees einzubinden, benutzt man einen Link wie {{http://www.wikepage.org/index.php?rss=blog|1}}.
+Die \"1\" gibt die Anzahl der Feeds der Seite an.
 
 !! Einfärben
 Um etwas farbig darzustellen vor den einzufärbenden Text zwei Rauten (#) stellen, den Farbnamen schreiben und wieder mit 2 Rauten (#) schließen. Der nachfolgende Text wird eingefärbt, wiederum 2 Rauten (#) beenden die Einfärbung. Folgende Farben sind möglich: Black (schwarz), Silver (silber), Gray (grau), Maroon (rotbraun), Red (rot), Purple (violett), Fuchsia (pink), Green (grün), Lime (hellgrün), Olive (dunkelgrün), Yellow (gelb), Navy (dunkelblau), Blue (blau), Teal (mintgrün), Aqua (hellblau) and White (weiß). Auch RGB-Farben wie #990000 sind möglich
