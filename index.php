@@ -74,7 +74,6 @@ $langu=$pagevars["lang_def"];
 if (!file_exists("lang/$lang.inc")){
 	$langu=$pagevars["lang_def"];
 }
-fclose($fp);
 
 include('data/passwd.php');
 include('lang/'.$langu.'.inc');
@@ -908,6 +907,7 @@ if( $_POST['wiki']==$page_admin ){
 			$fp=fopen("data/passwd.php","w+");
 			fwrite ($fp, '<?php $adminpassword="'.crypt($_POST['password1'], "CW").'"; $passworks="'.$passworks.'"; $TOC="'.$TOC.'"?>');
 			delpagefile($_POST['delpage'],$_POST['delfile']);
+			fclose($fp);
 		}else{
 			die(" <p> <a href=\"index.php\">".$lang['returnhomepage']."</a>");
 		}
@@ -915,6 +915,7 @@ if( $_POST['wiki']==$page_admin ){
 		$fp=fopen("data/passwd.php","w+");
 		fwrite ($fp, '<?php $adminpassword="'.$adminpassword.'"; $passworks="'.$passworks.'"; $TOC="'.$TOC.'"?>');
 		delpagefile($_POST['delpage'],$_POST['delfile']);
+		fclose($fp);
 	}
 	exit;
 	}
