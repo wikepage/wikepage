@@ -419,7 +419,7 @@ global $data_dir, $wiki_get, $pagevars, $langu;
 }
 
 // Wiki Style to HTML
-function filter($raw, $type) {
+function filter($raw, $type = 'wiki') {
 	global $wiki_get, $langu;
 	require ('lang/'.$langu.'.inc');
 	$filtered=stripslashes(htmlchars($raw));
