@@ -50,3 +50,7 @@ Wikepage has a maximum of one RSS feed support per page. To include a RSS feed i
 !! Coloring
 For coloring: Just begin with 2 sharps (#) then input color name and 2 sharps more.. then write the writings that will be colored, then 2 sharps to close. Entered colors used in font tag. Colors are Black, Silver, Gray, Maroon, Red, Purple, Fuchsia, Green, Lime, Olive, Yellow, Navy, Blue, Teal, Aqua and White of course. Or use RGB codes like #FF9900.
 ##blue##For example blue writing. Click edit of this page to view.##
+
+!! Videos
+To view Flash files: [flashfile.swf]
+A YouTube video which has a URL like: "http://www.youtube.com/watch?v=8tl-N9FJMpY" can be viewed using: [youtube=8tl-N9FJMpY]
