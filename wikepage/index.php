@@ -33,6 +33,8 @@ $pagevars=array(
 "timezone_str" => "CEST"
 );
 error_reporting(0);
+//error_reporting(E_ALL); ini_set('display_errors','1');
+if (PHP_MAJOR_VERSION < 8) die('Wikepage requires PHP 8.0 or later.');
 /*
  ++++++++ DON'T MAKE CHANGES BELOW HERE ! ++++++++ 
 */
@@ -42,20 +44,10 @@ ini_set('arg_separator.output','&amp;');
 ini_set('url_rewriter.tags', "a=href,area=href,frame=src,input=src,fieldset=");
 session_start();
 $wiki_get="wiki";
-$version_info=explode('.', phpversion());
-if ($version_info[0] < 5 ) {
-	$servpath=$HTTP_SERVER_VARS['PATH_TRANSLATED'];
-}else{
-	$servpath=$HTTP_SERVER_VARS['SCRIPT_FILENAME'];
-}
+$servpath=$_SERVER['SCRIPT_FILENAME'];
 
 $info=pathinfo( $servpath );
 $path=$info[ 'dirname' ];
-
-if ($version_info[0] < 4 || ($version_info[0] > 3 && $version_info[1] < 1)) {
-	$_POST=$HTTP_POST_VARS;
-	$_GET=$HTTP_GET_VARS;
-}
 
 if( isset( $_GET["lng"] ) ){
 	$pagevars["lang_def"]=$_GET["lng"];
@@ -63,7 +55,7 @@ if( isset( $_GET["lng"] ) ){
 	$_SESSION['lang']=$pagevars["lang_def"];
 }
 
-if(strlen($_SESSION['lang']) < 5 && strlen($_SESSION['lang']) <> 0){
+if(strlen($_SESSION['lang'] ?? '') < 5 && strlen($_SESSION['lang'] ?? '') <> 0){
 	$pagevars["lang_def"]=$_SESSION["lang"];
 	secure($pagevars["lang_def"]);
 }
@@ -81,12 +73,12 @@ include('lang/'.$langu.'.inc');
 // some special chars
 function htmlchars ($string) {
 	return str_replace(array("&","\"","<",">","&laquo;","&raquo;"),
-	array("&amp;","&quot;","&lt;","&gt;","&lt;","&gt;"), $string);
+	array("&amp;","&quot;","&lt;","&gt;","&lt;","&gt;"), $string ?? '');
 }
 // little security enchancement
 function secure ($string){
 	return str_replace(array('=',' ','%22','"','%20',"..","%2E%2E",".%2E","%2E.",".php",".phtml",".php3",".log","_log"),
-	array('','','','','',"","","","","_php","_phtml","_php3","-log-","-log-"), $string);
+	array('','','','','',"","","","","_php","_phtml","_php3","-log-","-log-"), $string ?? '');
 }
 
 function delpagefile($depa,$defi){
@@ -166,6 +158,7 @@ function characterData($parser, $rssdata) {
 }
 function RSSParse($rssfile, $itemcoun) {
 	global $rss_channel, $lang, $currently_writing, $main, $item_counter, $rssdata;
+	if(!function_exists('xml_parser_create')) return '(RSS: XML extension not available)';
 	set_time_limit(300);
 	if (isset($rss_channel)) unset($rss_channel);
 	$rss_channel = array();
@@ -193,11 +186,11 @@ function RSSParse($rssfile, $itemcoun) {
 		if (count($rss_channel["ITEMS"]) > 0) {
 		for($i = 0;$i < $itemcoun;$i++) {
 			if (isset($rss_channel["ITEMS"][$i]["LINK"])) {
-				if( strpos($rssfile, "news.google") == FALSE ){
+				if( strpos($rssfile, "news.google") === FALSE ){
 					$news .= "\n <a href=\"".$rss_channel["ITEMS"][$i]["LINK"]."\">".$rss_channel["ITEMS"][$i]["TITLE"]."</a><br />";
 				}
 			} else {
-				if( strpos($rssfile, "news.google") == FALSE ){
+				if( strpos($rssfile, "news.google") === FALSE ){
 					$news .="\n".$rss_channel["ITEMS"][$i]["TITLE"]."<br />";
 				}
 			}
@@ -302,13 +295,15 @@ function yonetim() {
 		require ('lang/'.$langu.'.inc');
 	//admin part
 	if($adminpassword){
-		if (!$ver = fopen("http://www.wikepage.org/latest.txt", "r")) {
-		$content .=$lang['couldnotversioninfo']."<p> ";
-	}
-		$latest = fread($ver, 4096);
-		if ($opus < $latest){
-		$content .=$lang['newversion']."<p> ";
+		if ($ver = fopen("http://www.wikepage.org/latest.txt", "r")) {
+			$latest = fread($ver, 4096);
+			fclose($ver);
+			if ($opus < $latest) {
+				$content .=$lang['newversion']."<p> ";
 			}
+		} else {
+			$content .=$lang['couldnotversioninfo']."<p> ";
+		}
 		$content .= "</p><form method=\"post\" action=\"index.php\">\n<fieldset style=\"display: none;\">\n<input type=\"hidden\" name=\"wiki\" value=\"".$page_admin."\" />\n</fieldset>\n<table id=\"find\">\n<tr><td colspan=\"2\"><b>".$lang['password']."</b></td></tr><tr>\n<td>".$lang['oldadminpass']."</td>\n<td><input type=\"password\" name=\"password0\" /></td>\n</tr><tr><td colspan=\"2\"><b>".$lang['changepass']."</b></td></tr><tr>\n<td>".$lang['adminpass']."</td>\n<td><input type=\"password\" name=\"password1\" /></td>\n</tr><tr>\n<td>".$lang['againadminpass']."</td>\n<td><input type=\"password\" name=\"password2\" /></td>\n</tr><tr><td colspan=\"2\"><b>".$lang['othersett']."</b></td></tr><tr>\n<td>".$lang['passless']."</td>\n<td><input type=\"checkbox\" name=\"passwrks\" value=\"checkbox\" ";
 		if ($passworks=="1"){
 			$content .= "checked=\"checked\" /></td>\n</tr>";
@@ -328,7 +323,7 @@ function yonetim() {
 return $content;
 }
 
-function blogout($archive){
+function blogout($archive=false){
 global $data_dir, $wiki_get, $pagevars, $langu;
 	require ('lang/'.$langu.'.inc');
 	$content="";
@@ -389,7 +384,7 @@ global $data_dir, $wiki_get, $pagevars, $langu;
 					unset($filem[0]);
 					$raw=implode("", $filem );
 					// filter!
-					$raw=filter( trim($raw), blog );
+					$raw=filter( trim($raw), "blog" );
 					$a=explode("_", "$data_dir/$page");
 					$b=explode("-", $a[0]);
 					$c=explode("-", $a[1]);
@@ -488,7 +483,7 @@ function filter($raw, $type = 'wiki') {
 	$filtered=preg_replace("/(?<=\n) (.*)(\n)/","</p><pre>\\1</pre><p>", $filtered);
 	$filtered=preg_replace("/<\/pre><p>(\s)*<\/p><pre>/","", $filtered);
 	//RSS parsing
-	if( strpos($filtered, "{{") !== FALSE ){
+	if( function_exists('xml_parser_create') && strpos($filtered, "{{") !== FALSE ){
 		preg_match_all("/\{\{(.+)\|(.+)\}\}/i",$filtered,$a,PREG_PATTERN_ORDER);
 		$d=array();
 		foreach ($a as $b){ 
@@ -641,7 +636,7 @@ function editpage($file) {
 	$uploadcode=$lang['uploadnote']."<input type=\"file\" name=\"userfile\" /><input type=\"hidden\" name=\"wiki\" value=\"".$pagename."\" />";
 	$whole =str_replace("<!--uploadsystem-->",stripslashes($uploadcode),$whole);
 	// locking file
-	if( file_exists($file) && !is_writeable($file) )
+	if( file_exists($file) && !is_writable($file) )
 		$whole=preg_replace("/<form .*<\/form>/s","<h3>".$lang['sorrypagelocked']."</h3>", $whole);
 	output($whole, $file );
 }
@@ -651,9 +646,10 @@ function htmltotxt($string) {
 	'@<[\/\!]*?[^<>]*?>@si', // Strip out HTML tags
 	'@([\r\n])[\s]+@', // Strip out white space
 	'@&(quot|#34);@i', // Replace HTML entities
-	'@&(amp|#38);@i','@&(lt|#60);@i','@&(gt|#62);@i','@&(nbsp|#160);@i','@&(iexcl|#161);@i','@&(cent|#162);@i','@&(pound|#163);@i','@&(copy|#169);@i','@&#(\d+);@e');
-	$replace=array ('','','\1','"','&','<','>',' ',chr(161),chr(162),chr(163),chr(169),'chr(\1)');
+	'@&(amp|#38);@i','@&(lt|#60);@i','@&(gt|#62);@i','@&(nbsp|#160);@i','@&(iexcl|#161);@i','@&(cent|#162);@i','@&(pound|#163);@i','@&(copy|#169);@i');
+	$replace=array ('','','\1','"','&','<','>',' ',chr(161),chr(162),chr(163),chr(169));
 	$string=preg_replace($search, $replace, $string);
+	$string=preg_replace_callback('@&#(\d+);@', fn($m)=>chr($m[1]), $string);
 	return $string;
 }
 
@@ -699,7 +695,7 @@ while( $counter < $max_pages ) {
 			$content .="<item>";
 			$content .="<title>".htmlchars(ltrim(stripslashes($filem[0]),'!'))."</title>";
 			$content .="<description>".htmlchars(htmltotxt($raw))."</description>";
-			$content .="<link>".$pagevars[url]."?".$wiki_get."=".$page."</link>";
+			$content .="<link>".$pagevars["url"]."?".$wiki_get."=".$page."</link>";
 			$content .="<pubDate>".gmdate("D, d M Y H:i:s", filemtime("$data_dir/$page"))." +0000</pubDate>";
 			$content .="</item>";
 		}
@@ -739,7 +735,7 @@ echo $content;
 				$content .="<title>$page</title>";
 				$content .="<description>".substr(htmlchars(htmltotxt($raw)), 0, 230)."...</description>";
 				$content .="<link>".$pagevars["url"]."?".$wiki_get."=".$page."</link>";
-				$content .="<pubDate>".strftime("%a, %d %b %Y ", $date).date("G:i:s", filemtime("$data_dir/$page")+(3600*$pagevars["timezone"]) )." +0000</pubDate>";
+				$content .="<pubDate>".gmdate("D, d M Y ", $date).date("G:i:s", filemtime("$data_dir/$page")+(3600*$pagevars["timezone"]) )." +0000</pubDate>";
 				$content .="</item>";
 			}
 		}
