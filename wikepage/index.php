@@ -590,37 +590,35 @@ function editpage($file) {
 	$already="";
 	$mainmenu="";
 	$filer="$data_dir/".$lang['blog_input_page'];
-	if (substr_count($file, "Entry-")!=0 or $file==$filer ){
+	if (substr_count($file, "Entry-")!=0 or $file==$filer ) {
 		if($file!=$filer)
 			if( file_exists( $file ) ) $already=file( "$file" );
-	if( file_exists( "newentry.html" ) )
-		$template=file("newentry.html");
-	else
-		echo " (Newentry) ".$lang['filenotfound']."<br />\n";
-	$template=implode( "", $template );
-	$blogimage=explode("]", ltrim(stripslashes($already[0]),'!'));
-	$blogimage=ltrim($blogimage[0],"[");
-	$subject=preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/","", ltrim(stripslashes($already[0]),'!'));
-	$whole=str_replace("<!--subject-->",ltrim($subject),$template);
-	$whole=str_replace("<!--submit-->",$lang['submit'],$whole);
-	$whole=str_replace("<!--already-->",stripslashes(implode("",array_slice($already,1))),$whole);
-	//Get Images in blog image directory
-	$handle=opendir("data/files/");
-	$images="<option>".$lang['noimage']."</option>";
-	while( $newfile=readdir($handle) )
-	{
-		if(preg_match("/([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))/",$newfile) )
-		{
-			if($newfile == $blogimage)
-			{
-				$images .= "<option selected>".$newfile."</option>";
-			}else{
-				$images .= "<option>".$newfile."</option>";
+		if (file_exists("newentry.html"))
+			$template = file("newentry.html");
+		else
+			echo " (Newentry) ".$lang['filenotfound']."<br />\n";
+		$template = implode("", $template);
+		$firstLine = (is_array($already) && isset($already[0])) ? stripslashes($already[0]) : '';
+		$blogimage = explode("]", ltrim($firstLine, '!'));
+		$blogimage = ltrim($blogimage[0] ?? '', "[");
+		$subject = preg_replace("/\[([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))\]/", "", ltrim($firstLine, '!'));
+		$whole = str_replace("<!--subject-->", ltrim($subject ?? ''), $template);
+		$whole = str_replace("<!--submit-->", $lang['submit'], $whole);
+		$alreadyContent = (is_array($already) && count($already) > 1) ? stripslashes(implode("", array_slice($already, 1))) : '';
+		$whole = str_replace("<!--already-->", $alreadyContent, $whole);
+		//Get Images in blog image directory
+		$handle=opendir("data/files/");
+		$images="<option>".$lang['noimage']."</option>";
+		while( $newfile=readdir($handle) ) {
+			if(preg_match("/([\w\.:\/~@\,\?\%=\+\-;#&]+\.(png|gif|jpg))/",$newfile) ) {
+				if($newfile == $blogimage)
+					$images .= "<option selected>".$newfile."</option>";
+				else
+					$images .= "<option>".$newfile."</option>";
 			}
 		}
-	}
-	$whole=str_replace("<!--blog_imagelist-->", $images, $whole);
-	}else{
+		$whole=str_replace("<!--blog_imagelist-->", $images, $whole);
+	} else {
 		 if( file_exists( $file ) ) $already=implode( "", file( "$file" ) );
 		//load menu file
 		$mainmenu=implode("", file('data/'.$langu.'_menu.txt') );
@@ -772,18 +770,12 @@ if( isset($_POST["content"]) ) {
 	if($testpass==$adminpassword || $passworks=="1"){
 		if( !file_exists( $name )){
 			$dirname= "$data_dir/".$lang['blog_input_page'];
-		if ($name==$dirname){
-			//here
-			$date=date("Y-m-d_H-i-s");
-			$namePath=".$path/$data_dir/Entry-".$date;
-			$name="$data_dir/Entry-".$date;
-		}else{
-			//thanks to M.T.Sandikkaya for path correction
-			$namePath=".$path/$name";
-		}
-		@touch($namePath);
-		chmod($name, 0666);
-		$already=implode( "", file( "$name" ) );
+			if ($name==$dirname){
+				$date=date("Y-m-d_H-i-s");
+				$name="$data_dir/Entry-".$date;
+			}
+			@touch($name);
+			@chmod($name, 0666);
 		}
 		if ( $_POST["blogedit"]== "yes"){
 			$data=rtrim($_POST["content"])."\n";
