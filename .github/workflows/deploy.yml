@@ -30,7 +30,7 @@ jobs:
           protocol: ftp
           port: 21
           server-dir: ${{ secrets.FTP_TARGET_DIR }}
-          local-dir: ./
+          local-dir: ./wikepage/
           dry-run: false
           exclude: |
             **/.git*
@@ -38,3 +38,4 @@ jobs:
             **/.github/**
             **/.env
             **/.env.*
+            data/**
